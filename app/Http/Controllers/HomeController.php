@@ -15,25 +15,31 @@ class HomeController extends Controller
     {
         $search = trim($request->input('q', ''));
         
-        $categories = Category::withCount('assets')
-            ->orderBy('sort_order', 'asc')
-            ->get();
-
-        $searchResults = null;
-        if (!empty($search)) {
-            $searchResults = Asset::with('category')
-                ->where('title', 'like', "%{$search}%")
-                ->orWhere('description', 'like', "%{$search}%")
-                ->orWhere('software', 'like', "%{$search}%")
-                ->orWhere('tags', 'like', "%{$search}%")
-                ->take(12)
+        try {
+            $categories = Category::withCount('assets')
+                ->orderBy('sort_order', 'asc')
                 ->get();
-        }
 
-        $featuredAssets = Asset::with('category')
-            ->where('is_featured', true)
-            ->take(6)
-            ->get();
+            $searchResults = null;
+            if (!empty($search)) {
+                $searchResults = Asset::with('category')
+                    ->where('title', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%")
+                    ->orWhere('software', 'like', "%{$search}%")
+                    ->orWhere('tags', 'like', "%{$search}%")
+                    ->take(12)
+                    ->get();
+            }
+
+            $featuredAssets = Asset::with('category')
+                ->where('is_featured', true)
+                ->take(6)
+                ->get();
+        } catch (\Exception $e) {
+            $categories = collect();
+            $searchResults = null;
+            $featuredAssets = collect();
+        }
 
         return view('home', compact('categories', 'searchResults', 'search', 'featuredAssets'));
     }
