@@ -4,27 +4,15 @@
 
 @section('content')
 
-<!-- Producer Toy Style Minimalist Hero Section -->
-<section class="hero-section">
-    <!-- Announcement Badge -->
-    <div class="hero-announcement">
-        <span class="dot"></span>
-        <span>ANIMORA CAMPUS &bull; 100% FREE FOR ANIMATION STUDENTS</span>
+<!-- Static Visual Hero Section (Animora Pop Art Banner - No Text) -->
+<section class="hero-static-section">
+    <div class="hero-image-wrapper">
+        <img src="{{ asset('images/animora-hero.jpg') }}" alt="Animora Animation Assets" class="hero-static-img">
     </div>
+</section>
 
-    <!-- Bold Minimalist Typography -->
-    <h1 class="hero-title">ANIMATION ASSETS FOR NEXT-GEN CREATORS.</h1>
-    <p class="hero-subtitle">
-        Download production-grade character rigs, modular environment kits, and optical mocap cycles designed to elevate your college assignments and studio demo reel.
-    </p>
-
-    <!-- Producer Toy Dual Action Buttons -->
-    <div class="hero-actions">
-        <a href="{{ route('browse') }}" class="btn-solid-white">Browse Student Catalog</a>
-        <a href="javascript:void(0)" onclick="alert('Student Campus Account: Authenticated!');" class="btn-ghost-white">Student Sign In</a>
-    </div>
-
-    <!-- Minimalist Monochrome Search Bar -->
+<!-- Search Bar -->
+<div class="hero-search-bar-wrap">
     <div class="search-container">
         <form action="{{ route('browse') }}" method="GET">
             <input 
@@ -42,7 +30,7 @@
             </button>
         </form>
     </div>
-</section>
+</div>
 
 <!-- Trust / Student Benefits Bar -->
 <div class="trust-bar">
