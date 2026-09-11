@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Animora | Student Animation Asset Library & CGI Tools')</title>
     
     <!-- Favicon -->
@@ -35,8 +36,18 @@
         </div>
         <div class="nav-right desktop-only">
             <a href="{{ route('browse') }}" class="nav-action-link">Explore Rigs</a>
-            <button type="button" class="btn-nav-auth-ghost" onclick="openAuthModal('signin')">Sign In</button>
-            <button type="button" class="btn-nav-auth-solid" onclick="openAuthModal('signup')">Sign Up</button>
+            @auth
+                <div class="auth-logged-pill">
+                    <span class="auth-user-name">👤 {{ Auth::user()->name }}</span>
+                    <form action="{{ route('auth.logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="btn-nav-auth-ghost" style="padding: 0.35rem 0.9rem; font-size: 0.78rem;">Logout</button>
+                    </form>
+                </div>
+            @else
+                <button type="button" class="btn-nav-auth-ghost" onclick="openAuthModal('signin')">Sign In</button>
+                <button type="button" class="btn-nav-auth-solid" onclick="openAuthModal('signup')">Sign Up</button>
+            @endauth
         </div>
         <!-- Mobile Menu Toggle Button -->
         <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
@@ -55,8 +66,18 @@
             <li><a href="{{ route('browse') }}" onclick="toggleMobileMenu()" style="color: #ffffff; font-weight: 700;">Explore Rigs &rarr;</a></li>
         </ul>
         <div class="mobile-drawer-auth">
-            <button type="button" class="btn-mobile-auth-ghost" onclick="toggleMobileMenu(); openAuthModal('signin');">Sign In</button>
-            <button type="button" class="btn-mobile-auth-solid" onclick="toggleMobileMenu(); openAuthModal('signup');">Sign Up</button>
+            @auth
+                <div style="grid-column: span 2; text-align: center; color: #ffffff; font-weight: 600; padding-bottom: 0.5rem;">
+                    Logged in as: {{ Auth::user()->name }}
+                </div>
+                <form action="{{ route('auth.logout') }}" method="POST" style="grid-column: span 2;">
+                    @csrf
+                    <button type="submit" class="btn-mobile-auth-ghost" style="width: 100%;">Logout</button>
+                </form>
+            @else
+                <button type="button" class="btn-mobile-auth-ghost" onclick="toggleMobileMenu(); openAuthModal('signin');">Sign In</button>
+                <button type="button" class="btn-mobile-auth-solid" onclick="toggleMobileMenu(); openAuthModal('signup');">Sign Up</button>
+            @endauth
         </div>
     </div>
 
@@ -265,48 +286,115 @@
             }
         }
 
-        function handleSignInSubmit(e) {
+        async function handleSignInSubmit(e) {
             e.preventDefault();
             const btn = document.getElementById('btnSignInSubmit');
             const msg = document.getElementById('authModalMsg');
-            btn.disabled = true;
-            btn.textContent = 'Signing in...';
+            const login = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const remember = document.getElementById('rememberMe').checked;
+            const metaCsrf = document.querySelector('meta[name="csrf-token"]');
+            const csrfToken = metaCsrf ? metaCsrf.getAttribute('content') : '';
 
-            setTimeout(() => {
-                btn.disabled = false;
-                btn.textContent = 'Sign In to Animora';
+            btn.disabled = true;
+            btn.textContent = 'Verifying with Neon DB...';
+            if (msg) msg.style.display = 'none';
+
+            try {
+                const response = await fetch("{{ route('auth.login') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({ login: login, password: password, remember: remember })
+                });
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    if (msg) {
+                        msg.className = 'auth-modal-msg auth-msg-success';
+                        msg.innerHTML = data.message;
+                        msg.style.display = 'block';
+                    }
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    if (msg) {
+                        msg.className = 'auth-modal-msg auth-msg-error';
+                        msg.innerHTML = data.message || 'Invalid email or password.';
+                        msg.style.display = 'block';
+                    }
+                    btn.disabled = false;
+                    btn.textContent = 'Sign In to Animora';
+                }
+            } catch (err) {
                 if (msg) {
-                    msg.className = 'auth-modal-msg auth-msg-success';
-                    msg.innerHTML = '✨ Welcome back! Successfully signed in to Animora.';
+                    msg.className = 'auth-modal-msg auth-msg-error';
+                    msg.innerHTML = 'Database network error. Please try again.';
                     msg.style.display = 'block';
                 }
-                setTimeout(() => {
-                    closeAuthModal();
-                    if (msg) msg.style.display = 'none';
-                }, 1400);
-            }, 600);
+                btn.disabled = false;
+                btn.textContent = 'Sign In to Animora';
+            }
         }
 
-        function handleSignUpSubmit(e) {
+        async function handleSignUpSubmit(e) {
             e.preventDefault();
             const btn = document.getElementById('btnSignUpSubmit');
             const msg = document.getElementById('authModalMsg');
-            btn.disabled = true;
-            btn.textContent = 'Creating account...';
+            const name = document.getElementById('regFullName').value;
+            const email = document.getElementById('regEmail').value;
+            const program = document.getElementById('regProgram').value;
+            const password = document.getElementById('regPassword').value;
+            const metaCsrf = document.querySelector('meta[name="csrf-token"]');
+            const csrfToken = metaCsrf ? metaCsrf.getAttribute('content') : '';
 
-            setTimeout(() => {
-                btn.disabled = false;
-                btn.textContent = 'Create Student Account';
+            btn.disabled = true;
+            btn.textContent = 'Saving to Neon DB...';
+            if (msg) msg.style.display = 'none';
+
+            try {
+                const response = await fetch("{{ route('auth.register') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({ name: name, email: email, program: program, password: password })
+                });
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    if (msg) {
+                        msg.className = 'auth-modal-msg auth-msg-success';
+                        msg.innerHTML = data.message;
+                        msg.style.display = 'block';
+                    }
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1200);
+                } else {
+                    if (msg) {
+                        msg.className = 'auth-modal-msg auth-msg-error';
+                        msg.innerHTML = data.message || 'Could not complete registration.';
+                        msg.style.display = 'block';
+                    }
+                    btn.disabled = false;
+                    btn.textContent = 'Create Student Account';
+                }
+            } catch (err) {
                 if (msg) {
-                    msg.className = 'auth-modal-msg auth-msg-success';
-                    msg.innerHTML = '🎉 Account created! Welcome to Animora Student Portal.';
+                    msg.className = 'auth-modal-msg auth-msg-error';
+                    msg.innerHTML = 'Database network error. Please try again.';
                     msg.style.display = 'block';
                 }
-                setTimeout(() => {
-                    closeAuthModal();
-                    if (msg) msg.style.display = 'none';
-                }, 1400);
-            }, 700);
+                btn.disabled = false;
+                btn.textContent = 'Create Student Account';
+            }
         }
 
         document.addEventListener('keydown', function(e) {

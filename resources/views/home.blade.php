@@ -287,18 +287,22 @@
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
 
+        const metaCsrf = document.querySelector('meta[name="csrf-token"]');
+        const csrfToken = metaCsrf ? metaCsrf.getAttribute('content') : '';
+
         try {
-            const response = await fetch('https://api.web3forms.com/submit', {
+            const response = await fetch("{{ route('contact.submit') }}", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
                 },
                 body: json
             });
             const resJson = await response.json();
 
-            if (response.status === 200 || resJson.success) {
+            if (response.ok && (response.status === 200 || resJson.success)) {
                 // Show inline Thank You card, hide form - NO REDIRECT
                 form.style.display = 'none';
                 if (thankYouCard) {
@@ -313,7 +317,7 @@
             }
         } catch (error) {
             result.className = 'form-result-alert form-error';
-            result.innerHTML = 'Network connection error. Please call us directly at (02425) 223181.';
+            result.innerHTML = 'Network error. Please try again or call us directly at (02425) 223181.';
             result.style.display = 'block';
         } finally {
             submitBtn.disabled = false;
