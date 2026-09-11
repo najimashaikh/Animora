@@ -62,7 +62,7 @@ class AuthController extends Controller
             if ($request->expectsJson() || $request->ajax()) {
                 return response()->json([
                     'success' => true,
-                    'message' => '✨ Welcome back! Redirecting...',
+                    'message' => 'Welcome back!',
                     'redirect' => route('home'),
                 ]);
             }
