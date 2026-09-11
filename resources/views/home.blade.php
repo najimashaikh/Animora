@@ -51,7 +51,7 @@
         </div>
         <!-- Card 4 -->
         <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-img"><img src="{{ asset('images/course-vfx.jpg') }}" alt="2-Year Full-Time Program - VFX"></div>
             <div class="course-card-title">2‑YEAR, FULL‑TIME PROGRAM – VFX</div>
             <div class="course-card-desc">Transform narratives into unforgettable cinematic experiences with VFX.</div>
         </div>
