@@ -13,98 +13,71 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     /**
-     * Handle student registration (Sign Up) and save into Neon PostgreSQL.
+     * Show the dedicated Sign In page.
      */
-    public function register(Request $request)
+    public function showLogin()
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email',
-            'password' => 'required|string|min:6',
-            'program' => 'nullable|string|max:255',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'message' => $validator->errors()->first(),
-            ], 422);
+        if (Auth::check()) {
+            return redirect()->route('home');
         }
-
-        try {
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'program' => $request->program,
-                'password' => Hash::make($request->password),
-            ]);
-
-            Auth::login($user, true);
-
-            return response()->json([
-                'success' => true,
-                'message' => '🎉 Welcome to Animora, ' . $user->name . '! Your account is saved in Neon PostgreSQL.',
-                'user' => [
-                    'id' => $user->id,
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'program' => $user->program,
-                ],
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Database error: ' . $e->getMessage(),
-            ], 500);
-        }
+        return view('auth.login');
     }
 
     /**
-     * Handle student login (Sign In) against Neon PostgreSQL.
+     * Show the dedicated Sign Up page.
+     */
+    public function showRegister()
+    {
+        if (Auth::check()) {
+            return redirect()->route('home');
+        }
+        return view('auth.register');
+    }
+
+    /**
+     * Handle user Sign In.
      */
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'login' => 'required|string',
-            'password' => 'required|string',
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
         ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'message' => $validator->errors()->first(),
-            ], 422);
-        }
-
-        $login = $request->input('login');
-        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
-        $credentials = [
-            $field => $login,
-            'password' => $request->input('password'),
-        ];
 
         $remember = $request->boolean('remember', true);
 
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
-            $user = Auth::user();
-
-            return response()->json([
-                'success' => true,
-                'message' => '✨ Welcome back, ' . $user->name . '!',
-                'user' => [
-                    'id' => $user->id,
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'program' => $user->program,
-                ],
-            ]);
+            return redirect()->intended(route('home'))->with('status', 'Welcome back!');
         }
 
-        return response()->json([
-            'success' => false,
-            'message' => 'Invalid credentials. Please verify your email/ID and password.',
-        ], 401);
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    }
+
+    /**
+     * Handle user Sign Up / Registration.
+     */
+    public function register(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'program' => ['nullable', 'string', 'max:255'],
+        ]);
+
+        $user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'program' => $request->input('program', 'General'),
+            'password' => Hash::make($validated['password']),
+        ]);
+
+        Auth::login($user, true);
+
+        return redirect()->route('home')->with('status', 'Account created successfully! Welcome to Animora.');
     }
 
     /**
@@ -116,20 +89,12 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        if ($request->wantsJson() || $request->ajax()) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Logged out successfully.',
-            ]);
-        }
-
         return redirect()->route('home');
     }
 
     /**
      * Handle contact form submission:
-     * 1. Store contact data permanently in Neon PostgreSQL database.
-     * 2. Send email notification via Web3Forms API.
+     * Stores contact data in Neon PostgreSQL database and sends email notification.
      */
     public function submitContact(Request $request)
     {
@@ -149,7 +114,6 @@ class AuthController extends Controller
         }
 
         try {
-            // Save contact inquiry permanently into Neon database
             $contact = Contact::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -158,11 +122,11 @@ class AuthController extends Controller
                 'message' => $request->message,
             ]);
 
-            // Also forward to Web3Forms so najimashaikh267@gmail.com gets email alert
+            // Forward to Web3Forms for email alert to najimashaikh267@gmail.com
             try {
                 Http::timeout(5)->post('https://api.web3forms.com/submit', [
                     'access_key' => '82d62467-fdbb-4b4c-852d-f44e8be9bc5d',
-                    'subject' => 'New Student Inquiry Stored in Neon - ' . $request->name,
+                    'subject' => 'New Student Inquiry - ' . $request->name,
                     'from_name' => 'Animora Campus Portal',
                     'name' => $request->name,
                     'email' => $request->email,
@@ -171,18 +135,18 @@ class AuthController extends Controller
                     'message' => $request->message,
                 ]);
             } catch (\Exception $ex) {
-                // Email forwarding failure should not break the user's DB submission
+                // Background email forwarding should not block successful DB save
             }
 
             return response()->json([
                 'success' => true,
-                'message' => 'Thank you! Your inquiry has been stored in our Neon database and sent to campus staff.',
+                'message' => 'Thank you! Your message has been sent successfully. Our campus team will contact you shortly.',
                 'contact_id' => $contact->id,
             ]);
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Failed to save to Neon database: ' . $e->getMessage(),
+                'message' => 'Failed to save inquiry: ' . $e->getMessage(),
             ], 500);
         }
     }
