@@ -198,13 +198,13 @@
                         <div class="form-group">
                             <label for="contactCourse">Interested Program</label>
                             <select id="contactCourse" name="course_interest" class="form-select">
-                                <option value="Professional Program">3-Year Professional Program (2D, 3D, VFX)</option>
-                                <option value="3D Animation">2-Year Full-Time – 3D Animation</option>
-                                <option value="Game Art Design">2-Year Full-Time – Game Art Design</option>
-                                <option value="VFX">2-Year Full-Time – VFX</option>
-                                <option value="Individual Courses">1-Year Full-Time – Individual Courses</option>
-                                <option value="Short Term Courses">10-Week On-Campus Short Term</option>
-                                <option value="General Inquiry">General Campus &amp; Admission Inquiry</option>
+                                <option value="Professional Program (2D, 3D, VFX)">3-Year Professional (2D/3D/VFX)</option>
+                                <option value="3D Animation">2-Year 3D Animation</option>
+                                <option value="Game Art Design">2-Year Game Art Design</option>
+                                <option value="VFX">2-Year VFX Program</option>
+                                <option value="Individual Courses">1-Year Individual Courses</option>
+                                <option value="Short Term Courses">10-Week Short Term Course</option>
+                                <option value="General Inquiry">General Campus Inquiry</option>
                             </select>
                         </div>
                     </div>

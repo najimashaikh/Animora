@@ -37,11 +37,26 @@
         <div class="nav-right desktop-only">
             <a href="{{ route('browse') }}" class="nav-action-link">Explore Rigs</a>
             @auth
-                <div class="auth-logged-pill">
-                    <span class="auth-user-name">👤 {{ Auth::user()->name }}</span>
-                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                <div class="user-header-pill">
+                    <!-- Initial Icon Badge -->
+                    <span class="user-initial-icon">
+                        {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                    </span>
+                    <!-- Blackish Gray User Name -->
+                    <span class="user-pill-name" title="{{ Auth::user()->name }}">
+                        {{ Str::limit(Auth::user()->name, 16) }}
+                    </span>
+                    <!-- Red Logout Button -->
+                    <form action="{{ route('logout') }}" method="POST" style="margin: 0; padding: 0; display: inline-flex;">
                         @csrf
-                        <button type="submit" class="btn-nav-auth-ghost" style="padding: 0.35rem 0.9rem; font-size: 0.78rem;">Logout</button>
+                        <button type="submit" class="btn-logout-red" title="Logout from Animora">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            <span>Logout</span>
+                        </button>
                     </form>
                 </div>
             @else
@@ -67,13 +82,28 @@
         </ul>
         <div class="mobile-drawer-auth">
             @auth
-                <div style="grid-column: span 2; text-align: center; color: #ffffff; font-weight: 600; padding-bottom: 0.5rem;">
-                    Logged in as: {{ Auth::user()->name }}
+                <div class="mobile-user-card" style="grid-column: span 2;">
+                    <div class="mobile-user-row">
+                        <span class="user-initial-icon">
+                            {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                        </span>
+                        <div class="mobile-user-text">
+                            <span class="mobile-user-name">{{ Auth::user()->name }}</span>
+                            <span class="mobile-user-email">{{ Auth::user()->email }}</span>
+                        </div>
+                    </div>
+                    <form action="{{ route('logout') }}" method="POST" style="width: 100%; margin-top: 0.6rem;">
+                        @csrf
+                        <button type="submit" class="btn-logout-red-mobile">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            <span>Log Out</span>
+                        </button>
+                    </form>
                 </div>
-                <form action="{{ route('logout') }}" method="POST" style="grid-column: span 2;">
-                    @csrf
-                    <button type="submit" class="btn-mobile-auth-ghost" style="width: 100%;">Logout</button>
-                </form>
             @else
                 <a href="{{ route('login') }}" class="btn-mobile-auth-ghost">Sign In</a>
                 <a href="{{ route('register') }}" class="btn-mobile-auth-solid">Sign Up</a>
