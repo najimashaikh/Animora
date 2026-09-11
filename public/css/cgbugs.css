@@ -98,15 +98,15 @@ body::before {
 }
 
 .brand-logo img {
-    width: 32px;
-    height: 32px;
+    height: 38px;
+    width: auto;
+    max-width: 140px;
     object-fit: contain;
-    filter: brightness(1.2);
     transition: var(--transition);
 }
 
 .brand-logo:hover img {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 .brand-badge {
@@ -261,50 +261,49 @@ body::before {
     border-bottom: 1px solid var(--border-subtle);
 }
 
-/* ================= HERO STATIC IMAGE BANNER (ANIMORA COMIC ART) ================= */
-.hero-static-section {
+/* ================= HERO STATIC IMAGE BANNER (ANIMORA COMIC ART - FULL WIDTH) ================= */
+.hero-static-section.hero-fullwidth {
     position: relative;
     width: 100%;
-    max-width: 1280px;
-    margin: 2rem auto 1.5rem;
-    padding: 0 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
     z-index: 10;
+    background: #000000;
 }
 
-.hero-image-wrapper {
+.hero-static-section.hero-fullwidth .hero-image-wrapper {
     position: relative;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 0;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 40px rgba(255, 255, 255, 0.05);
-    background: #ffffff;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+    background: #000000;
+    transition: none;
 }
 
-.hero-image-wrapper:hover {
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.95), 0 0 50px rgba(255, 204, 0, 0.15);
+.hero-static-section.hero-fullwidth .hero-image-wrapper:hover {
+    transform: none;
 }
 
-.hero-static-img {
+.hero-static-section.hero-fullwidth .hero-static-img {
     width: 100%;
     height: auto;
+    max-height: 80vh;
     display: block;
     object-fit: cover;
-    aspect-ratio: 16 / 9;
+    object-position: center;
 }
 
 .hero-search-bar-wrap {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0 1.5rem 1rem;
-    margin-bottom: 2rem;
+    padding: 2.2rem 1.5rem 1.2rem;
+    margin-bottom: 1.5rem;
     z-index: 20;
     position: relative;
 }

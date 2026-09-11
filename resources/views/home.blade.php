@@ -4,10 +4,10 @@
 
 @section('content')
 
-<!-- Static Visual Hero Section (Animora Pop Art Banner - No Text) -->
-<section class="hero-static-section">
+<!-- Full Width Static Hero Section (Animora Comic Art Banner - No Text) -->
+<section class="hero-static-section hero-fullwidth">
     <div class="hero-image-wrapper">
-        <img src="{{ asset('images/animora-hero.jpg') }}" alt="Animora Animation Assets" class="hero-static-img">
+        <img src="{{ asset('images/animora-hero-full.png') }}" alt="Animora Animation Assets" class="hero-static-img">
     </div>
 </section>
 

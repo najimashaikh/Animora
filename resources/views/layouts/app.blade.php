@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Animora | Student Animation Asset Library & CGI Tools')</title>
     
-    <!-- Favicon (Transparent Stag) -->
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
 
     <!-- Google Fonts: Minimalist High Contrast (Inter & Outfit) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,9 +24,8 @@
     <!-- Header Navigation (Producer Toy Minimalist B&W) -->
     <nav class="navbar">
         <div class="nav-left">
-            <a href="{{ route('home') }}" class="brand-logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Animora Logo" width="32" height="32">
-                <span>Animora</span>
+            <a href="{{ route('home') }}" class="brand-logo" aria-label="Animora Home">
+                <img src="{{ asset('images/logo.png') }}" alt="Animora" class="brand-logo-img">
                 <span class="brand-badge">Student Portal</span>
             </a>
             <ul class="nav-links desktop-only">
@@ -77,7 +77,7 @@
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <h4>ANIMORA CAMPUS</h4>
+                    <img src="{{ asset('images/logo.png') }}" alt="Animora" style="height: 38px; width: auto; max-width: 150px; object-fit: contain; margin-bottom: 1rem; display: block;">
                     <p>
                         The open digital asset marketplace and learning portal for 3D animation students. Download production-tested character rigs, sets, and pipeline automation tools.
                     </p>
