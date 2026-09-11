@@ -11,7 +11,7 @@
         <div class="hero-emblem-wrap">
             <div class="hero-emblem-glow"></div>
             <div class="hero-emblem">
-                <img src="{{ asset('images/logo.png') }}" alt="Animora Emblem" width="90" height="90">
+                <img src="{{ secure_asset('images/logo.png') }}" alt="Animora Emblem" width="90" height="90">
             </div>
         </div>
 
@@ -48,7 +48,7 @@
         <!-- 1. CHARACTER RIGS -->
         <div class="replica-card">
             <div class="card-thumbnail-box">
-                <img src="{{ asset('images/card-rigs.jpg') }}" alt="Character Rigs" width="280" height="140">
+                <img src="{{ secure_asset('images/card-rigs.jpg') }}" alt="Character Rigs" width="280" height="140">
             </div>
             <h3 class="card-title">CHARACTER RIGS</h3>
             <p class="card-subtitle">Ready-to-use Rigs &amp; Rigs Systems</p>
@@ -61,7 +61,7 @@
         <!-- 2. PRODUCTION ASSETS -->
         <div class="replica-card">
             <div class="card-thumbnail-box">
-                <img src="{{ asset('images/card-assets.jpg') }}" alt="Production Assets" width="280" height="140">
+                <img src="{{ secure_asset('images/card-assets.jpg') }}" alt="Production Assets" width="280" height="140">
             </div>
             <h3 class="card-title">PRODUCTION ASSETS</h3>
             <p class="card-subtitle">Props, Sets &amp; Environments</p>
@@ -74,7 +74,7 @@
         <!-- 3. ANIMATION CLIPS -->
         <div class="replica-card">
             <div class="card-thumbnail-box">
-                <img src="{{ asset('images/card-clips.jpg') }}" alt="Animation Clips" width="280" height="140">
+                <img src="{{ secure_asset('images/card-clips.jpg') }}" alt="Animation Clips" width="280" height="140">
             </div>
             <h3 class="card-title">ANIMATION CLIPS</h3>
             <p class="card-subtitle">Mocap, Clips &amp; Cycle Library</p>
@@ -87,7 +87,7 @@
         <!-- 4. PIPELINE TOOLS -->
         <div class="replica-card">
             <div class="card-thumbnail-box">
-                <img src="{{ asset('images/card-tools.jpg') }}" alt="Pipeline Tools" width="280" height="140">
+                <img src="{{ secure_asset('images/card-tools.jpg') }}" alt="Pipeline Tools" width="280" height="140">
             </div>
             <h3 class="card-title">PIPELINE TOOLS</h3>
             <p class="card-subtitle">Maya, Blender &amp; Houdini Tools</p>

@@ -6,8 +6,8 @@
     <title>@yield('title', 'Animora - Animation Library | Precision In Motion')</title>
     
     <!-- Favicon (Deer Head / Stag) -->
-    <link rel="icon" type="image/jpeg" href="{{ asset('favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/jpeg" href="{{ secure_asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ secure_asset('favicon.ico') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Animora Cyber-Blueprint Design System -->
-    <link rel="stylesheet" href="{{ asset('css/cgbugs.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/cgbugs.css') }}">
     @yield('styles')
 </head>
 <body>
@@ -24,7 +24,7 @@
     <nav class="navbar">
         <div class="nav-left">
             <a href="{{ route('home') }}" class="brand-logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Animora Logo" width="36" height="36">
+                <img src="{{ secure_asset('images/logo.png') }}" alt="Animora Logo" width="36" height="36">
                 <span>Animora</span>
             </a>
             <ul class="nav-links desktop-only">
