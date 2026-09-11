@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Asset;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,6 +18,58 @@ class HomeController extends Controller
         $categories = collect();
         $searchResults = null;
         $featuredAssets = collect();
+        $courses = collect();
+
+        // Fetch courses dynamically from database
+        try {
+            $courses = Course::where('is_featured_home', true)
+                ->orderBy('sort_order', 'asc')
+                ->get();
+        } catch (\Exception $e) {
+            $courses = collect();
+        }
+
+        // Fallback default courses if DB is initializing or empty
+        if ($courses->isEmpty()) {
+            $courses = collect([
+                (object)[
+                    'name' => 'Professional Program',
+                    'image_url' => 'images/course-professional-program.jpg',
+                    'image' => asset('images/course-professional-program.jpg'),
+                    'short_description' => '3-YEAR, FULL‑TIME PROGRAM – 2D, 3D, VFX. Master production pipelines in our 3‑year program.',
+                ],
+                (object)[
+                    'name' => '2-Year Full-Time Program - 3D Animation',
+                    'image_url' => 'images/course-3d-animation.jpg',
+                    'image' => asset('images/course-3d-animation.jpg'),
+                    'short_description' => '2‑YEAR, FULL‑TIME PROGRAM – 3D Animation. Full‑time 3D animation program covering diverse aspects of the 3D generalist skill set.',
+                ],
+                (object)[
+                    'name' => '2-Year Full-Time Program - Game Art Design',
+                    'image_url' => 'images/course-game-art-design.jpg',
+                    'image' => asset('images/course-game-art-design.jpg'),
+                    'short_description' => '2‑YEAR, FULL‑TIME PROGRAM – Game Art Design. From stunning visuals to seamless gameplay, we bring your creative vision to life.',
+                ],
+                (object)[
+                    'name' => '2-Year Full-Time Program - VFX',
+                    'image_url' => 'images/course-vfx.jpg',
+                    'image' => asset('images/course-vfx.jpg'),
+                    'short_description' => '2‑YEAR, FULL‑TIME PROGRAM – VFX. Transform narratives into unforgettable cinematic experiences with VFX.',
+                ],
+                (object)[
+                    'name' => '1-Year Full-Time Program - Individual Courses',
+                    'image_url' => 'images/course-individual-courses.jpg',
+                    'image' => asset('images/course-individual-courses.jpg'),
+                    'short_description' => '1‑YEAR, FULL‑TIME PROGRAM – Individual Courses. Unlock your creative potential with comprehensive media production skills.',
+                ],
+                (object)[
+                    'name' => '10-Week On-Campus Program - Short Term Courses',
+                    'image_url' => 'images/course-short-term-courses.jpg',
+                    'image' => asset('images/course-short-term-courses.jpg'),
+                    'short_description' => '10‑WEEK, ON‑CAMPUS PROGRAM – Short Term Courses. Standalone courses in film, game, and visual effects production.',
+                ],
+            ]);
+        }
 
         // If user submitted a search query from header search
         if (!empty($search)) {
@@ -33,7 +86,7 @@ class HomeController extends Controller
             }
         }
 
-        return view('home', compact('categories', 'searchResults', 'search', 'featuredAssets'));
+        return view('home', compact('categories', 'searchResults', 'search', 'featuredAssets', 'courses'));
     }
 
     /**

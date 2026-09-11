@@ -29,45 +29,17 @@
 <!-- Courses Section -->
 <section class="course-section">
 
-    <h2 class="animora-branding">OUR COURCES</h2>
+    <h2 class="animora-branding">OUR COURSES</h2>
     <div class="course-card-grid">
-        <!-- Card 1 -->
+        @foreach($courses as $course)
         <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/course-professional-program.jpg') }}" alt="Professional Program - 2D, 3D, VFX"></div>
-            <div class="course-card-title">PROFESSIONAL PROGRAM</div>
-            <div class="course-card-desc">3-YEAR, FULL‑TIME PROGRAM – 2D, 3D, VFX. Master production pipelines in our 3‑year program.</div>
+            <div class="course-card-img">
+                <img src="{{ isset($course->image) ? $course->image : (str_starts_with($course->image_url, 'http') ? $course->image_url : asset($course->image_url)) }}" alt="{{ $course->name }}">
+            </div>
+            <div class="course-card-title">{{ $course->name }}</div>
+            <div class="course-card-desc">{{ $course->short_description }}</div>
         </div>
-        <!-- Card 2 -->
-        <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/course-3d-animation.jpg') }}" alt="2-Year Full-Time Program - 3D Animation"></div>
-            <div class="course-card-title">2‑YEAR, FULL‑TIME PROGRAM – 3D Animation</div>
-            <div class="course-card-desc">Full‑time 3D animation program covering diverse aspects of the 3D generalist skill set.</div>
-        </div>
-        <!-- Card 3 -->
-        <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/course-game-art-design.jpg') }}" alt="2-Year Full-Time Program - Game Art Design"></div>
-            <div class="course-card-title">2‑YEAR, FULL‑TIME PROGRAM – Game Art Design</div>
-            <div class="course-card-desc">From stunning visuals to seamless gameplay, we bring your creative vision to life.</div>
-        </div>
-        <!-- Card 4 -->
-        <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/course-vfx.jpg') }}" alt="2-Year Full-Time Program - VFX"></div>
-            <div class="course-card-title">2‑YEAR, FULL‑TIME PROGRAM – VFX</div>
-            <div class="course-card-desc">Transform narratives into unforgettable cinematic experiences with VFX.</div>
-        </div>
-        <!-- Card 5 -->
-        <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/course-individual-courses.jpg') }}" alt="1-Year Full-Time Program - Individual Courses"></div>
-            <div class="course-card-title">1‑YEAR, FULL‑TIME PROGRAM – Individual Courses</div>
-            <div class="course-card-desc">Unlock your creative potential with comprehensive media production skills.</div>
-        </div>
-        <!-- Card 6 -->
-        <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/course-short-term-courses.jpg') }}" alt="10-Week On-Campus Program - Short Term Courses"></div>
-            <div class="course-card-title">10‑WEEK, ON‑CAMUS PROGRAM – Short Term Courses</div>
-            <div class="course-card-desc">Standalone courses in film, game, and visual effects production.</div>
-        </div>
-
+        @endforeach
     </div>
 </section>
 
