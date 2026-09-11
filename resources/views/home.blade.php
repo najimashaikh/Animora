@@ -57,13 +57,13 @@
         </div>
         <!-- Card 5 -->
         <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-img"><img src="{{ asset('images/course-individual-courses.jpg') }}" alt="1-Year Full-Time Program - Individual Courses"></div>
             <div class="course-card-title">1‑YEAR, FULL‑TIME PROGRAM – Individual Courses</div>
             <div class="course-card-desc">Unlock your creative potential with comprehensive media production skills.</div>
         </div>
         <!-- Card 6 -->
         <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-img"><img src="{{ asset('images/course-short-term-courses.jpg') }}" alt="10-Week On-Campus Program - Short Term Courses"></div>
             <div class="course-card-title">10‑WEEK, ON‑CAMUS PROGRAM – Short Term Courses</div>
             <div class="course-card-desc">Standalone courses in film, game, and visual effects production.</div>
         </div>
