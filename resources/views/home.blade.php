@@ -85,7 +85,7 @@
         <div class="product-card">
             <div class="product-card-thumb">
                 <span class="tag-free-student">Free &bull; Student</span>
-                <img src="{{ secure_asset('images/card-rigs.jpg') }}" alt="Student Character Rigs" width="280" height="165">
+                <img src="{{ asset('images/card-rigs.jpg') }}" alt="Student Character Rigs" width="280" height="165">
             </div>
             <div class="product-card-body">
                 <h3 class="product-card-title">CHARACTER RIGS</h3>
@@ -103,7 +103,7 @@
         <div class="product-card">
             <div class="product-card-thumb">
                 <span class="tag-free-student">Free &bull; Student</span>
-                <img src="{{ secure_asset('images/card-assets.jpg') }}" alt="Production Sets" width="280" height="165">
+                <img src="{{ asset('images/card-assets.jpg') }}" alt="Production Sets" width="280" height="165">
             </div>
             <div class="product-card-body">
                 <h3 class="product-card-title">PRODUCTION ASSETS</h3>
@@ -121,7 +121,7 @@
         <div class="product-card">
             <div class="product-card-thumb">
                 <span class="tag-free-student">Free &bull; Student</span>
-                <img src="{{ secure_asset('images/card-clips.jpg') }}" alt="Animation Clips" width="280" height="165">
+                <img src="{{ asset('images/card-clips.jpg') }}" alt="Animation Clips" width="280" height="165">
             </div>
             <div class="product-card-body">
                 <h3 class="product-card-title">ANIMATION CLIPS</h3>
@@ -139,7 +139,7 @@
         <div class="product-card">
             <div class="product-card-thumb">
                 <span class="tag-free-student">Free &bull; Student</span>
-                <img src="{{ secure_asset('images/card-tools.jpg') }}" alt="Pipeline Tools" width="280" height="165">
+                <img src="{{ asset('images/card-tools.jpg') }}" alt="Pipeline Tools" width="280" height="165">
             </div>
             <div class="product-card-body">
                 <h3 class="product-card-title">PIPELINE TOOLS</h3>

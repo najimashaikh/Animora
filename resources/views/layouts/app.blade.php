@@ -6,8 +6,8 @@
     <title>@yield('title', 'Animora | Student Animation Asset Library & CGI Tools')</title>
     
     <!-- Favicon (Transparent Stag) -->
-    <link rel="icon" type="image/png" href="{{ secure_asset('favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ secure_asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
 
     <!-- Google Fonts: Minimalist High Contrast (Inter & Outfit) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Animora Minimalist B&W Design System (Producer Toy Style) -->
-    <link rel="stylesheet" href="{{ secure_asset('css/cgbugs.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cgbugs.css') }}">
     @yield('styles')
 </head>
 <body>
@@ -24,7 +24,7 @@
     <nav class="navbar">
         <div class="nav-left">
             <a href="{{ route('home') }}" class="brand-logo">
-                <img src="{{ secure_asset('images/logo.png') }}" alt="Animora Logo" width="32" height="32">
+                <img src="{{ asset('images/logo.png') }}" alt="Animora Logo" width="32" height="32">
                 <span>Animora</span>
                 <span class="brand-badge">Student Portal</span>
             </a>
