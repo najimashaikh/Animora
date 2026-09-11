@@ -34,9 +34,9 @@
             </ul>
         </div>
         <div class="nav-right desktop-only">
-            <a href="{{ route('browse') }}" class="btn-student-auth">
-                Explore Rigs
-            </a>
+            <a href="{{ route('browse') }}" class="nav-action-link">Explore Rigs</a>
+            <button type="button" class="btn-nav-auth-ghost" onclick="openAuthModal('signin')">Sign In</button>
+            <button type="button" class="btn-nav-auth-solid" onclick="openAuthModal('signup')">Sign Up</button>
         </div>
         <!-- Mobile Menu Toggle Button -->
         <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
@@ -54,6 +54,10 @@
             <li><a href="{{ route('home') }}#contact" onclick="toggleMobileMenu()">Contact Us</a></li>
             <li><a href="{{ route('browse') }}" onclick="toggleMobileMenu()" style="color: #ffffff; font-weight: 700;">Explore Rigs &rarr;</a></li>
         </ul>
+        <div class="mobile-drawer-auth">
+            <button type="button" class="btn-mobile-auth-ghost" onclick="toggleMobileMenu(); openAuthModal('signin');">Sign In</button>
+            <button type="button" class="btn-mobile-auth-solid" onclick="toggleMobileMenu(); openAuthModal('signup');">Sign Up</button>
+        </div>
     </div>
 
     <!-- Main Dynamic Page Content -->
@@ -107,6 +111,87 @@
         </div>
     </footer>
 
+    <!-- Auth Modal (Sign In / Sign Up - Strictly NO green color) -->
+    <div id="authModal" class="auth-modal-backdrop" style="display: none;" onclick="handleAuthModalBackdrop(event)">
+        <div class="auth-modal-container">
+            <!-- Close Button -->
+            <button type="button" class="auth-modal-close" onclick="closeAuthModal()" aria-label="Close modal">&times;</button>
+            
+            <!-- Brand Header -->
+            <div class="auth-modal-header">
+                <img src="{{ asset('images/logo.png') }}" alt="Animora" class="auth-modal-logo">
+                <p class="auth-modal-subtitle">Student Portal &amp; Asset Library</p>
+            </div>
+
+            <!-- Tabs: Sign In / Sign Up -->
+            <div class="auth-tabs">
+                <button type="button" id="tabBtnSignIn" class="auth-tab active" onclick="switchAuthTab('signin')">Sign In</button>
+                <button type="button" id="tabBtnSignUp" class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button>
+            </div>
+
+            <!-- Status Banner -->
+            <div id="authModalMsg" class="auth-modal-msg" style="display: none;"></div>
+
+            <!-- Sign In Form -->
+            <form id="signInForm" class="auth-form-body" onsubmit="handleSignInSubmit(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address or Student ID *</label>
+                    <input type="text" id="loginEmail" placeholder="student@animora.edu or ID" required>
+                </div>
+                <div class="form-group">
+                    <div class="auth-label-row">
+                        <label for="loginPassword">Password *</label>
+                        <a href="javascript:void(0);" onclick="alert('Password reset instructions sent to your college email.');" class="auth-forgot-link">Forgot?</a>
+                    </div>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <div class="auth-remember-row">
+                    <label class="auth-checkbox-label">
+                        <input type="checkbox" id="rememberMe" checked>
+                        <span>Remember me on this device</span>
+                    </label>
+                </div>
+                <button type="submit" id="btnSignInSubmit" class="btn-auth-submit">Sign In to Animora</button>
+                <div class="auth-footer-switch">
+                    <span>Don't have an account?</span>
+                    <button type="button" class="auth-switch-link" onclick="switchAuthTab('signup')">Sign Up here</button>
+                </div>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signUpForm" class="auth-form-body" style="display: none;" onsubmit="handleSignUpSubmit(event)">
+                <div class="form-group">
+                    <label for="regFullName">Full Name *</label>
+                    <input type="text" id="regFullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">College Email Address *</label>
+                    <input type="email" id="regEmail" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="regProgram">Enrolled / Target Program</label>
+                    <select id="regProgram" class="form-select">
+                        <option value="3D Animation">2-Year Full-Time – 3D Animation</option>
+                        <option value="Game Art">2-Year Full-Time – Game Art Design</option>
+                        <option value="VFX">2-Year Full-Time – VFX</option>
+                        <option value="Professional Program">3-Year Professional Program (2D, 3D, VFX)</option>
+                        <option value="Short Term">10-Week Short Term Course</option>
+                        <option value="Individual">1-Year Individual Courses</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Create Password *</label>
+                    <input type="password" id="regPassword" placeholder="Minimum 8 characters" minlength="6" required>
+                </div>
+                <button type="submit" id="btnSignUpSubmit" class="btn-auth-submit">Create Student Account</button>
+                <div class="auth-footer-switch">
+                    <span>Already have an account?</span>
+                    <button type="button" class="auth-switch-link" onclick="switchAuthTab('signin')">Sign In here</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Interactive Scripts -->
     <script>
         function toggleMobileMenu() {
@@ -129,6 +214,106 @@
                 window.location.href = "{{ route('browse') }}";
             }
         }
+
+        // Auth Modal Controls
+        function openAuthModal(tab) {
+            const modal = document.getElementById('authModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                switchAuthTab(tab || 'signin');
+            }
+        }
+
+        function closeAuthModal() {
+            const modal = document.getElementById('authModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
+
+        function handleAuthModalBackdrop(e) {
+            if (e.target.id === 'authModal') {
+                closeAuthModal();
+            }
+        }
+
+        function switchAuthTab(tab) {
+            const tabSignIn = document.getElementById('tabBtnSignIn');
+            const tabSignUp = document.getElementById('tabBtnSignUp');
+            const formSignIn = document.getElementById('signInForm');
+            const formSignUp = document.getElementById('signUpForm');
+            const msg = document.getElementById('authModalMsg');
+
+            if (msg) msg.style.display = 'none';
+
+            if (tab === 'signup') {
+                tabSignIn.classList.remove('active');
+                tabSignUp.classList.add('active');
+                formSignIn.style.display = 'none';
+                formSignUp.style.display = 'block';
+                const firstInput = document.getElementById('regFullName');
+                if (firstInput) firstInput.focus();
+            } else {
+                tabSignUp.classList.remove('active');
+                tabSignIn.classList.add('active');
+                formSignUp.style.display = 'none';
+                formSignIn.style.display = 'block';
+                const firstInput = document.getElementById('loginEmail');
+                if (firstInput) firstInput.focus();
+            }
+        }
+
+        function handleSignInSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnSignInSubmit');
+            const msg = document.getElementById('authModalMsg');
+            btn.disabled = true;
+            btn.textContent = 'Signing in...';
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.textContent = 'Sign In to Animora';
+                if (msg) {
+                    msg.className = 'auth-modal-msg auth-msg-success';
+                    msg.innerHTML = '✨ Welcome back! Successfully signed in to Animora.';
+                    msg.style.display = 'block';
+                }
+                setTimeout(() => {
+                    closeAuthModal();
+                    if (msg) msg.style.display = 'none';
+                }, 1400);
+            }, 600);
+        }
+
+        function handleSignUpSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnSignUpSubmit');
+            const msg = document.getElementById('authModalMsg');
+            btn.disabled = true;
+            btn.textContent = 'Creating account...';
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.textContent = 'Create Student Account';
+                if (msg) {
+                    msg.className = 'auth-modal-msg auth-msg-success';
+                    msg.innerHTML = '🎉 Account created! Welcome to Animora Student Portal.';
+                    msg.style.display = 'block';
+                }
+                setTimeout(() => {
+                    closeAuthModal();
+                    if (msg) msg.style.display = 'none';
+                }, 1400);
+            }, 700);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAuthModal();
+            }
+        });
     </script>
     @yield('scripts')
 </body>

@@ -164,6 +164,54 @@ a {
     color: #ffffff;
 }
 
+.nav-action-link {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    padding: 0.4rem 0.6rem;
+}
+
+.nav-action-link:hover {
+    color: #ffffff;
+}
+
+.btn-nav-auth-ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f4f4f5;
+    padding: 0.45rem 1.15rem;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-nav-auth-ghost:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-nav-auth-solid {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: #000000;
+    padding: 0.45rem 1.3rem;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-nav-auth-solid:hover {
+    background: #e4e4e7;
+    transform: translateY(-1px);
+}
+
 .btn-student-auth {
     padding: 0.45rem 1.2rem;
     border: 1px solid var(--border-subtle);
@@ -250,6 +298,49 @@ a {
     border-bottom: 1px solid var(--border-subtle);
 }
 
+.mobile-drawer-auth {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.btn-mobile-auth-ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.btn-mobile-auth-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-mobile-auth-solid {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: #000000;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.btn-mobile-auth-solid:hover {
+    background: #e4e4e7;
+}
+
 /* ================= HERO STATIC IMAGE BANNER (ANIMORA COMIC ART - FULL VIEWPORT HEIGHT) ================= */
 .hero-static-section.hero-fullwidth {
     position: relative;
@@ -287,6 +378,30 @@ a {
     display: block;
     object-fit: cover;
     object-position: center;
+}
+
+/* Mobile Hero Image: Centered "Animora" Logo from the Image without Cropping */
+@media (max-width: 768px) {
+    .hero-static-section.hero-fullwidth {
+        padding: 0.5rem 0 1rem;
+        background: #000000;
+    }
+    .hero-static-section.hero-fullwidth .hero-image-wrapper {
+        height: auto;
+        min-height: unset;
+        max-height: unset;
+        aspect-ratio: 16 / 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .hero-static-section.hero-fullwidth .hero-static-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+    }
 }
 
 /* About & Contact Cards */
