@@ -39,16 +39,42 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        $validator = Validator::make($request->all(), [
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
+        if ($validator->fails()) {
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $validator->errors()->first(),
+                ], 422);
+            }
+            return back()->withErrors($validator)->onlyInput('email');
+        }
+
         $remember = $request->boolean('remember', true);
 
-        if (Auth::attempt($credentials, $remember)) {
+        if (Auth::attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
+
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => '✨ Welcome back! Redirecting...',
+                    'redirect' => route('home'),
+                ]);
+            }
+
             return redirect()->intended(route('home'))->with('status', 'Welcome back!');
+        }
+
+        if ($request->expectsJson() || $request->ajax()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'The provided credentials do not match our records.',
+            ], 401);
         }
 
         return back()->withErrors([
@@ -61,23 +87,51 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
-        $validated = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'program' => ['nullable', 'string', 'max:255'],
         ]);
 
-        $user = User::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'program' => $request->input('program', 'General'),
-            'password' => Hash::make($validated['password']),
-        ]);
+        if ($validator->fails()) {
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $validator->errors()->first(),
+                ], 422);
+            }
+            return back()->withErrors($validator)->withInput();
+        }
 
-        Auth::login($user, true);
+        try {
+            $user = User::create([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'program' => $request->input('program', 'General'),
+                'password' => Hash::make($request->input('password')),
+            ]);
 
-        return redirect()->route('home')->with('status', 'Account created successfully! Welcome to Animora.');
+            Auth::login($user, true);
+
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => '✨ Verification successful! Welcome to Animora, ' . $user->name . '. Redirecting...',
+                    'redirect' => route('home'),
+                ]);
+            }
+
+            return redirect()->route('home')->with('status', 'Account created successfully! Welcome to Animora.');
+        } catch (\Exception $e) {
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Database error: ' . $e->getMessage(),
+                ], 500);
+            }
+            return back()->withErrors(['email' => 'Database error occurred.'])->withInput();
+        }
     }
 
     /**

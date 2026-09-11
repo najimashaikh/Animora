@@ -2007,4 +2007,67 @@ a {
     }
 }
 
+/* Button Spinner Animation (No page reload) */
+.btn-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: #000000;
+    animation: btnSpinAnim 0.65s linear infinite;
+    margin-right: 0.5rem;
+    vertical-align: -2px;
+}
+
+@keyframes btnSpinAnim {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-auth-submit-page:disabled {
+    opacity: 0.85;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Auth Alert Box (Strictly NO green color) */
+.auth-alert-box {
+    padding: 0.9rem 1.15rem;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    animation: fadeInAlert 0.3s ease-out;
+}
+
+@keyframes fadeInAlert {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-alert-box p {
+    margin: 0;
+}
+
+.auth-alert-box.auth-alert-error {
+    background: #201014;
+    border: 1px solid #ef4444;
+    color: #fca5a5;
+}
+
+.auth-alert-box.auth-alert-success {
+    background: #14141c;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+}
+
+.auth-alert-box.auth-alert-info {
+    background: #12121a;
+    border: 1px solid #38bdf8;
+    color: #bae6fd;
+}
+
+
 

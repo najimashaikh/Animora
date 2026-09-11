@@ -14,21 +14,24 @@
             <p class="auth-page-subtitle">Join Animora to access student rigs, assets, and learning materials.</p>
         </div>
 
-        <!-- Validation Errors -->
+        <!-- Inline AJAX Feedback & Verification Alert (No page reload) -->
+        <div id="registerAlert" class="auth-alert-box" style="display: none;"></div>
+
+        <!-- Fallback Validation Errors -->
         @if ($errors->any())
-            <div class="auth-alert-error">
+            <div class="auth-alert-box auth-alert-error">
                 @foreach ($errors->all() as $error)
                     <p>{{ $error }}</p>
                 @endforeach
             </div>
         @endif
 
-        <!-- Registration Form -->
-        <form action="{{ route('register.post') }}" method="POST" class="auth-page-form">
+        <!-- Registration Form with Smooth Spinning Submit -->
+        <form id="registerForm" action="{{ route('register.post') }}" method="POST" class="auth-page-form" onsubmit="handleRegisterSubmit(event)">
             @csrf
 
             <div class="form-group">
-                <label for="name">Full Name</label>
+                <label for="name">Full Name *</label>
                 <input 
                     type="text" 
                     id="name" 
@@ -42,7 +45,7 @@
             </div>
 
             <div class="form-group">
-                <label for="email">Email Address</label>
+                <label for="email">Email Address *</label>
                 <input 
                     type="email" 
                     id="email" 
@@ -68,7 +71,7 @@
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Password *</label>
                 <input 
                     type="password" 
                     id="password" 
@@ -80,7 +83,7 @@
             </div>
 
             <div class="form-group">
-                <label for="password_confirmation">Confirm Password</label>
+                <label for="password_confirmation">Confirm Password *</label>
                 <input 
                     type="password" 
                     id="password_confirmation" 
@@ -91,8 +94,8 @@
                 >
             </div>
 
-            <button type="submit" class="btn-auth-submit-page">
-                Sign Up
+            <button type="submit" id="btnRegisterSubmit" class="btn-auth-submit-page">
+                <span id="btnRegisterText">Sign Up</span>
             </button>
         </form>
 
@@ -103,4 +106,61 @@
         </div>
     </div>
 </div>
+
+<script>
+    async function handleRegisterSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('registerForm');
+        const btn = document.getElementById('btnRegisterSubmit');
+        const alertBox = document.getElementById('registerAlert');
+
+        if (!form || !btn) return;
+
+        // Button spinning animation (no whole page reload)
+        btn.disabled = true;
+        btn.innerHTML = '<span class="btn-spinner"></span> <span>Verifying &amp; Creating Account...</span>';
+        alertBox.style.display = 'none';
+
+        const formData = new FormData(form);
+        const metaCsrf = document.querySelector('meta[name="csrf-token"]');
+        const csrfToken = metaCsrf ? metaCsrf.getAttribute('content') : '';
+
+        try {
+            const response = await fetch("{{ route('register.post') }}", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: formData
+            });
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                // Success: Verification passed!
+                btn.innerHTML = '<span>✓ Account Verified!</span>';
+                alertBox.className = 'auth-alert-box auth-alert-success';
+                alertBox.innerHTML = '<p>' + data.message + '</p>';
+                alertBox.style.display = 'block';
+
+                setTimeout(() => {
+                    window.location.href = data.redirect || "{{ route('home') }}";
+                }, 1000);
+            } else {
+                // Error: restore button
+                btn.disabled = false;
+                btn.innerHTML = '<span id="btnRegisterText">Sign Up</span>';
+                alertBox.className = 'auth-alert-box auth-alert-error';
+                alertBox.innerHTML = '<p>' + (data.message || 'Validation failed. Please verify your details.') + '</p>';
+                alertBox.style.display = 'block';
+            }
+        } catch (err) {
+            btn.disabled = false;
+            btn.innerHTML = '<span id="btnRegisterText">Sign Up</span>';
+            alertBox.className = 'auth-alert-box auth-alert-error';
+            alertBox.innerHTML = '<p>Network or server error. Please try again.</p>';
+            alertBox.style.display = 'block';
+        }
+    }
+</script>
 @endsection
