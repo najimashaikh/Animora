@@ -1,64 +1,62 @@
 @extends('layouts.app')
 
-@section('title', 'Pipeline Tools & Automation - Animora')
+@section('title', 'Student Pipeline Tools & Scripts | Animora')
 
 @section('content')
-<div class="categories-container" style="padding-top: 2rem;">
+<div class="section-wrapper" style="padding-top: 3rem;">
     <!-- Pipeline Header -->
-    <div style="margin-bottom: 2.5rem;">
-        <h1 class="section-title" style="font-size: 2.2rem; margin-bottom: 0.5rem;">
-            STUDIO PIPELINE &amp; AUTOMATION
+    <div style="margin-bottom: 3rem;">
+        <span class="brand-badge" style="margin-bottom: 0.8rem; display: inline-block;">AUTOMATION REPOSITORY</span>
+        <h1 class="section-title" style="font-size: 2.4rem; margin-bottom: 0.6rem; letter-spacing: -0.01em;">
+            STUDENT PIPELINE SCRIPTS &amp; TOOLS
         </h1>
-        <p style="color: var(--text-secondary); max-width: 800px;">
-            High-performance Python scripts, shelf tools, and rigging automation plugins for Autodesk Maya, Blender, and SideFX Houdini to supercharge your animation production pipeline.
+        <p style="color: var(--text-muted); max-width: 700px; font-size: 0.95rem; line-height: 1.6;">
+            Open-source Python shelf scripts, auto-weight paint smoothers, and batch exporters designed to eliminate repetitive technical tasks for animation students.
         </p>
     </div>
 
-    <!-- Pipeline Architecture Breakdown Cards -->
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3.5rem;">
-        <div class="feature-card" style="padding: 1.5rem;">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--cyan-primary);">&#9881; Maya Rigging Engine</div>
-            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
-                Automated ribbon spines, dynamic IK/FK blending nodes, and blendshape mirroring scripts compatible with Maya 2022-2025.
+    <!-- Software Breakdown Cards -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem;">
+        <div class="product-card" style="padding: 1.6rem;">
+            <div style="font-size: 1.25rem; font-family: var(--font-heading); font-weight: 800; margin-bottom: 0.5rem; color: #ffffff;">Maya Rigging Shelf</div>
+            <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.55;">
+                One-click FK/IK switchers, ribbon spine generators, and symmetry mirror tools compatible with Maya 2022-2025 student licenses.
             </p>
         </div>
-        <div class="feature-card" style="padding: 1.5rem;">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--cyan-primary);">&#128394; Blender Geometry Nodes</div>
-            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
-                Procedural crowd simulators, auto-weight paint smoothers, and fast batch FBX export pipelines for game engines.
+        <div class="product-card" style="padding: 1.6rem;">
+            <div style="font-size: 1.25rem; font-family: var(--font-heading); font-weight: 800; margin-bottom: 0.5rem; color: #ffffff;">Blender 4.x Addons</div>
+            <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.55;">
+                Asset browser batch metadata taggers, auto-weight paint smoothers, and fast FBX export pipelines for Unreal Engine student reels.
             </p>
         </div>
-        <div class="feature-card" style="padding: 1.5rem;">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--cyan-primary);">&#128736; Houdini KineFX Solvers</div>
-            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
-                Custom VEX wrangles and KineFX retargeting networks for seamless optical mocap motion transfer.
+        <div class="product-card" style="padding: 1.6rem;">
+            <div style="font-size: 1.25rem; font-family: var(--font-heading); font-weight: 800; margin-bottom: 0.5rem; color: #ffffff;">KineFX Mocap Tools</div>
+            <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.55;">
+                Houdini motion capture retargeting setups to quickly clean up noisy optical mocap data for assignment submissions.
             </p>
         </div>
     </div>
 
-    <!-- Script Library Grid -->
-    <h3 class="section-title" style="margin-bottom: 1.5rem;">AVAILABLE SCRIPTS &amp; PLUGINS</h3>
-    <div class="assets-grid">
+    <!-- Available Scripts List -->
+    <h3 class="section-title" style="font-size: 1.3rem; margin-bottom: 1.8rem;">CAMPUS VERIFIED SCRIPTS</h3>
+    <div class="cards-grid">
         @forelse($tools as $tool)
-            <div class="asset-item-card">
-                <div class="asset-thumb">
-                    <span class="software-badge">{{ $tool->software }}</span>
-                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="1.4">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                </div>
-                <div class="asset-item-body">
-                    <h4 class="asset-item-title">{{ $tool->title }}</h4>
-                    <p class="asset-item-desc">{{ $tool->description }}</p>
-                    <div class="asset-item-footer">
-                        <span style="color: var(--cyan-soft); font-size: 0.8rem;">{{ $tool->file_format }}</span>
-                        <a href="{{ route('asset.show', $tool->slug) }}" class="download-link">Get Tool &rarr;</a>
+            <div class="product-card">
+                <div class="product-card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+                        <span style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;">{{ $tool->software }}</span>
+                        <span class="tag-free-student" style="position: static; font-size: 0.62rem;">Verified</span>
+                    </div>
+                    <h4 class="product-card-title">{{ $tool->title }}</h4>
+                    <p class="product-card-desc">{{ $tool->description }}</p>
+                    <div class="product-card-footer">
+                        <span class="product-stat">{{ $tool->file_format }}</span>
+                        <a href="{{ route('asset.show', $tool->slug) }}" class="btn-card-action">Download Tool &rarr;</a>
                     </div>
                 </div>
             </div>
         @empty
-            <p style="color: var(--text-secondary);">Pipeline scripts loading...</p>
+            <p style="color: var(--text-muted);">Pipeline scripts loading...</p>
         @endforelse
     </div>
 </div>
