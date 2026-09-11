@@ -14,14 +14,13 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $search = trim($request->input('q', ''));
-        
-        try {
-            $categories = Category::withCount('assets')
-                ->orderBy('sort_order', 'asc')
-                ->get();
+        $categories = collect();
+        $searchResults = null;
+        $featuredAssets = collect();
 
-            $searchResults = null;
-            if (!empty($search)) {
+        // If user submitted a search query from header search
+        if (!empty($search)) {
+            try {
                 $searchResults = Asset::with('category')
                     ->where('title', 'like', "%{$search}%")
                     ->orWhere('description', 'like', "%{$search}%")
@@ -29,16 +28,9 @@ class HomeController extends Controller
                     ->orWhere('tags', 'like', "%{$search}%")
                     ->take(12)
                     ->get();
+            } catch (\Exception $e) {
+                $searchResults = null;
             }
-
-            $featuredAssets = Asset::with('category')
-                ->where('is_featured', true)
-                ->take(6)
-                ->get();
-        } catch (\Exception $e) {
-            $categories = collect();
-            $searchResults = null;
-            $featuredAssets = collect();
         }
 
         return view('home', compact('categories', 'searchResults', 'search', 'featuredAssets'));

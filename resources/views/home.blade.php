@@ -139,13 +139,45 @@
         <p class="contact-subheading">Have questions about our programs, campus admissions, or student assets? Send us a message.</p>
 
         <div class="contact-grid">
-            <!-- Left: Contact Form -->
+            <!-- Left: Contact Form Card with Inline Thank You Message -->
             <div class="contact-form-card">
-                <form action="https://api.web3forms.com/submit" method="POST" class="web3-contact-form">
+                <!-- Inline Result Alert (For errors/info) -->
+                <div id="formResult" class="form-result-alert" style="display: none;"></div>
+
+                <!-- Inline Thank You Card (Shown on success, NO redirect, NO green) -->
+                <div id="thankYouCard" class="thank-you-card" style="display: none;">
+                    <div class="thank-you-avatar">
+                        <span class="thank-you-emoji">✨</span>
+                    </div>
+                    <h3 class="thank-you-title">Thank You!</h3>
+                    <p class="thank-you-text">Your inquiry has been successfully received. Our campus team at S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College will connect with you shortly.</p>
+                    
+                    <div class="thank-you-details">
+                        <div class="thank-detail-item">
+                            <span class="thank-detail-label">Status</span>
+                            <span class="thank-detail-val">Received &amp; Logged</span>
+                        </div>
+                        <div class="thank-detail-item">
+                            <span class="thank-detail-label">Destination</span>
+                            <span class="thank-detail-val">najimashaikh267@gmail.com</span>
+                        </div>
+                        <div class="thank-detail-item">
+                            <span class="thank-detail-label">Campus Phone</span>
+                            <span class="thank-detail-val">(02425) 223181 / 222869</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-reset-form" onclick="showFormAgain()">
+                        Send Another Message
+                    </button>
+                </div>
+
+                <!-- Form Element (Strictly prevented from redirecting) -->
+                <form id="web3ContactForm" action="javascript:void(0);" onsubmit="handleContactSubmit(event)" method="POST" class="web3-contact-form">
                     <!-- Web3Forms Access Key -->
                     <input type="hidden" name="access_key" value="82d62467-fdbb-4b4c-852d-f44e8be9bc5d">
-                    <input type="hidden" name="subject" value="New Inquiry from Animora Website">
-                    <input type="hidden" name="from_name" value="Animora Portal">
+                    <input type="hidden" name="subject" value="New Inquiry - Animora Student Portal">
+                    <input type="hidden" name="from_name" value="Animora Campus Portal">
 
                     <div class="form-row">
                         <div class="form-group">
@@ -164,7 +196,7 @@
                             <input type="tel" id="contactPhone" name="phone" placeholder="+91 98765 43210">
                         </div>
                         <div class="form-group">
-                            <label for="contactCourse">Interested Course</label>
+                            <label for="contactCourse">Interested Program</label>
                             <select id="contactCourse" name="course_interest" class="form-select">
                                 <option value="Professional Program">3-Year Professional Program (2D, 3D, VFX)</option>
                                 <option value="3D Animation">2-Year Full-Time – 3D Animation</option>
@@ -179,23 +211,42 @@
 
                     <div class="form-group">
                         <label for="contactMessage">Your Message *</label>
-                        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your learning goals or requirements..." required></textarea>
+                        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your learning goals or questions..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-contact-submit">
+                    <button type="submit" id="contactSubmitBtn" class="btn-contact-submit">
                         <span>Send Message</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     </button>
                 </form>
             </div>
 
-            <!-- Right: Campus Quick Info Card -->
+            <!-- Right: Campus Official Details -->
             <div class="contact-info-card">
+                <div class="info-item">
+                    <div class="info-icon">🏛️</div>
+                    <div class="info-text">
+                        <h5>College / Campus</h5>
+                        <p><strong>S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College</strong></p>
+                    </div>
+                </div>
+
                 <div class="info-item">
                     <div class="info-icon">📍</div>
                     <div class="info-text">
-                        <h5>Campus Address</h5>
-                        <p>Animora Animation &amp; CGI Academy Campus, Maharashtra, India</p>
+                        <h5>Address</h5>
+                        <p>Ghulewadi, Pune Nashik Highway (NH – 50), Sangamner, District Ahmednagar 422 605, Maharashtra – India</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-text">
+                        <h5>Call Us On</h5>
+                        <p>
+                            <a href="tel:02425223181">(02425) 223181</a><br>
+                            <a href="tel:02425222869">(02425) 222869</a>
+                        </p>
                     </div>
                 </div>
 
@@ -207,21 +258,77 @@
                     </div>
                 </div>
 
-                <div class="info-item">
-                    <div class="info-icon">⏱️</div>
-                    <div class="info-text">
-                        <h5>Campus Hours</h5>
-                        <p>Monday – Saturday: 9:00 AM – 6:00 PM</p>
-                    </div>
-                </div>
-
                 <div class="info-badge-box">
                     <span class="info-dot"></span>
-                    <span>Admissions Open for New Animation Batches</span>
+                    <span>Admissions &amp; Student Inquiries Active</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Web3Forms AJAX Client-Side Handler (Stays on website, no redirect, shows Thank You) -->
+<script>
+    async function handleContactSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('web3ContactForm');
+        const result = document.getElementById('formResult');
+        const submitBtn = document.getElementById('contactSubmitBtn');
+        const thankYouCard = document.getElementById('thankYouCard');
+
+        if (!form) return;
+
+        submitBtn.disabled = true;
+        const originalBtnHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>Sending Message...</span>';
+        result.style.display = 'none';
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+            const resJson = await response.json();
+
+            if (response.status === 200 || resJson.success) {
+                // Show inline Thank You card, hide form - NO REDIRECT
+                form.style.display = 'none';
+                if (thankYouCard) {
+                    thankYouCard.style.display = 'flex';
+                    thankYouCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                form.reset();
+            } else {
+                result.className = 'form-result-alert form-error';
+                result.innerHTML = resJson.message || 'Submission error. Please try again.';
+                result.style.display = 'block';
+            }
+        } catch (error) {
+            result.className = 'form-result-alert form-error';
+            result.innerHTML = 'Network connection error. Please call us directly at (02425) 223181.';
+            result.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+        }
+    }
+
+    function showFormAgain() {
+        const form = document.getElementById('web3ContactForm');
+        const thankYouCard = document.getElementById('thankYouCard');
+        const result = document.getElementById('formResult');
+        if (form) form.style.display = 'block';
+        if (thankYouCard) thankYouCard.style.display = 'none';
+        if (result) result.style.display = 'none';
+    }
+</script>
 
 @endsection

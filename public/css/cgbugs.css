@@ -1500,12 +1500,12 @@ a {
     align-items: center;
     gap: 0.6rem;
     padding: 0.9rem 1.1rem;
-    background: #09130d;
-    border: 1px solid rgba(34, 197, 94, 0.3);
+    background: #141418;
+    border: 1px solid #27272e;
     border-radius: 14px;
     font-size: 0.82rem;
     font-weight: 600;
-    color: #4ade80;
+    color: #e4e4e7;
     margin-top: 0.5rem;
 }
 
@@ -1513,9 +1513,127 @@ a {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #22c55e;
-    box-shadow: 0 0 10px #22c55e;
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
     flex-shrink: 0;
+}
+
+/* Thank You Card (Inline after submission - Strictly NO green color) */
+.thank-you-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.2rem 1.2rem;
+    background: #111115;
+    border: 1px solid #2c2c34;
+    border-radius: 18px;
+    animation: fadeInScale 0.35s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.thank-you-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #1a1a22;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.thank-you-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.6rem 0;
+    letter-spacing: -0.02em;
+}
+
+.thank-you-text {
+    font-size: 0.92rem;
+    color: #a1a1aa;
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 0 1.4rem 0;
+}
+
+.thank-you-details {
+    width: 100%;
+    background: #17171d;
+    border: 1px solid #282830;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    text-align: left;
+}
+
+.thank-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+}
+
+.thank-detail-label {
+    color: #71717a;
+    font-weight: 500;
+}
+
+.thank-detail-val {
+    color: #ffffff;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+.btn-reset-form {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 0.75rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-reset-form:hover {
+    background: #e4e4e7;
+    transform: translateY(-2px);
+}
+
+/* Form alerts - strictly NO green */
+.form-result-alert {
+    padding: 0.85rem 1.1rem;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.form-result-alert.form-error {
+    background: #201014;
+    border: 1px solid #ef4444;
+    color: #fca5a5;
 }
 
 /* Responsive */
@@ -1531,3 +1649,4 @@ a {
         padding: 2rem 1.5rem;
     }
 }
+
