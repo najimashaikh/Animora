@@ -28,20 +28,7 @@
 
 <!-- Courses Section -->
 <section class="course-section">
-    <style>
-        .course-section h2 {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            position: sticky;
-            top: 0;
-            background: var(--bg-black);
-            z-index: 100;
-            padding: 0.5rem 0;
-        }
-    </style>
+
     <h2 class="animora-branding">OUR COURCES</h2>
     <div class="course-card-grid">
         <!-- Card 1 -->
