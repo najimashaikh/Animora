@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Animora | Student Animation Asset Library & CGI Tools')
+@section('title', 'Animora | Explore Animation Courses')
 
 @section('content')
 
@@ -11,175 +11,103 @@
     </div>
 </section>
 
-<!-- Trust / Student Benefits Bar -->
-<div class="trust-bar">
-    <div class="trust-item">
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-        </svg>
-        <span>Verified for Maya 2024 &amp; Blender 4.x</span>
-    </div>
-    <div class="trust-item">
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-        </svg>
-        <span>100% Free for Student Portfolios</span>
-    </div>
-    <div class="trust-item">
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-        </svg>
-        <span>One-Click Package Downloads</span>
-    </div>
-    <div class="trust-item">
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-        </svg>
-        <span>Powered by Neon Cloud PostgreSQL</span>
-    </div>
-</div>
-
-<!-- 4 Categories (Producer Toy Minimalist Card Layout) -->
-<section class="section-wrapper">
-    <div class="section-head">
-        <h2 class="section-title">STUDENT ASSET CATEGORIES</h2>
-        <a href="{{ route('browse') }}" class="section-link">View All Catalog &rarr;</a>
-    </div>
-
-    <div class="cards-grid">
+<!-- Doraemon Blue Themed "Explore Courses" Section (Exact Below Hero) -->
+<section class="courses-doraemon-section" id="courses">
+    <div class="courses-doraemon-container">
         
-        <!-- 1. CHARACTER RIGS -->
-        <div class="product-card">
-            <div class="product-card-thumb">
-                <span class="tag-free-student">Free &bull; Student</span>
-                <img src="{{ asset('images/card-rigs.jpg') }}" alt="Student Character Rigs" width="280" height="165">
+        <!-- Section Header with Doraemon Animated Mascot -->
+        <div class="courses-head-banner">
+            <div class="courses-badge-row">
+                <span class="doraemon-badge">DORAEMON BLUE EDITION</span>
+                <span class="badge-student-live">STUDENT ACADEMY</span>
             </div>
-            <div class="product-card-body">
-                <h3 class="product-card-title">CHARACTER RIGS</h3>
-                <p class="product-card-desc">
-                    Ready-to-animate bipedal &amp; mechanical character rigs with full face controllers for student acting assignments.
+            
+            <div class="courses-title-wrapper">
+                <div class="courses-title-group">
+                    <h2 class="courses-main-title">EXPLORE COURSES</h2>
+                    <p class="courses-subtitle">Master 3D character animation, rigging mechanics, and anime cinematic pipelines with hands-on studio mentors.</p>
+                </div>
+                
+                <!-- Doraemon Animated GIF Mascot -->
+                <div class="doraemon-mascot-box">
+                    <img src="{{ asset('images/doraemon-courses.gif') }}" alt="Doraemon Animated Sticker" class="doraemon-gif-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Doraemon Blue Course Grid -->
+        <div class="courses-grid">
+            
+            <!-- Course 1 -->
+            <div class="course-card-doraemon">
+                <div class="course-card-tag">Maya &amp; Blender</div>
+                <h3 class="course-card-name">3D Character Animation Masterclass</h3>
+                <p class="course-card-desc">
+                    Learn the 12 principles of animation, body mechanics, dynamic walk cycles, and expressive facial acting for student demo reels.
                 </p>
-                <div class="product-card-footer">
-                    <span class="product-stat">345 Assets</span>
-                    <a href="{{ route('browse', 'character-rigs') }}" class="btn-card-action">EXPLORE</a>
+                <div class="course-meta">
+                    <span class="meta-pill">12 Weeks</span>
+                    <span class="meta-pill">Beginner to Pro</span>
+                </div>
+                <div class="course-card-bottom">
+                    <span class="course-free-tag">100% Free for Students</span>
+                    <a href="javascript:void(0)" onclick="alert('Course enrollment open for Animora Students!');" class="btn-doraemon-action">Enroll Course &rarr;</a>
                 </div>
             </div>
-        </div>
 
-        <!-- 2. PRODUCTION ASSETS -->
-        <div class="product-card">
-            <div class="product-card-thumb">
-                <span class="tag-free-student">Free &bull; Student</span>
-                <img src="{{ asset('images/card-assets.jpg') }}" alt="Production Sets" width="280" height="165">
-            </div>
-            <div class="product-card-body">
-                <h3 class="product-card-title">PRODUCTION ASSETS</h3>
-                <p class="product-card-desc">
-                    Modular 3D sci-fi interiors, cinematic lighting rigs, and demo reel backdrop sets ready for lighting &amp; rendering.
+            <!-- Course 2 -->
+            <div class="course-card-doraemon">
+                <div class="course-card-tag">Rigging &amp; Python</div>
+                <h3 class="course-card-name">Advanced Character Rigging &amp; Skinning</h3>
+                <p class="course-card-desc">
+                    Construct production biped/quadruped skeletons, FK/IK blend switches, stretchy spline systems, and custom facial UI pickers.
                 </p>
-                <div class="product-card-footer">
-                    <span class="product-stat">1.2K Assets</span>
-                    <a href="{{ route('browse', 'production-assets') }}" class="btn-card-action">EXPLORE</a>
+                <div class="course-meta">
+                    <span class="meta-pill">8 Weeks</span>
+                    <span class="meta-pill">Intermediate</span>
+                </div>
+                <div class="course-card-bottom">
+                    <span class="course-free-tag">100% Free for Students</span>
+                    <a href="javascript:void(0)" onclick="alert('Course enrollment open for Animora Students!');" class="btn-doraemon-action">Enroll Course &rarr;</a>
                 </div>
             </div>
-        </div>
 
-        <!-- 3. ANIMATION CLIPS -->
-        <div class="product-card">
-            <div class="product-card-thumb">
-                <span class="tag-free-student">Free &bull; Student</span>
-                <img src="{{ asset('images/card-clips.jpg') }}" alt="Animation Clips" width="280" height="165">
-            </div>
-            <div class="product-card-body">
-                <h3 class="product-card-title">ANIMATION CLIPS</h3>
-                <p class="product-card-desc">
-                    Optical motion capture loops, walk cycles, sprint mechanics, and combat references for student animation practice.
+            <!-- Course 3 -->
+            <div class="course-card-doraemon">
+                <div class="course-card-tag">Lighting &amp; Unreal</div>
+                <h3 class="course-card-name">CGI Environment &amp; Unreal Engine 5</h3>
+                <p class="course-card-desc">
+                    Build cinematic sci-fi environments, master Lumen real-time lighting, camera choreography, and final portfolio rendering.
                 </p>
-                <div class="product-card-footer">
-                    <span class="product-stat">890 Clips</span>
-                    <a href="{{ route('browse', 'animation-clips') }}" class="btn-card-action">EXPLORE</a>
+                <div class="course-meta">
+                    <span class="meta-pill">10 Weeks</span>
+                    <span class="meta-pill">All Levels</span>
+                </div>
+                <div class="course-card-bottom">
+                    <span class="course-free-tag">100% Free for Students</span>
+                    <a href="javascript:void(0)" onclick="alert('Course enrollment open for Animora Students!');" class="btn-doraemon-action">Enroll Course &rarr;</a>
                 </div>
             </div>
-        </div>
 
-        <!-- 4. PIPELINE TOOLS -->
-        <div class="product-card">
-            <div class="product-card-thumb">
-                <span class="tag-free-student">Free &bull; Student</span>
-                <img src="{{ asset('images/card-tools.jpg') }}" alt="Pipeline Tools" width="280" height="165">
-            </div>
-            <div class="product-card-body">
-                <h3 class="product-card-title">PIPELINE TOOLS</h3>
-                <p class="product-card-desc">
-                    Python scripts, shelf plugins, and auto-rigging tools to streamline Maya, Blender, and Houdini studio workflows.
+            <!-- Course 4 -->
+            <div class="course-card-doraemon">
+                <div class="course-card-tag">Anime &amp; NPR</div>
+                <h3 class="course-card-name">Anime Shading &amp; Comic Art Pipeline</h3>
+                <p class="course-card-desc">
+                    Techniques for stylized anime cell-shading, line art ink extraction, and Japanese animation action timing in Blender.
                 </p>
-                <div class="product-card-footer">
-                    <span class="product-stat">156 Scripts</span>
-                    <a href="{{ route('browse', 'pipeline-tools') }}" class="btn-card-action">EXPLORE</a>
+                <div class="course-meta">
+                    <span class="meta-pill">6 Weeks</span>
+                    <span class="meta-pill">Specialization</span>
+                </div>
+                <div class="course-card-bottom">
+                    <span class="course-free-tag">100% Free for Students</span>
+                    <a href="javascript:void(0)" onclick="alert('Course enrollment open for Animora Students!');" class="btn-doraemon-action">Enroll Course &rarr;</a>
                 </div>
             </div>
+
         </div>
 
-    </div>
-</section>
-
-<!-- About Section (Minimalist B&W Producer Toy Style) -->
-<section id="about" class="section-wrapper">
-    <div class="section-head">
-        <h2 class="section-title">ABOUT ANIMORA</h2>
-        <span class="product-stat">Student Digital Library</span>
-    </div>
-    <div class="about-card-box">
-        <div class="about-content">
-            <h3 class="about-heading">Next-Gen Assets Built for Animation Students</h3>
-            <p class="about-text">
-                Animora is a high-grade 3D animation asset marketplace created specifically to empower animation students, indie artists, and college creators. From fully articulate character rigs for Maya & Blender to modular sci-fi environment sets and optical motion capture loops, Animora provides everything needed to create award-winning portfolios and studio reels.
-            </p>
-            <div class="about-stats-grid">
-                <div class="about-stat-item">
-                    <span class="about-stat-number">100%</span>
-                    <span class="about-stat-label">Free Student Access</span>
-                </div>
-                <div class="about-stat-item">
-                    <span class="about-stat-number">2.5K+</span>
-                    <span class="about-stat-label">Production Assets</span>
-                </div>
-                <div class="about-stat-item">
-                    <span class="about-stat-number">Maya &amp; Blender</span>
-                    <span class="about-stat-label">Studio Ready Rigs</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Us Section -->
-<section id="contact" class="section-wrapper" style="margin-bottom: 4rem;">
-    <div class="section-head">
-        <h2 class="section-title">CONTACT US</h2>
-        <span class="product-stat">Student &amp; Campus Support</span>
-    </div>
-    <div class="contact-card-box">
-        <div class="contact-info">
-            <h3 class="about-heading">Have questions or need custom rigs?</h3>
-            <p class="about-text">
-                Reach out to the Animora student support desk for assistance with download packages, rig compatibility, or academic submissions.
-            </p>
-            <div class="contact-links-list">
-                <div class="contact-row">
-                    <span class="contact-label">Email:</span>
-                    <a href="mailto:support@animora.student" class="contact-val">support@animora.student</a>
-                </div>
-                <div class="contact-row">
-                    <span class="contact-label">Campus Lab:</span>
-                    <span class="contact-val">Animation &amp; CGI Studio Wing</span>
-                </div>
-                <div class="contact-row">
-                    <span class="contact-label">Discord:</span>
-                    <span class="contact-val">#animora-creators</span>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
