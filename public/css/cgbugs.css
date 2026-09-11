@@ -42,34 +42,23 @@ html, body {
     line-height: 1.5;
 }
 
+body {
+    padding-top: 68px;
+}
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/* Subtle Minimalist Background Grid */
-body::before {
-    content: '';
+/* ================= TOP NAVBAR ================= */
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-    background-size: 48px 48px;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* ================= TOP NAVBAR ================= */
-.navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
     height: 68px;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
@@ -77,7 +66,7 @@ body::before {
     align-items: center;
     justify-content: space-between;
     padding: 0 3.5rem;
-    z-index: 200;
+    z-index: 1000;
 }
 
 .nav-left {
@@ -933,17 +922,11 @@ body::before {
     width: 100%;
     max-width: 1260px;
     margin: 2rem auto;
-    padding: 5rem 2rem 0; /* top padding to accommodate sticky header */
+    padding: 0 2rem;
     text-align: center;
 }
 
-/* Sticky heading for course section */
 .course-section h2 {
-    position: sticky;
-    top: 68px; /* height of navbar */
-    background: var(--bg-black);
-    z-index: 150;
-    padding: 0.5rem 0;
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 900;
@@ -977,12 +960,14 @@ body::before {
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
 }
 
 .course-card-img img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .course-card-title {

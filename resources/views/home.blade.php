@@ -33,19 +33,19 @@
     <div class="course-card-grid">
         <!-- Card 1 -->
         <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-img"><img src="{{ asset('images/course-professional-program.jpg') }}" alt="Professional Program - 2D, 3D, VFX"></div>
             <div class="course-card-title">PROFESSIONAL PROGRAM</div>
             <div class="course-card-desc">3-YEAR, FULL‑TIME PROGRAM – 2D, 3D, VFX. Master production pipelines in our 3‑year program.</div>
         </div>
         <!-- Card 2 -->
         <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-img"><img src="{{ asset('images/course-3d-animation.jpg') }}" alt="2-Year Full-Time Program - 3D Animation"></div>
             <div class="course-card-title">2‑YEAR, FULL‑TIME PROGRAM – 3D Animation</div>
             <div class="course-card-desc">Full‑time 3D animation program covering diverse aspects of the 3D generalist skill set.</div>
         </div>
         <!-- Card 3 -->
         <div class="course-card">
-            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-img"><img src="{{ asset('images/course-game-art-design.jpg') }}" alt="2-Year Full-Time Program - Game Art Design"></div>
             <div class="course-card-title">2‑YEAR, FULL‑TIME PROGRAM – Game Art Design</div>
             <div class="course-card-desc">From stunning visuals to seamless gameplay, we bring your creative vision to life.</div>
         </div>
