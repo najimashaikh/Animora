@@ -21,30 +21,22 @@
 </head>
 <body>
 
-    <!-- Header Navigation (Producer Toy Minimalist B&W) -->
+    <!-- Header Navigation (Sleek Sticky B&W) -->
     <nav class="navbar">
         <div class="nav-left">
             <a href="{{ route('home') }}" class="brand-logo" aria-label="Animora Home">
                 <img src="{{ asset('images/logo.png') }}" alt="Animora" class="brand-logo-img">
-                <span class="brand-badge">Student Portal</span>
             </a>
             <ul class="nav-links desktop-only">
-                <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Store</a></li>
-                <li><a href="{{ route('browse', 'character-rigs') }}">Student Rigs</a></li>
-                <li><a href="{{ route('browse', 'production-assets') }}">Sets &amp; Props</a></li>
-                <li><a href="{{ route('pipeline') }}">Pipeline</a></li>
+                <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
+                <li><a href="{{ route('home') }}#about">About</a></li>
+                <li><a href="{{ route('home') }}#contact">Contact Us</a></li>
             </ul>
         </div>
         <div class="nav-right desktop-only">
-            <button class="nav-action" onclick="focusMainSearch()">
-                <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-                Search
-            </button>
-            <button class="btn-student-auth" onclick="alert('Student Campus Account: Authenticated!');">
-                Student Sign In
-            </button>
+            <a href="{{ route('browse') }}" class="btn-student-auth">
+                Explore Rigs
+            </a>
         </div>
         <!-- Mobile Menu Toggle Button -->
         <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
@@ -57,13 +49,10 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobileDrawer" class="mobile-drawer">
         <ul class="mobile-nav-links">
-            <li><a href="{{ route('home') }}" onclick="toggleMobileMenu()">Store / Catalog</a></li>
-            <li><a href="{{ route('browse', 'character-rigs') }}" onclick="toggleMobileMenu()">Student Rigs</a></li>
-            <li><a href="{{ route('browse', 'production-assets') }}" onclick="toggleMobileMenu()">Sets &amp; Environments</a></li>
-            <li><a href="{{ route('browse', 'animation-clips') }}" onclick="toggleMobileMenu()">Mocap &amp; Cycles</a></li>
-            <li><a href="{{ route('pipeline') }}" onclick="toggleMobileMenu()">Pipeline Tools</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleMobileMenu(); focusMainSearch();">Search Assets</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleMobileMenu(); alert('Student Campus Account: Authenticated!');" style="color: #ffffff; font-weight: 700;">Student Sign In &rarr;</a></li>
+            <li><a href="{{ route('home') }}" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="{{ route('home') }}#about" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="{{ route('home') }}#contact" onclick="toggleMobileMenu()">Contact Us</a></li>
+            <li><a href="{{ route('browse') }}" onclick="toggleMobileMenu()" style="color: #ffffff; font-weight: 700;">Explore Rigs &rarr;</a></li>
         </ul>
     </div>
 

@@ -11,27 +11,6 @@
     </div>
 </section>
 
-<!-- Search Bar -->
-<div class="hero-search-bar-wrap">
-    <div class="search-container">
-        <form action="{{ route('browse') }}" method="GET">
-            <input 
-                type="text" 
-                name="q" 
-                id="mainSearchInput" 
-                class="search-input" 
-                placeholder="Search rigs, assignment sets, mocap, software (Maya, Blender)..." 
-                autocomplete="off"
-            >
-            <button type="submit" class="search-btn" title="Search Library">
-                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-            </button>
-        </form>
-    </div>
-</div>
-
 <!-- Trust / Student Benefits Bar -->
 <div class="trust-bar">
     <div class="trust-item">
@@ -141,6 +120,66 @@
             </div>
         </div>
 
+    </div>
+</section>
+
+<!-- About Section (Minimalist B&W Producer Toy Style) -->
+<section id="about" class="section-wrapper">
+    <div class="section-head">
+        <h2 class="section-title">ABOUT ANIMORA</h2>
+        <span class="product-stat">Student Digital Library</span>
+    </div>
+    <div class="about-card-box">
+        <div class="about-content">
+            <h3 class="about-heading">Next-Gen Assets Built for Animation Students</h3>
+            <p class="about-text">
+                Animora is a high-grade 3D animation asset marketplace created specifically to empower animation students, indie artists, and college creators. From fully articulate character rigs for Maya & Blender to modular sci-fi environment sets and optical motion capture loops, Animora provides everything needed to create award-winning portfolios and studio reels.
+            </p>
+            <div class="about-stats-grid">
+                <div class="about-stat-item">
+                    <span class="about-stat-number">100%</span>
+                    <span class="about-stat-label">Free Student Access</span>
+                </div>
+                <div class="about-stat-item">
+                    <span class="about-stat-number">2.5K+</span>
+                    <span class="about-stat-label">Production Assets</span>
+                </div>
+                <div class="about-stat-item">
+                    <span class="about-stat-number">Maya &amp; Blender</span>
+                    <span class="about-stat-label">Studio Ready Rigs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact" class="section-wrapper" style="margin-bottom: 4rem;">
+    <div class="section-head">
+        <h2 class="section-title">CONTACT US</h2>
+        <span class="product-stat">Student &amp; Campus Support</span>
+    </div>
+    <div class="contact-card-box">
+        <div class="contact-info">
+            <h3 class="about-heading">Have questions or need custom rigs?</h3>
+            <p class="about-text">
+                Reach out to the Animora student support desk for assistance with download packages, rig compatibility, or academic submissions.
+            </p>
+            <div class="contact-links-list">
+                <div class="contact-row">
+                    <span class="contact-label">Email:</span>
+                    <a href="mailto:support@animora.student" class="contact-val">support@animora.student</a>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">Campus Lab:</span>
+                    <span class="contact-val">Animation &amp; CGI Studio Wing</span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">Discord:</span>
+                    <span class="contact-val">#animora-creators</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
