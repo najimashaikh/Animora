@@ -28,7 +28,7 @@
 
 <!-- Courses Section -->
 <section class="course-section">
-    <h2>CG BUGS PROVIDES</h2>
+    <h2 class="animora-branding">OUR COURCES</h2>
     <div class="course-card-grid">
         <!-- Card 1 -->
         <div class="course-card">
@@ -65,6 +65,24 @@
             <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
             <div class="course-card-title">10‑WEEK, ON‑CAMUS PROGRAM – Short Term Courses</div>
             <div class="course-card-desc">Standalone courses in film, game, and visual effects production.</div>
+        </div>
+        <!-- Card 7 -->
+        <div class="course-card">
+            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-title">Placeholder 7</div>
+            <div class="course-card-desc">Description for placeholder 7.</div>
+        </div>
+        <!-- Card 8 -->
+        <div class="course-card">
+            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-title">Placeholder 8</div>
+            <div class="course-card-desc">Description for placeholder 8.</div>
+        </div>
+        <!-- Card 9 -->
+        <div class="course-card">
+            <div class="course-card-img"><img src="{{ asset('images/placeholder.png') }}" alt="Program Image"></div>
+            <div class="course-card-title">Placeholder 9</div>
+            <div class="course-card-desc">Description for placeholder 9.</div>
         </div>
     </div>
 </section>

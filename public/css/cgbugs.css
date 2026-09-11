@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ANIMORA - PRODUCER TOY INSPIRED MINIMALIST BLACK & WHITE DESIGN SYSTEM
+   ANIMORA - MINIMALIST BLACK & WHITE DESIGN SYSTEM
    Optimized for Animation Students & Digital Creators
    ========================================================================== */
 
@@ -899,7 +899,7 @@ body::before {
     font-family: var(--font-heading);
     font-size: clamp(2.2rem, 5.5vw, 4.2rem);
     font-weight: 900;
-    color: #ff7f00; /* orange color */
+    color: #ffffff; /* white color */
     text-decoration: none;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -910,7 +910,7 @@ body::before {
 
 .doraemon-sketch-text:hover {
     transform: scale(1.06);
-    color: #ff7f00; /* orange hover */
+    color: #ffea00; /* original hover yellow */
     text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
 }
 
@@ -945,7 +945,7 @@ body::before {
 
 .course-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     justify-items: center;
 }
