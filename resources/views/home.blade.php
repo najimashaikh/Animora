@@ -71,18 +71,19 @@
     </div>
 </section>
 
-<!-- Principal & Leadership Section -->
-<section class="principal-section" id="about">
-    <div class="principal-container">
-        <div class="principal-card">
-            <div class="principal-img-wrapper">
-                <img src="{{ asset('images/principal-dr-gaikwad.jpg') }}" alt="Prof. (Dr.) Gaikwad Arun Hari - Principal & Head" class="principal-img">
+<!-- Mentors & Staff Section -->
+<section class="mentors-section" id="about">
+    <div class="mentors-container">
+        <h2 class="animora-branding mentors-heading">OUR MENTORS &amp; STAFF</h2>
+        <div class="mentor-card">
+            <div class="mentor-img-wrapper">
+                <img src="{{ asset('images/principal-dr-gaikwad.jpg') }}" alt="Prof. (Dr.) Gaikwad Arun Hari - Principal & Head of Animora" class="mentor-img">
             </div>
-            <div class="principal-info">
-                <div class="principal-badge">LEADERSHIP &amp; VISION</div>
-                <h2 class="principal-name">Prof. (Dr.) Gaikwad Arun Hari</h2>
-                <div class="principal-title">Principal &amp; Head of Animora</div>
-                <p class="principal-quote">
+            <div class="mentor-info">
+                <span class="mentor-badge">PRINCIPAL &amp; HEAD</span>
+                <h3 class="mentor-name">Prof. (Dr.) Gaikwad Arun Hari</h3>
+                <div class="mentor-role">Principal &amp; Head of Animora</div>
+                <p class="mentor-quote">
                     "Fostering creativity, innovation, and industry-grade excellence in animation and digital media arts. At Animora, our mission is to empower the next generation of visual storytellers, 3D artists, and pipeline directors."
                 </p>
             </div>
