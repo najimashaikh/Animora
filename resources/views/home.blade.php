@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Animora | Explore Animation Courses')
+@section('title', 'Animora | Explore Courses')
 
 @section('content')
 
@@ -11,29 +11,18 @@
     </div>
 </section>
 
-<!-- Big Static Doraemon Blue Banner (Doraemon Left, Explore Courses Right) -->
-<section class="doraemon-blue-banner" id="courses">
-    <div class="doraemon-banner-inner">
-        
-        <!-- Left Side: Doraemon GIF -->
-        <div class="doraemon-left-side">
-            <div class="doraemon-gif-frame">
-                <img src="{{ asset('images/doraemon-courses.gif') }}" alt="Doraemon Sticker" class="doraemon-large-gif">
-            </div>
+<!-- Exact Doraemon Blue Box Matching Sketch -->
+<section class="doraemon-sketch-section">
+    <div class="doraemon-sketch-box">
+        <!-- Left: Doraemon GIF (The Circle in sketch) -->
+        <div class="doraemon-sketch-left">
+            <img src="{{ asset('images/doraemon-courses.gif') }}" alt="Doraemon" class="doraemon-sketch-img">
         </div>
 
-        <!-- Right Side: Explore Courses -->
-        <div class="doraemon-right-side">
-            <span class="doraemon-tagline">ANIMORA STUDENT ACADEMY</span>
-            <h2 class="doraemon-title">EXPLORE COURSES</h2>
-            <p class="doraemon-desc">
-                Learn 3D Character Animation, Rigging, VFX and CGI Pipelines with industry-grade tools.
-            </p>
-            <a href="{{ route('browse') }}" class="btn-doraemon-white">
-                Explore All Courses &rarr;
-            </a>
+        <!-- Right: Explore Courses text in sketch -->
+        <div class="doraemon-sketch-right">
+            <a href="{{ route('browse') }}" class="doraemon-sketch-text">EXPLORE COURSES</a>
         </div>
-
     </div>
 </section>
 
