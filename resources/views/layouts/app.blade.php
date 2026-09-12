@@ -76,7 +76,7 @@
     <div id="mobileDrawer" class="mobile-drawer">
         <ul class="mobile-nav-links">
             <li><a href="{{ route('home') }}" onclick="toggleMobileMenu()">Home</a></li>
-            <li><a href="{{ route('home') }}#about" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="{{ route('about') }}" onclick="toggleMobileMenu()">About</a></li>
             <li><a href="{{ route('home') }}#contact" onclick="toggleMobileMenu()">Contact Us</a></li>
             <li><a href="{{ route('home') }}#courses" onclick="toggleMobileMenu()" style="color: #ffffff; font-weight: 700;">Explore Courses &rarr;</a></li>
         </ul>

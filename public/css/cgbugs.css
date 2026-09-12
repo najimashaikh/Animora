@@ -2417,6 +2417,868 @@ a {
     color: #ffffff;
 }
 
+/* ================= HOMEPAGE COLLEGE PROJECT ATTRIBUTION BANNER ================= */
+.college-project-home-banner {
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto 4.5rem;
+    padding: 0 1.5rem;
+}
+
+.college-home-box {
+    background: #0d121c;
+    border: 2.5px solid #ff7f00; /* Warm comic accent */
+    border-radius: 18px;
+    padding: 1.4rem 1.8rem;
+    box-shadow: 6px 6px 0 #000000;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    transition: transform 0.2s ease;
+}
+
+.college-home-box:hover {
+    transform: translateY(-2px);
+}
+
+.college-home-left {
+    flex-shrink: 0;
+}
+
+.college-home-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 0.5rem 0.65rem;
+    border: 2px solid #ff7f00;
+    box-shadow: 3px 3px 0 #000000;
+    transition: transform 0.2s ease;
+    width: 86px;
+    height: 86px;
+}
+
+.college-home-logo-wrap:hover {
+    transform: scale(1.05);
+}
+
+.college-home-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.college-home-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+}
+
+.college-home-tag {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #ff9933;
+    background: #1c150c;
+    border: 1.5px solid #ff7f00;
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.college-home-title {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.college-home-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.college-home-title a:hover {
+    color: #ff9933;
+    text-decoration: underline;
+}
+
+.college-home-desc {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.college-home-desc strong {
+    color: #f1f5f9;
+}
+
+.college-home-right {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.btn-college-home-about {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: #ff7f00;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.55rem 1.1rem;
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 0 #b35900;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-college-home-about:hover {
+    background: #ff9426;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #b35900;
+}
+
+.btn-college-home-about:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #b35900;
+}
+
+.btn-college-home-site {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: #111722;
+    color: #cbd5e1;
+    border: 1.5px solid #334155;
+    border-radius: 10px;
+    padding: 0.45rem 1rem;
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-college-home-site:hover {
+    border-color: #ff7f00;
+    color: #ffffff;
+    background: #162030;
+}
+
+@media (max-width: 820px) {
+    .college-home-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.4rem 1.2rem;
+        gap: 1.2rem;
+    }
+    .college-home-center {
+        align-items: center;
+    }
+    .college-home-right {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* ================= ABOUT PAGE CARTOONIST COMIC STYLING ================= */
+.about-page-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto 6rem;
+    padding: 0 1.5rem;
+}
+
+/* About Hero Card */
+.about-hero-section {
+    margin-bottom: 3.5rem;
+}
+
+.about-hero-card {
+    background: #0d121c;
+    border: 3px solid #0088ff;
+    border-radius: 20px;
+    padding: 2.2rem 2.4rem;
+    box-shadow: 6px 6px 0 #000000;
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.about-logo-wrapper {
+    flex-shrink: 0;
+}
+
+.about-college-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 0.85rem;
+    border: 2.5px solid #0088ff;
+    box-shadow: 4px 4px 0 #000000;
+    transition: transform 0.25s ease;
+    width: 135px;
+    height: 135px;
+}
+
+.about-college-logo-link:hover {
+    transform: scale(1.06) rotate(-2deg);
+}
+
+.about-college-logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.about-hero-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-comic-badge {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #38bdf8;
+    background: #131b29;
+    border: 1.5px solid #0088ff;
+    border-radius: 999px;
+    padding: 0.25rem 0.85rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.about-hero-title {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin: 0 0 0.35rem;
+}
+
+.about-hero-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.about-hero-title a:hover {
+    color: #38bdf8;
+}
+
+.about-college-location {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #a1a1aa;
+    margin-bottom: 0.8rem;
+}
+
+.about-hero-desc {
+    font-size: 0.92rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 1.3rem;
+}
+
+.about-hero-desc strong {
+    color: #ffffff;
+}
+
+.about-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.btn-about-college-website {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #0088ff;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.65rem 1.3rem;
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 0 #0055b3;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-about-college-website:hover {
+    background: #0099ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #0055b3;
+}
+
+.btn-about-college-website:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #0055b3;
+}
+
+.btn-about-explore-courses {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #111722;
+    color: #cbd5e1;
+    border: 2px solid #1e2838;
+    border-radius: 10px;
+    padding: 0.65rem 1.3rem;
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-about-explore-courses:hover {
+    border-color: #0088ff;
+    color: #ffffff;
+    background: #162030;
+}
+
+/* Section Common Headers */
+.about-section-header {
+    text-align: center;
+    margin-bottom: 2.2rem;
+}
+
+.about-sub-tag {
+    display: inline-block;
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ff9933;
+    background: #1c150c;
+    border: 1.5px solid #ff7f00;
+    border-radius: 999px;
+    padding: 0.2rem 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-section-heading {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0 #000000;
+}
+
+.about-section-lead {
+    font-size: 0.92rem;
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.55;
+}
+
+/* Students Grid */
+.about-students-section {
+    margin-bottom: 4.5rem;
+}
+
+.about-students-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+}
+
+.student-comic-card {
+    background: #111722;
+    border: 2px solid #1e2838;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 4px 4px 0 #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.student-comic-card:hover {
+    transform: translateY(-3px);
+    border-color: #38bdf8;
+}
+
+.student-comic-card.student-card-highlight {
+    border-color: #0088ff;
+    background: #111a28;
+}
+
+.student-avatar-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.student-avatar-initial {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #162032;
+    border: 2px solid #0088ff;
+    color: #ffffff;
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 0 #000000;
+}
+
+.student-rank-badge {
+    font-family: 'Fredoka', cursive, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: #0088ff;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    letter-spacing: 0.08em;
+}
+
+.student-name {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.25rem;
+    letter-spacing: 0.02em;
+}
+
+.student-role {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 0.6rem;
+    line-height: 1.35;
+}
+
+.student-desc {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.45;
+    margin: 0 0 1rem;
+    flex-grow: 1;
+}
+
+.student-skills-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.student-skills-pills span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: #0a0e16;
+    border: 1px solid #232f42;
+    color: #cbd5e1;
+    border-radius: 6px;
+    padding: 0.15rem 0.5rem;
+}
+
+/* Mentors Section on About Page */
+.about-mentors-section {
+    margin-bottom: 4.5rem;
+}
+
+.about-principal-card {
+    background: #111722;
+    border: 2px solid #1e2838;
+    border-radius: 18px;
+    padding: 1.8rem 2rem;
+    box-shadow: 4px 4px 0 #000000;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-principal-left {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.about-principal-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid #0088ff;
+    box-shadow: 3px 3px 0 #000000;
+}
+
+.about-badge-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    background: #1c2434;
+    color: #38bdf8;
+    border: 1.5px solid #0088ff;
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    text-transform: uppercase;
+}
+
+.about-principal-right {
+    flex: 1;
+}
+
+.about-principal-name {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.25rem;
+}
+
+.about-principal-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #a1a1aa;
+    margin-bottom: 0.75rem;
+}
+
+.about-principal-quote {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Teachers 3-Column Grid */
+.about-teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+}
+
+.about-teacher-card {
+    background: #111722;
+    border: 2px solid #1e2838;
+    border-radius: 16px;
+    padding: 1.6rem 1.4rem;
+    text-align: center;
+    box-shadow: 4px 4px 0 #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.about-teacher-card:hover {
+    transform: translateY(-3px);
+    border-color: #0088ff;
+}
+
+.about-teacher-img-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.about-teacher-avatar {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid #0088ff;
+    box-shadow: 2px 2px 0 #000000;
+}
+
+.about-teacher-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    background: #1c2434;
+    color: #38bdf8;
+    border: 1px solid #0088ff;
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    text-transform: uppercase;
+}
+
+.about-teacher-name {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.2rem;
+}
+
+.about-teacher-designation {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 0.35rem;
+}
+
+.about-teacher-domain {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #38bdf8;
+    margin-bottom: 0.6rem;
+    line-height: 1.35;
+}
+
+.about-teacher-desc {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* Institution Spotlight Section */
+.about-institution-section {
+    margin-bottom: 2rem;
+}
+
+.about-institution-card {
+    background: #0d121c;
+    border: 2.5px solid #ff7f00;
+    border-radius: 20px;
+    padding: 2.2rem 2.4rem;
+    box-shadow: 6px 6px 0 #000000;
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.institution-logo-col {
+    flex-shrink: 0;
+}
+
+.institution-logo-img {
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 0.8rem;
+    border: 2px solid #ff7f00;
+    box-shadow: 3px 3px 0 #000000;
+    transition: transform 0.2s ease;
+}
+
+.institution-logo-img:hover {
+    transform: scale(1.05);
+}
+
+.institution-text-col {
+    flex: 1;
+}
+
+.institution-badge {
+    font-family: 'Fredoka', cursive, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #ff9933;
+    background: #1c150c;
+    border: 1.5px solid #ff7f00;
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.institution-title {
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.35;
+    margin: 0 0 0.6rem;
+}
+
+.institution-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.institution-title a:hover {
+    color: #ff9933;
+}
+
+.institution-desc {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.55;
+    margin-bottom: 1.3rem;
+}
+
+.institution-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.btn-institution-site {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #ff7f00;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.6rem 1.25rem;
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 0 #b35900;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-institution-site:hover {
+    background: #ff9426;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #b35900;
+}
+
+.btn-institution-site:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #b35900;
+}
+
+.btn-institution-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #111722;
+    color: #cbd5e1;
+    border: 2px solid #1e2838;
+    border-radius: 10px;
+    padding: 0.6rem 1.25rem;
+    font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-institution-contact:hover {
+    border-color: #ff7f00;
+    color: #ffffff;
+    background: #162030;
+}
+
+/* About Page Responsive */
+@media (max-width: 900px) {
+    .about-hero-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.8rem 1.4rem;
+        gap: 1.5rem;
+    }
+    .about-hero-details {
+        align-items: center;
+    }
+    .about-hero-actions {
+        justify-content: center;
+    }
+    .about-students-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.1rem;
+    }
+    .about-teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.1rem;
+    }
+    .about-principal-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1.2rem;
+        gap: 1.2rem;
+    }
+    .about-institution-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.6rem 1.2rem;
+        gap: 1.4rem;
+    }
+    .institution-footer-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-students-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-teachers-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-hero-card,
+    .about-institution-card {
+        padding: 1.4rem 1rem;
+    }
+    .about-college-logo-link {
+        width: 105px;
+        height: 105px;
+    }
+    .institution-logo-img {
+        width: 105px;
+    }
+}
+
+
 
 
 
