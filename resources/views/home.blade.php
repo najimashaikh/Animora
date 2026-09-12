@@ -182,17 +182,27 @@
                                 <label for="contactPhone">PHONE NUMBER</label>
                                 <input type="tel" id="contactPhone" name="phone" placeholder="+91 98765 43210">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group custom-select-group">
                                 <label for="contactCourse">INTERESTED PROGRAM</label>
-                                <select id="contactCourse" name="course_interest" class="form-select cartoon-select">
-                                    <option value="Professional Program (2D, 3D, VFX)">3-Year Professional (2D/3D/VFX)</option>
-                                    <option value="3D Animation">2-Year 3D Animation</option>
-                                    <option value="Game Art Design">2-Year Game Art Design</option>
-                                    <option value="VFX">2-Year VFX Program</option>
-                                    <option value="Individual Courses">1-Year Individual Courses</option>
-                                    <option value="Short Term Courses">10-Week Short Term Course</option>
-                                    <option value="General Inquiry">General Campus Inquiry</option>
-                                </select>
+                                <div class="custom-dropdown-wrap" id="customCourseDropdown">
+                                    <input type="hidden" name="course_interest" id="contactCourse" value="{{ $courses->first()->name ?? 'Professional Program' }}">
+                                    <button type="button" class="custom-dropdown-trigger" id="courseDropdownBtn" aria-haspopup="listbox" aria-expanded="false">
+                                        <span class="dropdown-selected-text" id="selectedCourseText">{{ $courses->first()->name ?? 'Select a Program' }}</span>
+                                        <svg class="dropdown-arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                    <div class="custom-dropdown-menu" id="courseDropdownMenu" role="listbox">
+                                        @foreach($courses as $course)
+                                        <div class="custom-dropdown-item {{ $loop->first ? 'active' : '' }}" data-value="{{ $course->name }}" role="option">
+                                            <span class="dropdown-item-title">{{ $course->name }}</span>
+                                        </div>
+                                        @endforeach
+                                        <div class="custom-dropdown-item" data-value="General Campus Inquiry" role="option">
+                                            <span class="dropdown-item-title">General Campus Inquiry</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -248,12 +258,6 @@
                             <h5 class="blue-info-title">DIRECT EMAIL</h5>
                             <p class="blue-info-text"><a href="mailto:najimashaikh267@gmail.com">najimashaikh267@gmail.com</a></p>
                         </div>
-                    </div>
-
-                    <!-- Active Badge -->
-                    <div class="blue-admissions-badge">
-                        <span class="blue-pulse-dot"></span>
-                        <span>Admissions &amp; Student Inquiries Active</span>
                     </div>
 
                 </div>
@@ -331,6 +335,53 @@
         if (thankYouCard) thankYouCard.style.display = 'none';
         if (result) result.style.display = 'none';
     }
+
+    // Custom Course Dropdown handler
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdownWrap = document.getElementById('customCourseDropdown');
+        const dropdownBtn = document.getElementById('courseDropdownBtn');
+        const dropdownMenu = document.getElementById('courseDropdownMenu');
+        const hiddenInput = document.getElementById('contactCourse');
+        const selectedText = document.getElementById('selectedCourseText');
+
+        if (!dropdownWrap || !dropdownBtn || !dropdownMenu) return;
+
+        dropdownBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = dropdownWrap.classList.contains('open');
+            if (isOpen) {
+                dropdownWrap.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            } else {
+                dropdownWrap.classList.add('open');
+                dropdownBtn.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        const items = dropdownMenu.querySelectorAll('.custom-dropdown-item');
+        items.forEach(function (item) {
+            item.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const val = this.getAttribute('data-value');
+                if (hiddenInput) hiddenInput.value = val;
+                if (selectedText) selectedText.textContent = val;
+
+                items.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                dropdownWrap.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!dropdownWrap.contains(e.target)) {
+                dropdownWrap.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
 </script>
 
 @endsection
