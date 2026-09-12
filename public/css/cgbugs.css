@@ -1465,15 +1465,15 @@ a {
     width: 100%;
 }
 
-/* Solid Cartoonist Blue Box (No Glassmorphism, Crisp Comic Panel) */
+/* Solid Cartoonist Blue Box (Strictly Zero Glassmorphism, Crisp Minimalist Comic Panel) */
 .contact-static-blue-box {
     position: relative;
     width: 100%;
-    background: #0d121d; /* Solid dark comic navy */
-    border: 3px solid #0088ff; /* Solid comic blue border */
+    background: #0d121c; /* Solid dark comic navy */
+    border: 3px solid #0088ff; /* Crisp comic blue border */
     border-radius: 20px;
     padding: 2rem 2.2rem;
-    box-shadow: 0 8px 0 #000000, 0 12px 28px rgba(0, 0, 0, 0.8); /* Comic offset shadow */
+    box-shadow: 6px 6px 0 #000000; /* Minimalist comic hard offset shadow */
     overflow: visible;
 }
 
@@ -1484,7 +1484,7 @@ a {
     gap: 1.5rem;
     margin-bottom: 1.6rem;
     padding-bottom: 1.4rem;
-    border-bottom: 2px solid #1a2336;
+    border-bottom: 2px solid #1b2436;
 }
 
 .contact-robot-mascot-wrap {
@@ -1494,9 +1494,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #141b2a;
+    background: #121824;
     border: 2px solid #0088ff;
     border-radius: 16px;
+    box-shadow: 3px 3px 0 #000000;
 }
 
 .contact-robot-img {
@@ -1523,7 +1524,7 @@ a {
     font-size: 0.76rem;
     font-weight: 700;
     color: #38bdf8;
-    background: #162032;
+    background: #131b29;
     border: 1.5px solid #0088ff;
     border-radius: 999px;
     padding: 0.25rem 0.8rem;
@@ -1539,7 +1540,7 @@ a {
     color: #ffffff;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    text-shadow: 3px 3px 0 #000000;
+    text-shadow: 2px 2px 0 #000000;
     line-height: 1.1;
     margin-bottom: 0.35rem;
 }
@@ -1561,13 +1562,13 @@ a {
     align-items: start;
 }
 
-/* Left: Form Panel (Solid, No Blur) */
+/* Left: Form Panel (Solid Minimalist Comic Panel) */
 .contact-blue-form-panel {
-    background: #131926;
-    border: 2px solid #1e293b;
+    background: #111722;
+    border: 2px solid #1e2838;
     border-radius: 16px;
     padding: 1.6rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 0 #000000;
 }
 
 .web3-contact-form {
@@ -1599,8 +1600,8 @@ a {
 
 .form-group input,
 .form-group textarea {
-    background: #090d14;
-    border: 2px solid #232d3f;
+    background: #0a0e16;
+    border: 2px solid #232f42;
     border-radius: 10px;
     color: #ffffff;
     font-family: var(--font-body);
@@ -1619,7 +1620,7 @@ a {
 .form-group textarea:focus {
     outline: none;
     border-color: #0088ff;
-    background: #0c121c;
+    background: #0c121e;
 }
 
 .form-group input::placeholder,
@@ -1639,8 +1640,8 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 0.7rem;
-    background: #090d14;
-    border: 2px solid #232d3f;
+    background: #0a0e16;
+    border: 2px solid #232f42;
     border-radius: 10px;
     padding: 0.65rem 0.9rem;
     color: #ffffff;
@@ -1654,7 +1655,7 @@ a {
 .custom-dropdown-trigger:hover,
 .custom-dropdown-wrap.open .custom-dropdown-trigger {
     border-color: #0088ff;
-    background: #0c121c;
+    background: #0c121e;
 }
 
 .dropdown-selected-text {
@@ -1682,11 +1683,11 @@ a {
     top: calc(100% + 5px);
     left: 0;
     right: 0;
-    background: #0d131f;
+    background: #111722;
     border: 2px solid #0088ff;
     border-radius: 12px;
     padding: 0.35rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+    box-shadow: 4px 4px 0 #000000;
     z-index: 1000;
     max-height: 240px;
     overflow-y: auto;
@@ -1716,7 +1717,7 @@ a {
 }
 
 .custom-dropdown-item:hover {
-    background: #1e293b;
+    background: #1b2434;
     color: #38bdf8;
 }
 
@@ -1725,12 +1726,12 @@ a {
     color: #ffffff;
 }
 
-/* Submit Button: Solid Punchy Cartoon Button */
+/* Submit Button: Solid Punchy Cartoon Button with 3D Offset */
 .btn-contact-submit.cartoon-btn-submit {
     background: #0088ff;
     color: #ffffff;
     border: 2px solid #ffffff;
-    border-radius: 999px;
+    border-radius: 12px;
     padding: 0.8rem 1.6rem;
     font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
     font-size: 1rem;
@@ -1738,13 +1739,13 @@ a {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     text-shadow: 1px 1px 0 #000000;
-    box-shadow: 0 4px 0 #0055b3;
+    box-shadow: 0 5px 0 #0055b3;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    transition: all 0.15s ease;
+    transition: all 0.12s ease;
     width: 100%;
     margin-top: 0.3rem;
 }
@@ -1752,15 +1753,15 @@ a {
 .btn-contact-submit.cartoon-btn-submit:hover {
     background: #0099ff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 0 #0055b3;
+    box-shadow: 0 7px 0 #0055b3;
 }
 
 .btn-contact-submit.cartoon-btn-submit:active {
-    transform: translateY(2px);
+    transform: translateY(3px);
     box-shadow: 0 2px 0 #0055b3;
 }
 
-/* Right: Location Panel (Solid Cards, No Blur) */
+/* Right: Location Panel (Solid Cards, Crisp Minimalist Comic Style) */
 .contact-blue-location-panel {
     display: flex;
     flex-direction: column;
@@ -1768,14 +1769,14 @@ a {
 }
 
 .blue-info-card {
-    background: #131926;
-    border: 2px solid #1e293b;
+    background: #111722;
+    border: 2px solid #1e2838;
     border-radius: 14px;
     padding: 1rem 1.15rem;
     display: flex;
     align-items: flex-start;
     gap: 0.85rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 3px 0 #000000;
     transition: all 0.2s ease;
 }
 
@@ -1786,8 +1787,8 @@ a {
 
 .blue-info-icon {
     font-size: 1.15rem;
-    background: #0a0f18;
-    border: 1.5px solid #0088ff;
+    background: #0a0e16;
+    border: 2px solid #0088ff;
     width: 38px;
     height: 38px;
     border-radius: 10px;
