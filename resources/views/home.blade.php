@@ -104,138 +104,164 @@
     </div>
 </section>
 
-<!-- Contact Us Section with Web3Forms -->
+<!-- Contact Us Section with Static Blue Box & Theme Touch -->
 <section class="contact-section" id="contact">
     <div class="contact-container">
-        <h2 class="animora-branding contact-heading">CONTACT US</h2>
-        <p class="contact-subheading">Have questions about our programs, campus admissions, or student assets? Send us a message.</p>
+        
+        <!-- Pura Static Blue Box (With Animora Theme Touch) -->
+        <div class="contact-static-blue-box">
+            
+            <!-- Top Mascot & Header Banner inside the Blue Box -->
+            <div class="contact-blue-header">
+                <div class="contact-robot-mascot-wrap">
+                    <img src="{{ asset('images/contact-robot.png') }}" alt="Contact Us Robot Mascot" class="contact-robot-img">
+                </div>
+                <div class="contact-header-content">
+                    <div class="contact-comic-tag">ANIMORA CAMPUS HELPDESK</div>
+                    <h2 class="contact-comic-title">CONTACT US</h2>
+                    <p class="contact-comic-desc">Have questions about our 2D, 3D &amp; VFX programs, student rigs, or campus admissions? Send us a message directly!</p>
+                </div>
+            </div>
 
-        <div class="contact-grid">
-            <!-- Left: Contact Form Card with Inline Thank You Message -->
-            <div class="contact-form-card">
-                <!-- Inline Result Alert (For errors/info) -->
-                <div id="formResult" class="form-result-alert" style="display: none;"></div>
+            <!-- Form & Location Grid inside the Blue Box -->
+            <div class="contact-blue-grid">
+                
+                <!-- Left: Contact Form inside Blue Box -->
+                <div class="contact-blue-form-panel">
+                    <!-- Inline Result Alert (For errors/info) -->
+                    <div id="formResult" class="form-result-alert" style="display: none;"></div>
 
-                <!-- Inline Thank You Card (Shown on success, NO redirect, NO green) -->
-                <div id="thankYouCard" class="thank-you-card" style="display: none;">
-                    <div class="thank-you-avatar">
-                        <span class="thank-you-emoji">✨</span>
+                    <!-- Inline Thank You Card (Shown on success, NO redirect, NO green) -->
+                    <div id="thankYouCard" class="thank-you-card cartoon-thank-you" style="display: none;">
+                        <div class="thank-you-avatar">
+                            <span class="thank-you-emoji">✨</span>
+                        </div>
+                        <h3 class="thank-you-title">THANK YOU!</h3>
+                        <p class="thank-you-text">Your inquiry has been successfully received. Our campus team at S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College will connect with you shortly.</p>
+                        
+                        <div class="thank-you-details">
+                            <div class="thank-detail-item">
+                                <span class="thank-detail-label">Status</span>
+                                <span class="thank-detail-val">Received &amp; Logged</span>
+                            </div>
+                            <div class="thank-detail-item">
+                                <span class="thank-detail-label">Destination</span>
+                                <span class="thank-detail-val">najimashaikh267@gmail.com</span>
+                            </div>
+                            <div class="thank-detail-item">
+                                <span class="thank-detail-label">Campus Phone</span>
+                                <span class="thank-detail-val">(02425) 223181 / 222869</span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-reset-form" onclick="showFormAgain()">
+                            SEND ANOTHER MESSAGE
+                        </button>
                     </div>
-                    <h3 class="thank-you-title">Thank You!</h3>
-                    <p class="thank-you-text">Your inquiry has been successfully received. Our campus team at S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College will connect with you shortly.</p>
+
+                    <!-- Form Element (Strictly prevented from redirecting) -->
+                    <form id="web3ContactForm" action="javascript:void(0);" onsubmit="handleContactSubmit(event)" method="POST" class="web3-contact-form">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="82d62467-fdbb-4b4c-852d-f44e8be9bc5d">
+                        <input type="hidden" name="subject" value="New Inquiry - Animora Student Portal">
+                        <input type="hidden" name="from_name" value="Animora Campus Portal">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">YOUR FULL NAME *</label>
+                                <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">EMAIL ADDRESS *</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="name@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactPhone">PHONE NUMBER</label>
+                                <input type="tel" id="contactPhone" name="phone" placeholder="+91 98765 43210">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactCourse">INTERESTED PROGRAM</label>
+                                <select id="contactCourse" name="course_interest" class="form-select cartoon-select">
+                                    <option value="Professional Program (2D, 3D, VFX)">3-Year Professional (2D/3D/VFX)</option>
+                                    <option value="3D Animation">2-Year 3D Animation</option>
+                                    <option value="Game Art Design">2-Year Game Art Design</option>
+                                    <option value="VFX">2-Year VFX Program</option>
+                                    <option value="Individual Courses">1-Year Individual Courses</option>
+                                    <option value="Short Term Courses">10-Week Short Term Course</option>
+                                    <option value="General Inquiry">General Campus Inquiry</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">YOUR MESSAGE *</label>
+                            <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your learning goals or questions..." required></textarea>
+                        </div>
+
+                        <button type="submit" id="contactSubmitBtn" class="btn-contact-submit cartoon-btn-submit">
+                            <span>SEND MESSAGE</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Location & Campus Details inside Blue Box -->
+                <div class="contact-blue-location-panel">
                     
-                    <div class="thank-you-details">
-                        <div class="thank-detail-item">
-                            <span class="thank-detail-label">Status</span>
-                            <span class="thank-detail-val">Received &amp; Logged</span>
-                        </div>
-                        <div class="thank-detail-item">
-                            <span class="thank-detail-label">Destination</span>
-                            <span class="thank-detail-val">najimashaikh267@gmail.com</span>
-                        </div>
-                        <div class="thank-detail-item">
-                            <span class="thank-detail-label">Campus Phone</span>
-                            <span class="thank-detail-val">(02425) 223181 / 222869</span>
+                    <!-- College / Campus Card -->
+                    <div class="blue-info-card">
+                        <div class="blue-info-icon">🏛️</div>
+                        <div class="blue-info-content">
+                            <h5 class="blue-info-title">COLLEGE / CAMPUS</h5>
+                            <p class="blue-info-text"><strong>S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College</strong></p>
                         </div>
                     </div>
 
-                    <button type="button" class="btn-reset-form" onclick="showFormAgain()">
-                        Send Another Message
-                    </button>
+                    <!-- Campus Location / Address Card -->
+                    <div class="blue-info-card">
+                        <div class="blue-info-icon">📍</div>
+                        <div class="blue-info-content">
+                            <h5 class="blue-info-title">CAMPUS LOCATION</h5>
+                            <p class="blue-info-text">Ghulewadi, Pune Nashik Highway (NH – 50), Sangamner, District Ahmednagar 422 605, Maharashtra – India</p>
+                        </div>
+                    </div>
+
+                    <!-- Call Us Card -->
+                    <div class="blue-info-card">
+                        <div class="blue-info-icon">📞</div>
+                        <div class="blue-info-content">
+                            <h5 class="blue-info-title">CALL US ON</h5>
+                            <p class="blue-info-text">
+                                <a href="tel:02425223181">(02425) 223181</a><br>
+                                <a href="tel:02425222869">(02425) 222869</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="blue-info-card">
+                        <div class="blue-info-icon">✉️</div>
+                        <div class="blue-info-content">
+                            <h5 class="blue-info-title">DIRECT EMAIL</h5>
+                            <p class="blue-info-text"><a href="mailto:najimashaikh267@gmail.com">najimashaikh267@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Active Badge -->
+                    <div class="blue-admissions-badge">
+                        <span class="blue-pulse-dot"></span>
+                        <span>Admissions &amp; Student Inquiries Active</span>
+                    </div>
+
                 </div>
 
-                <!-- Form Element (Strictly prevented from redirecting) -->
-                <form id="web3ContactForm" action="javascript:void(0);" onsubmit="handleContactSubmit(event)" method="POST" class="web3-contact-form">
-                    <!-- Web3Forms Access Key -->
-                    <input type="hidden" name="access_key" value="82d62467-fdbb-4b4c-852d-f44e8be9bc5d">
-                    <input type="hidden" name="subject" value="New Inquiry - Animora Student Portal">
-                    <input type="hidden" name="from_name" value="Animora Campus Portal">
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="contactName">Full Name *</label>
-                            <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactEmail">Email Address *</label>
-                            <input type="email" id="contactEmail" name="email" placeholder="name@example.com" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="contactPhone">Phone Number</label>
-                            <input type="tel" id="contactPhone" name="phone" placeholder="+91 98765 43210">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactCourse">Interested Program</label>
-                            <select id="contactCourse" name="course_interest" class="form-select">
-                                <option value="Professional Program (2D, 3D, VFX)">3-Year Professional (2D/3D/VFX)</option>
-                                <option value="3D Animation">2-Year 3D Animation</option>
-                                <option value="Game Art Design">2-Year Game Art Design</option>
-                                <option value="VFX">2-Year VFX Program</option>
-                                <option value="Individual Courses">1-Year Individual Courses</option>
-                                <option value="Short Term Courses">10-Week Short Term Course</option>
-                                <option value="General Inquiry">General Campus Inquiry</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contactMessage">Your Message *</label>
-                        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your learning goals or questions..." required></textarea>
-                    </div>
-
-                    <button type="submit" id="contactSubmitBtn" class="btn-contact-submit">
-                        <span>Send Message</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                    </button>
-                </form>
             </div>
 
-            <!-- Right: Campus Official Details -->
-            <div class="contact-info-card">
-                <div class="info-item">
-                    <div class="info-icon">🏛️</div>
-                    <div class="info-text">
-                        <h5>College / Campus</h5>
-                        <p><strong>S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College</strong></p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">📍</div>
-                    <div class="info-text">
-                        <h5>Address</h5>
-                        <p>Ghulewadi, Pune Nashik Highway (NH – 50), Sangamner, District Ahmednagar 422 605, Maharashtra – India</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">📞</div>
-                    <div class="info-text">
-                        <h5>Call Us On</h5>
-                        <p>
-                            <a href="tel:02425223181">(02425) 223181</a><br>
-                            <a href="tel:02425222869">(02425) 222869</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">✉️</div>
-                    <div class="info-text">
-                        <h5>Direct Email</h5>
-                        <p><a href="mailto:najimashaikh267@gmail.com">najimashaikh267@gmail.com</a></p>
-                    </div>
-                </div>
-
-                <div class="info-badge-box">
-                    <span class="info-dot"></span>
-                    <span>Admissions &amp; Student Inquiries Active</span>
-                </div>
-            </div>
         </div>
+
     </div>
 </section>
 

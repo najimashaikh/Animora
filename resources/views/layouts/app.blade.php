@@ -11,10 +11,10 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
 
-    <!-- Google Fonts: Minimalist High Contrast (Inter & Outfit) -->
+    <!-- Google Fonts: Minimalist High Contrast (Inter & Outfit) + Fredoka for Comic Cartoon elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Animora Minimalist B&W Design System (Producer Toy Style) -->
     <link rel="stylesheet" href="{{ asset('css/cgbugs.css') }}">
