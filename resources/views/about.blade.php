@@ -238,7 +238,143 @@
         </div>
     </section>
 
-    <!-- Section 3: College Profile Spotlight Card -->
+    <!-- Section 3: Technology Stack & Database Architecture -->
+    <section class="about-tech-stack-section">
+        <div class="about-section-header">
+            <span class="about-sub-tag">ENGINEERING &amp; ARCHITECTURE</span>
+            <h2 class="about-section-heading">PROJECT TECHNOLOGY STACK</h2>
+            <p class="about-section-lead">
+                A robust, modern software stack built for high performance, serverless cloud data persistence, and responsive comic aesthetics.
+            </p>
+        </div>
+
+        <div class="about-tech-grid">
+            
+            <!-- Tech 1: Backend & Framework -->
+            <div class="tech-comic-card">
+                <div class="tech-card-top">
+                    <div class="tech-icon-box" style="border-color: #ff2d20; color: #ff2d20;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <span class="tech-category-pill">BACKEND CORE</span>
+                </div>
+                <h3 class="tech-card-title">PHP 8.2 &amp; Laravel 10</h3>
+                <p class="tech-card-desc">
+                    Architected on the Laravel 10 MVC framework. Features Eloquent ORM for relationship models, robust routing, CSRF token security, session auth guards, and modular Blade component templates.
+                </p>
+                <div class="tech-card-tags">
+                    <span>PHP 8.2</span>
+                    <span>Laravel 10</span>
+                    <span>Eloquent ORM</span>
+                    <span>Blade Engine</span>
+                    <span>Artisan CLI</span>
+                </div>
+            </div>
+
+            <!-- Tech 2: Database & Cloud -->
+            <div class="tech-comic-card">
+                <div class="tech-card-top">
+                    <div class="tech-icon-box" style="border-color: #38bdf8; color: #38bdf8;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                    </div>
+                    <span class="tech-category-pill">CLOUD DATABASE</span>
+                </div>
+                <h3 class="tech-card-title">PostgreSQL (Neon Tech Cloud)</h3>
+                <p class="tech-card-desc">
+                    Powered by serverless PostgreSQL on Neon Tech (AWS Cloud). Features automated schema migrations, seeder data pipelines, relational integrity across courses and assets, and forced SSL encryption.
+                </p>
+                <div class="tech-card-tags">
+                    <span>PostgreSQL</span>
+                    <span>Neon Serverless</span>
+                    <span>AWS US-East</span>
+                    <span>SSL Require</span>
+                    <span>Migrations &amp; Seeds</span>
+                </div>
+            </div>
+
+            <!-- Tech 3: Frontend & Design System -->
+            <div class="tech-comic-card">
+                <div class="tech-card-top">
+                    <div class="tech-icon-box" style="border-color: #ffea00; color: #ffea00;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m4.93 4.93 4.24 4.24"></path>
+                            <path d="m14.83 9.17 4.24-4.24"></path>
+                            <path d="m14.83 14.83 4.24 4.24"></path>
+                            <path d="m9.17 14.83-4.24 4.24"></path>
+                            <circle cx="12" cy="12" r="4"></circle>
+                        </svg>
+                    </div>
+                    <span class="tech-category-pill">FRONTEND &amp; UI</span>
+                </div>
+                <h3 class="tech-card-title">Vanilla CSS3 &amp; ES6+ JS</h3>
+                <p class="tech-card-desc">
+                    Hand-crafted minimalist cartoonist comic design system. Built with zero external CSS frameworks (no Tailwind overhead), Fredoka &amp; Outfit typography, hard offset drop-shadows, and zero glassmorphism.
+                </p>
+                <div class="tech-card-tags">
+                    <span>Vanilla CSS3</span>
+                    <span>ES6+ JavaScript</span>
+                    <span>Fredoka &amp; Outfit</span>
+                    <span>CSS Grid &amp; Flex</span>
+                    <span>SVG Icons</span>
+                </div>
+            </div>
+
+            <!-- Tech 4: Performance & Integrations -->
+            <div class="tech-comic-card">
+                <div class="tech-card-top">
+                    <div class="tech-icon-box" style="border-color: #10b981; color: #10b981;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <span class="tech-category-pill">SPEED &amp; INTEGRATIONS</span>
+                </div>
+                <h3 class="tech-card-title">Caching &amp; Web3Forms API</h3>
+                <p class="tech-card-desc">
+                    Engineered with high-speed query caching (reducing latency by 80x down to 253ms), filemtime asset version cache-busting, asynchronous Web3Forms AJAX message submission, and BCrypt security.
+                </p>
+                <div class="tech-card-tags">
+                    <span>Cache::remember</span>
+                    <span>Cache-Busting (v=mtime)</span>
+                    <span>Web3Forms API</span>
+                    <span>BCrypt Hashing</span>
+                    <span>Async Fetch</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Architecture Specs Summary Ribbon -->
+        <div class="tech-specs-ribbon">
+            <div class="tech-spec-item">
+                <span class="spec-label">APPLICATION ARCHITECTURE</span>
+                <span class="spec-value">Laravel 10 MVC (Model-View-Controller)</span>
+            </div>
+            <div class="tech-spec-item">
+                <span class="spec-label">ACTIVE DATABASE</span>
+                <span class="spec-value">PostgreSQL (Neon Tech Serverless Cloud)</span>
+            </div>
+            <div class="tech-spec-item">
+                <span class="spec-label">STYLING METHODOLOGY</span>
+                <span class="spec-value">Animora Minimalist Comic (Zero Glassmorphism)</span>
+            </div>
+            <div class="tech-spec-item">
+                <span class="spec-label">QUERY OPTIMIZATION</span>
+                <span class="spec-value">Sub-250ms Response via Local Cache Layer</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: College Profile Spotlight Card -->
     <section class="about-institution-section">
         <div class="about-institution-card">
             <div class="institution-logo-col">
