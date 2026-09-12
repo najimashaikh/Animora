@@ -380,26 +380,24 @@ a {
     object-position: center;
 }
 
-/* Mobile Hero Image: Centered "Animora" Logo from the Image without Cropping */
+/* Mobile Hero Image: Taller impactful height with central "Animora" logo centered */
 @media (max-width: 768px) {
     .hero-static-section.hero-fullwidth {
-        padding: 0.5rem 0 1rem;
+        padding: 0;
         background: #000000;
     }
     .hero-static-section.hero-fullwidth .hero-image-wrapper {
-        height: auto;
-        min-height: unset;
-        max-height: unset;
-        aspect-ratio: 16 / 9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 48vh;
+        min-height: 330px;
+        max-height: 440px;
+        aspect-ratio: unset;
+        display: block;
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
     .hero-static-section.hero-fullwidth .hero-static-img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center center;
     }
 }
@@ -947,38 +945,44 @@ a {
     }
 }
 
-/* ================= EXACT DORAEMON BLUE BOX (MATCHING USER SKETCH) ================= */
+/* ================= COMPACT EXPLORE COURSES BANNER (DESKTOP & MOBILE) ================= */
 .doraemon-sketch-section {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 3.5rem 1.5rem 5rem;
+    padding: 1.8rem 1.5rem 2.2rem;
     margin: 0;
     background: #000000;
 }
 
 .doraemon-sketch-box {
     width: 100%;
-    max-width: 1140px;
-    min-height: 280px;
-    background: #222222; /* neutral dark background for new image */
-    border-radius: 24px;
-    border: 6px solid #ff7f00; /* orange border */
+    max-width: 580px;
+    min-height: auto;
+    background: #18181b;
+    border-radius: 16px;
+    border: 3px solid #ff7f00; /* refined compact orange border */
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 2.5rem 3.5rem;
-    box-shadow: none;
+    justify-content: center;
+    gap: 1.8rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 24px rgba(255, 127, 0, 0.08);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
+.doraemon-sketch-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(255, 127, 0, 0.16);
+    border-color: #ff9933;
+}
 
-
-/* Left: Doraemon GIF */
+/* Left: Character Icon */
 .doraemon-sketch-left {
     flex-shrink: 0;
-    width: 220px;
-    height: 220px;
+    width: 85px;
+    height: 85px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -989,7 +993,7 @@ a {
     max-height: 100%;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
 }
 
 /* Right: EXPLORE COURSES Text */
@@ -1001,34 +1005,44 @@ a {
 
 .doraemon-sketch-text {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-    font-weight: 900;
-    color: #ffffff; /* white color */
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
     text-decoration: none;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
-    transition: transform 0.25s ease, text-shadow 0.25s ease, color 0.25s ease;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: color 0.2s ease;
     display: inline-block;
 }
 
 .doraemon-sketch-text:hover {
-    transform: scale(1.06);
-    color: #ffea00; /* original hover yellow */
-    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+    color: #ffea00;
 }
 
 @media (max-width: 768px) {
+    .doraemon-sketch-section {
+        padding: 1rem 1.2rem 1.4rem;
+    }
     .doraemon-sketch-box {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
-        padding: 2.5rem 1.5rem;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 1.2rem;
+        padding: 0.75rem 1.4rem;
+        max-width: 330px;
+        border-width: 2.5px;
+        border-radius: 14px;
         min-height: auto;
     }
     .doraemon-sketch-left {
-        width: 160px;
-        height: 160px;
+        width: 56px;
+        height: 56px;
+    }
+    .doraemon-sketch-text {
+        font-size: 1.15rem;
+        letter-spacing: 0.03em;
+        text-shadow: none;
     }
 }
 
