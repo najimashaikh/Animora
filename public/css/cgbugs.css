@@ -1424,8 +1424,8 @@ a {
 /* Responsive */
 @media (max-width: 900px) {
     .teachers-line-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.85rem;
     }
     .principal-spotlight {
         flex-direction: column;
@@ -1452,9 +1452,63 @@ a {
 }
 
 @media (max-width: 600px) {
+    /* Home Page: Principal on top */
+    .principal-spotlight {
+        margin-bottom: 2rem;
+        gap: 1rem;
+    }
+    .mentor-avatar-img.principal-avatar {
+        width: 105px;
+        height: 105px;
+    }
+    .mentor-comic-name {
+        font-size: 1.25rem;
+    }
+    .mentor-comic-role {
+        font-size: 0.8rem;
+    }
+    .comic-speech-bubble {
+        padding: 0.9rem 1rem;
+    }
+    .comic-speech-bubble p {
+        font-size: 0.84rem;
+        line-height: 1.55;
+    }
+
+    /* Home Page: 1x3 (3 teachers in 1 line/row on mobile) */
     .teachers-line-grid {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.45rem;
+    }
+    .teacher-cartoon-card {
+        padding: 0.85rem 0.3rem;
+        border-radius: 14px;
+    }
+    .teacher-avatar-img,
+    .teacher-avatar-placeholder {
+        width: 62px;
+        height: 62px;
+    }
+    .teacher-comic-tag {
+        font-size: 0.5rem;
+        padding: 0.12rem 0.35rem;
+        margin-top: -8px;
+        letter-spacing: 0.02em;
+    }
+    .teacher-name {
+        font-size: 0.74rem;
+        font-weight: 700;
+        margin: 0.4rem 0 0.15rem;
+        line-height: 1.2;
+    }
+    .teacher-role {
+        font-size: 0.65rem;
+        margin-bottom: 0.2rem;
+        line-height: 1.2;
+    }
+    .teacher-desc {
+        font-size: 0.65rem;
+        line-height: 1.3;
     }
 }
 
@@ -3217,8 +3271,8 @@ a {
         gap: 1.1rem;
     }
     .about-teachers-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.1rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
     }
     .about-principal-card {
         flex-direction: column;
@@ -3236,12 +3290,116 @@ a {
 }
 
 @media (max-width: 600px) {
+    /* About Page: Created by 6 Students grid is strictly 2/2 in mobile (2 per row) */
     .about-students-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
     }
+    .student-comic-card {
+        padding: 0.85rem 0.6rem;
+        border-radius: 12px;
+    }
+    .student-avatar-box {
+        margin-bottom: 0.65rem;
+    }
+    .student-avatar-initial {
+        width: 38px;
+        height: 38px;
+        font-size: 0.88rem;
+        border-radius: 8px;
+    }
+    .student-rank-badge {
+        font-size: 0.58rem;
+        padding: 0.12rem 0.4rem;
+    }
+    .student-name {
+        font-size: 0.92rem;
+        margin: 0 0 0.15rem;
+        line-height: 1.2;
+    }
+    .student-role {
+        font-size: 0.7rem;
+        margin-bottom: 0.35rem;
+        line-height: 1.25;
+    }
+    .student-desc {
+        font-size: 0.7rem;
+        line-height: 1.35;
+        margin: 0 0 0.6rem;
+    }
+    .student-skills-pills {
+        gap: 0.25rem;
+    }
+    .student-skills-pills span {
+        font-size: 0.62rem;
+        padding: 0.1rem 0.35rem;
+    }
+
+    /* About Page: Principal on top in mobile */
+    .about-principal-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem 1rem;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+    .about-principal-img {
+        width: 90px;
+        height: 90px;
+    }
+    .about-principal-name {
+        font-size: 1.15rem;
+    }
+    .about-principal-title {
+        font-size: 0.78rem;
+        margin-bottom: 0.4rem;
+    }
+    .about-principal-quote {
+        font-size: 0.8rem;
+        line-height: 1.45;
+    }
+
+    /* About Page: 1x3 (3 teachers in 1 line/row on mobile) */
     .about-teachers-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.45rem;
     }
+    .about-teacher-card {
+        padding: 0.85rem 0.3rem;
+        border-radius: 12px;
+    }
+    .about-teacher-img-wrap {
+        margin-bottom: 0.5rem;
+    }
+    .about-teacher-avatar {
+        width: 62px;
+        height: 62px;
+    }
+    .about-teacher-tag {
+        font-size: 0.5rem;
+        padding: 0.1rem 0.32rem;
+        letter-spacing: 0.02em;
+    }
+    .about-teacher-name {
+        font-size: 0.74rem;
+        margin: 0 0 0.15rem;
+        line-height: 1.2;
+    }
+    .about-teacher-designation {
+        font-size: 0.64rem;
+        margin-bottom: 0.15rem;
+        line-height: 1.2;
+    }
+    .about-teacher-domain {
+        font-size: 0.65rem;
+        margin-bottom: 0.35rem;
+        line-height: 1.25;
+    }
+    .about-teacher-desc {
+        font-size: 0.65rem;
+        line-height: 1.3;
+    }
+
     .about-hero-card {
         padding: 1.4rem 1rem;
     }
