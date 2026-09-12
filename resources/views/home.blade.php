@@ -273,27 +273,24 @@
 <section class="college-project-home-banner">
     <div class="college-home-box">
         <div class="college-home-left">
-            <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="college-home-logo-wrap" title="Visit Sangamner College Official Website">
-                <img src="{{ asset('images/college-logo.png') }}" alt="Sangamner College Official Emblem" class="college-home-logo">
+            <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="college-home-logo-wrap" title="S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College">
+                <img src="{{ asset('images/college-logo.png') }}" alt="Sangamner College Logo" class="college-home-logo">
             </a>
         </div>
         <div class="college-home-center">
-            <div class="college-home-tag">ACADEMIC CAPSTONE PROJECT</div>
+            <div class="college-home-tag">FINAL YEAR COLLEGE PROJECT</div>
             <h3 class="college-home-title">
                 <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer">
                     S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College (Autonomous), Sangamner
                 </a>
             </h3>
             <p class="college-home-desc">
-                Developed with pride by <strong>6 Students:</strong> Najima Shaikh, Vaishnavi Galande, Payal Satpute, Swamini Bhaskar, Shreya Abhang, Shruti Kadlag | Guided by <strong>Prof. Sitaram Kawade, Prof. Dipa Gite &amp; Prof. Harshal Pawase</strong>.
+                Created by <strong>6 Students:</strong> Najima Shaikh, Vaishnavi Galande, Payal Satpute, Swamini Bhaskar, Shreya Abhang, Shruti Kadlag | Guided by <strong>Prof. Sitaram Kawade, Prof. Dipa Gite &amp; Prof. Harshal Pawase</strong>.
             </p>
         </div>
         <div class="college-home-right">
             <a href="{{ route('about') }}" class="btn-college-home-about">
-                <span>About Team &amp; Mentors</span> &rarr;
-            </a>
-            <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="btn-college-home-site">
-                <span>College Website</span> ↗
+                <span>About Our Project &amp; Team</span> &rarr;
             </a>
         </div>
     </div>
