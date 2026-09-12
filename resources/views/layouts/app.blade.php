@@ -35,7 +35,7 @@
             </ul>
         </div>
         <div class="nav-right desktop-only">
-            <a href="{{ route('browse') }}" class="nav-action-link">Explore Rigs</a>
+            <a href="{{ route('home') }}#courses" class="nav-action-link">Explore Courses</a>
             @auth
                 <div class="user-header-pill">
                     <!-- Initial Icon Badge -->
@@ -78,7 +78,7 @@
             <li><a href="{{ route('home') }}" onclick="toggleMobileMenu()">Home</a></li>
             <li><a href="{{ route('home') }}#about" onclick="toggleMobileMenu()">About</a></li>
             <li><a href="{{ route('home') }}#contact" onclick="toggleMobileMenu()">Contact Us</a></li>
-            <li><a href="{{ route('browse') }}" onclick="toggleMobileMenu()" style="color: #ffffff; font-weight: 700;">Explore Rigs &rarr;</a></li>
+            <li><a href="{{ route('home') }}#courses" onclick="toggleMobileMenu()" style="color: #ffffff; font-weight: 700;">Explore Courses &rarr;</a></li>
         </ul>
         <div class="mobile-drawer-auth">
             @auth

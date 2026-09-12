@@ -21,13 +21,13 @@
 
         <!-- Right: Explore Courses text in sketch -->
         <div class="doraemon-sketch-right">
-            <a href="{{ route('browse') }}" class="doraemon-sketch-text">EXPLORE COURSES</a>
+            <a href="#courses" class="doraemon-sketch-text">EXPLORE COURSES</a>
         </div>
     </div>
 </section>
 
 <!-- Courses Section -->
-<section class="course-section">
+<section class="course-section" id="courses">
 
     <h2 class="animora-branding">OUR COURSES</h2>
     <div class="course-card-grid">
