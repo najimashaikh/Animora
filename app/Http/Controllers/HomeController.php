@@ -151,4 +151,12 @@ class HomeController extends Controller
 
         return view('pipeline', compact('tools'));
     }
+
+    /**
+     * About Animora - College Project & Mentors.
+     */
+    public function about()
+    {
+        return view('about');
+    }
 }
