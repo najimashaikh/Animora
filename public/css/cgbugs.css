@@ -2426,8 +2426,8 @@ a {
 }
 
 .college-home-box {
-    background: #0d121c;
-    border: 2px solid #1e293b;
+    background: #111114;
+    border: 2px solid #222226;
     border-radius: 18px;
     padding: 1.4rem 1.8rem;
     box-shadow: 6px 6px 0 #000000;
@@ -2439,7 +2439,7 @@ a {
 
 .college-home-box:hover {
     transform: translateY(-2px);
-    border-color: #0088ff;
+    border-color: #3f3f46;
 }
 
 .college-home-left {
@@ -2453,15 +2453,16 @@ a {
     background: #ffffff;
     border-radius: 14px;
     padding: 0.5rem 0.65rem;
-    border: 2px solid #0088ff;
+    border: 2px solid #27272e;
     box-shadow: 3px 3px 0 #000000;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease;
     width: 86px;
     height: 86px;
 }
 
 .college-home-logo-wrap:hover {
     transform: scale(1.05);
+    border-color: #ffffff;
 }
 
 .college-home-logo {
@@ -2483,9 +2484,9 @@ a {
     font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
-    color: #38bdf8;
-    background: #131b29;
-    border: 1.5px solid #0088ff;
+    color: #ffffff;
+    background: #18181b;
+    border: 1.5px solid #27272a;
     border-radius: 999px;
     padding: 0.2rem 0.75rem;
     text-transform: uppercase;
@@ -2508,19 +2509,19 @@ a {
 }
 
 .college-home-title a:hover {
-    color: #38bdf8;
+    color: #ffffff;
     text-decoration: underline;
 }
 
 .college-home-desc {
     font-size: 0.82rem;
-    color: #94a3b8;
+    color: #a1a1aa;
     line-height: 1.45;
     margin: 0;
 }
 
 .college-home-desc strong {
-    color: #f1f5f9;
+    color: #ffffff;
 }
 
 .college-home-right {
@@ -2534,8 +2535,8 @@ a {
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    background: #0088ff;
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
     border: 2px solid #ffffff;
     border-radius: 10px;
     padding: 0.6rem 1.2rem;
@@ -2543,7 +2544,7 @@ a {
     font-size: 0.88rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    box-shadow: 0 4px 0 #0055b3;
+    box-shadow: 0 4px 0 #71717a;
     cursor: pointer;
     transition: all 0.15s ease;
     white-space: nowrap;
@@ -2551,14 +2552,14 @@ a {
 }
 
 .btn-college-home-about:hover {
-    background: #0099ff;
+    background: #f4f4f5;
     transform: translateY(-2px);
-    box-shadow: 0 6px 0 #0055b3;
+    box-shadow: 0 6px 0 #52525b;
 }
 
 .btn-college-home-about:active {
     transform: translateY(2px);
-    box-shadow: 0 1px 0 #0055b3;
+    box-shadow: 0 1px 0 #52525b;
 }
 
 @media (max-width: 820px) {
@@ -2591,8 +2592,8 @@ a {
 }
 
 .about-hero-card {
-    background: #0d121c;
-    border: 2.5px solid #1e293b;
+    background: #111114;
+    border: 2px solid #222226;
     border-radius: 20px;
     padding: 2.2rem 2.4rem;
     box-shadow: 6px 6px 0 #000000;
@@ -2603,7 +2604,7 @@ a {
 }
 
 .about-hero-card:hover {
-    border-color: #0088ff;
+    border-color: #3f3f46;
 }
 
 .about-logo-wrapper {
@@ -2617,15 +2618,16 @@ a {
     background: #ffffff;
     border-radius: 16px;
     padding: 0.85rem;
-    border: 2.5px solid #0088ff;
+    border: 2px solid #27272e;
     box-shadow: 4px 4px 0 #000000;
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.2s ease;
     width: 135px;
     height: 135px;
 }
 
 .about-college-logo-link:hover {
     transform: scale(1.06) rotate(-2deg);
+    border-color: #ffffff;
 }
 
 .about-college-logo-img {
@@ -2646,9 +2648,9 @@ a {
     font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
     font-size: 0.74rem;
     font-weight: 700;
-    color: #38bdf8;
-    background: #131b29;
-    border: 1.5px solid #0088ff;
+    color: #ffffff;
+    background: #18181b;
+    border: 1.5px solid #27272a;
     border-radius: 999px;
     padding: 0.22rem 0.8rem;
     margin-bottom: 0.5rem;
@@ -2672,19 +2674,20 @@ a {
 }
 
 .about-hero-title a:hover {
-    color: #38bdf8;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 .about-college-location {
     font-size: 0.88rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: #a1a1aa;
     margin-bottom: 0.8rem;
 }
 
 .about-hero-desc {
     font-size: 0.92rem;
-    color: #cbd5e1;
+    color: #a1a1aa;
     line-height: 1.6;
     margin-bottom: 1.3rem;
 }
@@ -2704,8 +2707,8 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    background: #0088ff;
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
     border: 2px solid #ffffff;
     border-radius: 10px;
     padding: 0.65rem 1.3rem;
@@ -2713,29 +2716,29 @@ a {
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    box-shadow: 0 4px 0 #0055b3;
+    box-shadow: 0 4px 0 #71717a;
     text-decoration: none;
     transition: all 0.15s ease;
 }
 
 .btn-about-explore-courses:hover {
-    background: #0099ff;
+    background: #f4f4f5;
     transform: translateY(-2px);
-    box-shadow: 0 6px 0 #0055b3;
+    box-shadow: 0 6px 0 #52525b;
 }
 
 .btn-about-explore-courses:active {
     transform: translateY(2px);
-    box-shadow: 0 1px 0 #0055b3;
+    box-shadow: 0 1px 0 #52525b;
 }
 
 .btn-about-contact-team {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    background: #111722;
-    color: #cbd5e1;
-    border: 2px solid #1e2838;
+    background: #18181b;
+    color: #ffffff;
+    border: 1px solid #27272a;
     border-radius: 10px;
     padding: 0.65rem 1.3rem;
     font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
@@ -2746,9 +2749,9 @@ a {
 }
 
 .btn-about-contact-team:hover {
-    border-color: #0088ff;
+    border-color: #ffffff;
     color: #ffffff;
-    background: #162030;
+    background: #27272a;
 }
 
 /* Section Common Headers */
@@ -2764,9 +2767,9 @@ a {
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #38bdf8;
-    background: #131b29;
-    border: 1.5px solid #0088ff;
+    color: #ffffff;
+    background: #18181b;
+    border: 1.5px solid #27272a;
     border-radius: 999px;
     padding: 0.2rem 0.8rem;
     margin-bottom: 0.5rem;
@@ -2784,7 +2787,7 @@ a {
 
 .about-section-lead {
     font-size: 0.92rem;
-    color: #94a3b8;
+    color: #a1a1aa;
     max-width: 650px;
     margin: 0 auto;
     line-height: 1.55;
@@ -2802,8 +2805,8 @@ a {
 }
 
 .student-comic-card {
-    background: #111722;
-    border: 2px solid #1e2838;
+    background: #111114;
+    border: 2px solid #222226;
     border-radius: 16px;
     padding: 1.5rem;
     box-shadow: 4px 4px 0 #000000;
@@ -2815,12 +2818,12 @@ a {
 
 .student-comic-card:hover {
     transform: translateY(-3px);
-    border-color: #38bdf8;
+    border-color: #3f3f46;
 }
 
 .student-comic-card.student-card-highlight {
-    border-color: #0088ff;
-    background: #111a28;
+    border-color: #3f3f46;
+    background: #141418;
 }
 
 .student-avatar-box {
@@ -2835,8 +2838,8 @@ a {
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: #162032;
-    border: 2px solid #0088ff;
+    background: #1c1c22;
+    border: 2px solid #2e2e38;
     color: #ffffff;
     font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
     font-size: 1.1rem;
@@ -2851,8 +2854,8 @@ a {
     font-family: 'Fredoka', cursive, sans-serif;
     font-size: 0.68rem;
     font-weight: 800;
-    color: #ffffff;
-    background: #0088ff;
+    color: #000000;
+    background: #ffffff;
     border-radius: 999px;
     padding: 0.2rem 0.6rem;
     letter-spacing: 0.08em;
@@ -2870,14 +2873,14 @@ a {
 .student-role {
     font-size: 0.82rem;
     font-weight: 600;
-    color: #38bdf8;
+    color: #d4d4d8;
     margin-bottom: 0.6rem;
     line-height: 1.35;
 }
 
 .student-desc {
     font-size: 0.82rem;
-    color: #94a3b8;
+    color: #a1a1aa;
     line-height: 1.5;
     margin: 0 0 1rem;
     flex-grow: 1;
@@ -2892,9 +2895,9 @@ a {
 .student-skills-pills span {
     font-size: 0.72rem;
     font-weight: 600;
-    background: #0a0e16;
-    border: 1px solid #232f42;
-    color: #cbd5e1;
+    background: #18181b;
+    border: 1px solid #27272a;
+    color: #d4d4d8;
     border-radius: 6px;
     padding: 0.15rem 0.5rem;
 }
@@ -2905,8 +2908,8 @@ a {
 }
 
 .about-principal-card {
-    background: #111722;
-    border: 2px solid #1e2838;
+    background: #111114;
+    border: 2px solid #222226;
     border-radius: 18px;
     padding: 1.8rem 2rem;
     box-shadow: 4px 4px 0 #000000;
@@ -2918,7 +2921,7 @@ a {
 }
 
 .about-principal-card:hover {
-    border-color: #0088ff;
+    border-color: #3f3f46;
 }
 
 .about-principal-left {
@@ -2935,7 +2938,7 @@ a {
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
-    border: 2px solid #0088ff;
+    border: 2px solid #27272e;
     box-shadow: 3px 3px 0 #000000;
 }
 
@@ -2943,9 +2946,9 @@ a {
     font-size: 0.68rem;
     font-weight: 800;
     letter-spacing: 0.1em;
-    background: #1c2434;
-    color: #38bdf8;
-    border: 1.5px solid #0088ff;
+    background: #18181b;
+    color: #ffffff;
+    border: 1.5px solid #27272a;
     border-radius: 999px;
     padding: 0.2rem 0.7rem;
     text-transform: uppercase;
@@ -2973,7 +2976,7 @@ a {
 .about-principal-quote {
     font-size: 0.9rem;
     line-height: 1.6;
-    color: #cbd5e1;
+    color: #a1a1aa;
     margin: 0;
     font-style: italic;
 }
@@ -2986,8 +2989,8 @@ a {
 }
 
 .about-teacher-card {
-    background: #111722;
-    border: 2px solid #1e2838;
+    background: #111114;
+    border: 2px solid #222226;
     border-radius: 16px;
     padding: 1.6rem 1.4rem;
     text-align: center;
@@ -3000,7 +3003,7 @@ a {
 
 .about-teacher-card:hover {
     transform: translateY(-3px);
-    border-color: #0088ff;
+    border-color: #3f3f46;
 }
 
 .about-teacher-img-wrap {
@@ -3017,7 +3020,7 @@ a {
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
-    border: 2px solid #0088ff;
+    border: 2px solid #27272e;
     box-shadow: 2px 2px 0 #000000;
 }
 
@@ -3025,9 +3028,9 @@ a {
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 0.08em;
-    background: #1c2434;
-    color: #38bdf8;
-    border: 1px solid #0088ff;
+    background: #18181b;
+    color: #ffffff;
+    border: 1px solid #27272a;
     border-radius: 999px;
     padding: 0.15rem 0.6rem;
     text-transform: uppercase;
@@ -3044,21 +3047,21 @@ a {
 .about-teacher-designation {
     font-size: 0.78rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: #a1a1aa;
     margin-bottom: 0.35rem;
 }
 
 .about-teacher-domain {
     font-size: 0.82rem;
     font-weight: 700;
-    color: #38bdf8;
+    color: #e4e4e7;
     margin-bottom: 0.6rem;
     line-height: 1.35;
 }
 
 .about-teacher-desc {
     font-size: 0.8rem;
-    color: #94a3b8;
+    color: #a1a1aa;
     line-height: 1.5;
     margin: 0;
 }
@@ -3076,8 +3079,8 @@ a {
 }
 
 .tech-comic-card {
-    background: #111722;
-    border: 2px solid #1e2838;
+    background: #111114;
+    border: 2px solid #222226;
     border-radius: 18px;
     padding: 1.8rem;
     box-shadow: 4px 4px 0 #000000;
@@ -3089,7 +3092,7 @@ a {
 
 .tech-comic-card:hover {
     transform: translateY(-3px);
-    border-color: #0088ff;
+    border-color: #3f3f46;
 }
 
 .tech-card-top {
@@ -3104,9 +3107,9 @@ a {
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: #0a0e16;
-    border: 2px solid #232f42;
-    color: #38bdf8;
+    background: #18181b;
+    border: 1.5px solid #27272a;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3118,9 +3121,9 @@ a {
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.08em;
-    color: #38bdf8;
-    background: #131b29;
-    border: 1px solid #1e293b;
+    color: #ffffff;
+    background: #18181b;
+    border: 1px solid #27272a;
     border-radius: 999px;
     padding: 0.2rem 0.65rem;
     text-transform: uppercase;
@@ -3137,7 +3140,7 @@ a {
 
 .tech-card-desc {
     font-size: 0.88rem;
-    color: #94a3b8;
+    color: #a1a1aa;
     line-height: 1.55;
     margin: 0 0 1.2rem;
     flex-grow: 1;
@@ -3152,17 +3155,17 @@ a {
 .tech-card-tags span {
     font-size: 0.72rem;
     font-weight: 600;
-    background: #0a0e16;
-    border: 1px solid #232f42;
-    color: #38bdf8;
+    background: #18181b;
+    border: 1px solid #27272a;
+    color: #e4e4e7;
     border-radius: 8px;
     padding: 0.25rem 0.6rem;
 }
 
 /* Architecture Specs Summary Ribbon */
 .tech-specs-ribbon {
-    background: #0d121c;
-    border: 2px solid #1e293b;
+    background: #111114;
+    border: 2px solid #222226;
     border-radius: 16px;
     padding: 1.4rem 1.8rem;
     box-shadow: 5px 5px 0 #000000;
@@ -3184,7 +3187,7 @@ a {
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    color: #38bdf8;
+    color: #71717a;
     text-transform: uppercase;
 }
 
