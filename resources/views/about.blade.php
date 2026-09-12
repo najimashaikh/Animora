@@ -1,46 +1,41 @@
 @extends('layouts.app')
 
-@section('title', 'About Animora | Final Year College Capstone Project')
+@section('title', 'About Animora | Final Year College Project')
 
 @section('content')
 <div class="about-page-container">
 
-    <!-- Hero: College Capstone Project Intro -->
+    <!-- Hero: College Project Intro -->
     <section class="about-hero-section">
         <div class="about-hero-card">
             
-            <!-- Clickable College Official Logo -->
+            <!-- Clickable College Logo (redirects to college website) -->
             <div class="about-logo-wrapper">
-                <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="about-college-logo-link" title="Visit Official Sangamner College Website">
-                    <img src="{{ asset('images/college-logo.png') }}" alt="S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College Official Emblem" class="about-college-logo-img">
+                <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="about-college-logo-link" title="S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College">
+                    <img src="{{ asset('images/college-logo.png') }}" alt="Sangamner College Logo" class="about-college-logo-img">
                 </a>
             </div>
 
             <!-- College Project Header Content -->
             <div class="about-hero-details">
-                <div class="about-comic-badge">ACADEMIC CAPSTONE PROJECT</div>
+                <div class="about-comic-badge">FINAL YEAR COLLEGE PROJECT</div>
                 <h1 class="about-hero-title">
                     <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer">
                         S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College (Autonomous)
                     </a>
                 </h1>
-                <p class="about-college-location">Sangamner, District Ahmednagar, Maharashtra, India</p>
+                <p class="about-college-location">Sangamner, Ahmednagar, Maharashtra</p>
                 
                 <p class="about-hero-desc">
-                    <strong>Animora</strong> is our official final-year college project — a specialized student animation asset marketplace and CGI learning platform. Built from scratch with Laravel and PostgreSQL, it is crafted to bridge the gap between classroom theory and real-world studio production pipelines.
+                    <strong>Animora</strong> is our final year academic project. It is an online portal for animation students to explore 3D animation courses, download character rigs, and access creative production tools. Built from scratch by 6 students using Laravel and PostgreSQL.
                 </p>
 
                 <div class="about-hero-actions">
-                    <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="btn-about-college-website">
-                        <span>Visit College Website</span>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
                     <a href="{{ route('home') }}#courses" class="btn-about-explore-courses">
-                        Explore Courses &rarr;
+                        Explore Our Courses &rarr;
+                    </a>
+                    <a href="{{ route('home') }}#contact" class="btn-about-contact-team">
+                        Contact Us &rarr;
                     </a>
                 </div>
             </div>
@@ -50,10 +45,10 @@
     <!-- Section 1: The 6 Student Creators -->
     <section class="about-students-section">
         <div class="about-section-header">
-            <span class="about-sub-tag">THE STUDENT CREATIVE TEAM</span>
-            <h2 class="about-section-heading">DEVELOPED BY 6 STUDENTS</h2>
+            <span class="about-sub-tag">THE STUDENT TEAM</span>
+            <h2 class="about-section-heading">CREATED BY 6 STUDENTS</h2>
             <p class="about-section-lead">
-                Proudly built as our academic capstone project by a passionate team of 6 final-year students, combining full-stack web engineering, 3D asset workflows, and comic art direction.
+                We designed and developed this website together as our final year college project.
             </p>
         </div>
 
@@ -66,14 +61,14 @@
                     <span class="student-rank-badge">LEAD</span>
                 </div>
                 <h3 class="student-name">Najima Shaikh</h3>
-                <div class="student-role">Project Lead &amp; Full Stack Architecture</div>
+                <div class="student-role">Project Lead &amp; Full Stack Developer</div>
                 <p class="student-desc">
-                    Led overall project architecture, authentication systems, PostgreSQL database migrations, dynamic course integration, and responsive comic interface design.
+                    Built the overall website structure, user login &amp; signup system, PostgreSQL database connections, and integrated all pages.
                 </p>
                 <div class="student-skills-pills">
                     <span>Laravel</span>
                     <span>PostgreSQL</span>
-                    <span>System Design</span>
+                    <span>Full Stack</span>
                 </div>
             </div>
 
@@ -83,14 +78,14 @@
                     <span class="student-avatar-initial">VG</span>
                 </div>
                 <h3 class="student-name">Vaishnavi Galande</h3>
-                <div class="student-role">Frontend UI &amp; Component Design</div>
+                <div class="student-role">Frontend &amp; UI Design</div>
                 <p class="student-desc">
-                    Designed responsive UI layouts, cartoon interactive buttons, custom dropdown controls, and assisted in asset categorization and mobile user flows.
+                    Designed the website layout, custom dropdowns, forms, buttons, and made sure the site works smoothly on mobile phones.
                 </p>
                 <div class="student-skills-pills">
-                    <span>Blade UI</span>
-                    <span>CSS Grid</span>
-                    <span>Responsive UX</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Responsive UI</span>
                 </div>
             </div>
 
@@ -100,14 +95,14 @@
                     <span class="student-avatar-initial">PS</span>
                 </div>
                 <h3 class="student-name">Payal Satpute</h3>
-                <div class="student-role">Creative Art &amp; Theme Direction</div>
+                <div class="student-role">Creative Art &amp; Theme</div>
                 <p class="student-desc">
-                    Spearheaded comic mascot integration, Fredoka typography palette, color harmony, and visual presentation for animation courses and rigs.
+                    Worked on the cartoon mascot robot, dark theme colors, typography, and the overall look of our course cards.
                 </p>
                 <div class="student-skills-pills">
-                    <span>Graphic Design</span>
-                    <span>Comic Palette</span>
-                    <span>Art Direction</span>
+                    <span>UI Design</span>
+                    <span>Color Theme</span>
+                    <span>Artwork</span>
                 </div>
             </div>
 
@@ -117,14 +112,14 @@
                     <span class="student-avatar-initial">SB</span>
                 </div>
                 <h3 class="student-name">Swamini Bhaskar</h3>
-                <div class="student-role">Database &amp; Data Pipeline</div>
+                <div class="student-role">Database &amp; Backend</div>
                 <p class="student-desc">
-                    Managed Neon Tech cloud database schemas, course models, seeders, and high-speed query optimization through caching strategies.
+                    Set up the cloud PostgreSQL database on Neon, created data tables for courses, and added caching so pages load quickly.
                 </p>
                 <div class="student-skills-pills">
-                    <span>Neon PostgreSQL</span>
-                    <span>Eloquent ORM</span>
-                    <span>Caching</span>
+                    <span>PostgreSQL</span>
+                    <span>Neon Cloud</span>
+                    <span>Data Cache</span>
                 </div>
             </div>
 
@@ -134,14 +129,14 @@
                     <span class="student-avatar-initial">SA</span>
                 </div>
                 <h3 class="student-name">Shreya Abhang</h3>
-                <div class="student-role">Quality Assurance &amp; Testing</div>
+                <div class="student-role">Testing &amp; Quality Check</div>
                 <p class="student-desc">
-                    Conducted cross-browser rendering tests, mobile viewport validation, form handling tests, and accessibility checks across user flows.
+                    Tested the website across Chrome, Edge, and mobile viewports, checked form submissions, and reported UI fixes.
                 </p>
                 <div class="student-skills-pills">
-                    <span>QA Testing</span>
-                    <span>Form Validation</span>
-                    <span>Bug Triage</span>
+                    <span>Testing</span>
+                    <span>Form Check</span>
+                    <span>Mobile Tests</span>
                 </div>
             </div>
 
@@ -151,12 +146,12 @@
                     <span class="student-avatar-initial">SK</span>
                 </div>
                 <h3 class="student-name">Shruti Kadlag</h3>
-                <div class="student-role">Content Architecture &amp; User Research</div>
+                <div class="student-role">Content &amp; Documentation</div>
                 <p class="student-desc">
-                    Curated program curriculum details, contact information, project documentation, and conducted animation student workflow research.
+                    Wrote the curriculum descriptions, campus details, project notes, and helped organize the final presentation material.
                 </p>
                 <div class="student-skills-pills">
-                    <span>Content Strategy</span>
+                    <span>Content</span>
                     <span>Documentation</span>
                     <span>User Research</span>
                 </div>
@@ -168,10 +163,10 @@
     <!-- Section 2: Guided by Teachers & Mentors -->
     <section class="about-mentors-section">
         <div class="about-section-header">
-            <span class="about-sub-tag">FACULTY ADVISORY &amp; MENTORSHIP</span>
+            <span class="about-sub-tag">FACULTY GUIDANCE</span>
             <h2 class="about-section-heading">GUIDED BY OUR TEACHERS</h2>
             <p class="about-section-lead">
-                Developed under the guidance of faculty members of S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College, Sangamner.
+                We developed this project under the guidance and support of our college faculty members.
             </p>
         </div>
 
@@ -179,13 +174,13 @@
         <div class="about-principal-card">
             <div class="about-principal-left">
                 <img src="{{ asset('images/principal-dr-gaikwad.jpg') }}" alt="Prof. (Dr.) Gaikwad Arun Hari" class="about-principal-img">
-                <span class="about-badge-tag">HEAD &amp; PRINCIPAL</span>
+                <span class="about-badge-tag">PRINCIPAL</span>
             </div>
             <div class="about-principal-right">
                 <h3 class="about-principal-name">Prof. (Dr.) Gaikwad Arun Hari</h3>
-                <div class="about-principal-title">Principal &amp; Academic Patron — Sangamner College</div>
+                <div class="about-principal-title">Principal — Sangamner College</div>
                 <p class="about-principal-quote">
-                    “Fostering technical innovation, digital literacy, and creative industry readiness. Animora demonstrates our students' ability to synthesize advanced software engineering with computer graphics and digital media arts into an impactful, usable educational platform.”
+                    “Encouraging our students to build practical, real-world projects that combine technology, computer graphics, and creative digital arts.”
                 </p>
             </div>
         </div>
@@ -201,9 +196,9 @@
                 </div>
                 <h4 class="about-teacher-name">Mr. Kawade Sitaram Namdev</h4>
                 <div class="about-teacher-designation">Assistant Professor</div>
-                <div class="about-teacher-domain">3D Animation, Rigging &amp; Pipeline Workflows</div>
+                <div class="about-teacher-domain">3D Animation, Rigging &amp; Pipelines</div>
                 <p class="about-teacher-desc">
-                    Provided key mentorship on animation production pipelines, character rigging standards, asset categorization, and industry workflows.
+                    Guided us on 3D animation pipelines, character rigging standards, and how professional animation studios organize their assets.
                 </p>
             </div>
 
@@ -215,9 +210,9 @@
                 </div>
                 <h4 class="about-teacher-name">Ms. Gite Dipa Prabhakar</h4>
                 <div class="about-teacher-designation">Assistant Professor</div>
-                <div class="about-teacher-domain">Digital Media, Visual Arts &amp; Creative Foundations</div>
+                <div class="about-teacher-domain">Digital Media &amp; Visual Arts</div>
                 <p class="about-teacher-desc">
-                    Guided the visual storytelling, color theory, aesthetic alignment, and user interaction design for the creative arts student community.
+                    Guided us on visual storytelling, color balance, clean presentation, and making the website easy to use for students.
                 </p>
             </div>
 
@@ -229,22 +224,22 @@
                 </div>
                 <h4 class="about-teacher-name">Ms. Pawase Harshal Shivaji</h4>
                 <div class="about-teacher-designation">Assistant Professor</div>
-                <div class="about-teacher-domain">Computer Graphics, VFX &amp; Creative Technologies</div>
+                <div class="about-teacher-domain">Computer Graphics &amp; VFX</div>
                 <p class="about-teacher-desc">
-                    Mentored the computer graphics integration, VFX simulation toolsets, performance optimization, and project technical documentation.
+                    Guided us on computer graphics concepts, VFX tools, code structure, and overall project review.
                 </p>
             </div>
 
         </div>
     </section>
 
-    <!-- Section 3: Technology Stack & Database Architecture -->
+    <!-- Section 3: Technology Stack & Database (Simple, Clear English) -->
     <section class="about-tech-stack-section">
         <div class="about-section-header">
-            <span class="about-sub-tag">ENGINEERING &amp; ARCHITECTURE</span>
-            <h2 class="about-section-heading">PROJECT TECHNOLOGY STACK</h2>
+            <span class="about-sub-tag">TECHNOLOGY &amp; DATABASE</span>
+            <h2 class="about-section-heading">WHAT WE USED TO BUILD THIS</h2>
             <p class="about-section-lead">
-                A robust, modern software stack built for high performance, serverless cloud data persistence, and responsive comic aesthetics.
+                Here is a simple look at the programming tools, database, and technologies used in Animora.
             </p>
         </div>
 
@@ -253,58 +248,56 @@
             <!-- Tech 1: Backend & Framework -->
             <div class="tech-comic-card">
                 <div class="tech-card-top">
-                    <div class="tech-icon-box" style="border-color: #ff2d20; color: #ff2d20;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="tech-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                             <polyline points="2 17 12 22 22 17"></polyline>
                             <polyline points="2 12 12 17 22 12"></polyline>
                         </svg>
                     </div>
-                    <span class="tech-category-pill">BACKEND CORE</span>
+                    <span class="tech-category-pill">BACKEND</span>
                 </div>
                 <h3 class="tech-card-title">PHP 8.2 &amp; Laravel 10</h3>
                 <p class="tech-card-desc">
-                    Architected on the Laravel 10 MVC framework. Features Eloquent ORM for relationship models, robust routing, CSRF token security, session auth guards, and modular Blade component templates.
+                    The main engine of our website. Laravel handles our page routes, user accounts, secure logins, and displays dynamic web pages using Blade templates.
                 </p>
                 <div class="tech-card-tags">
                     <span>PHP 8.2</span>
                     <span>Laravel 10</span>
-                    <span>Eloquent ORM</span>
-                    <span>Blade Engine</span>
-                    <span>Artisan CLI</span>
+                    <span>Blade Templates</span>
+                    <span>User Auth</span>
                 </div>
             </div>
 
             <!-- Tech 2: Database & Cloud -->
             <div class="tech-comic-card">
                 <div class="tech-card-top">
-                    <div class="tech-icon-box" style="border-color: #38bdf8; color: #38bdf8;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="tech-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
                             <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
                             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
                         </svg>
                     </div>
-                    <span class="tech-category-pill">CLOUD DATABASE</span>
+                    <span class="tech-category-pill">DATABASE</span>
                 </div>
-                <h3 class="tech-card-title">PostgreSQL (Neon Tech Cloud)</h3>
+                <h3 class="tech-card-title">PostgreSQL on Neon Cloud</h3>
                 <p class="tech-card-desc">
-                    Powered by serverless PostgreSQL on Neon Tech (AWS Cloud). Features automated schema migrations, seeder data pipelines, relational integrity across courses and assets, and forced SSL encryption.
+                    Our cloud database hosted on Neon Tech. It safely stores all course details, animation assets, and user profiles with secure SSL connections.
                 </p>
                 <div class="tech-card-tags">
                     <span>PostgreSQL</span>
-                    <span>Neon Serverless</span>
-                    <span>AWS US-East</span>
-                    <span>SSL Require</span>
-                    <span>Migrations &amp; Seeds</span>
+                    <span>Neon Cloud</span>
+                    <span>Database Migrations</span>
+                    <span>SSL Secure</span>
                 </div>
             </div>
 
             <!-- Tech 3: Frontend & Design System -->
             <div class="tech-comic-card">
                 <div class="tech-card-top">
-                    <div class="tech-icon-box" style="border-color: #ffea00; color: #ffea00;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="tech-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="m4.93 4.93 4.24 4.24"></path>
                             <path d="m14.83 9.17 4.24-4.24"></path>
@@ -313,94 +306,61 @@
                             <circle cx="12" cy="12" r="4"></circle>
                         </svg>
                     </div>
-                    <span class="tech-category-pill">FRONTEND &amp; UI</span>
+                    <span class="tech-category-pill">FRONTEND</span>
                 </div>
-                <h3 class="tech-card-title">Vanilla CSS3 &amp; ES6+ JS</h3>
+                <h3 class="tech-card-title">HTML5, Vanilla CSS &amp; JavaScript</h3>
                 <p class="tech-card-desc">
-                    Hand-crafted minimalist cartoonist comic design system. Built with zero external CSS frameworks (no Tailwind overhead), Fredoka &amp; Outfit typography, hard offset drop-shadows, and zero glassmorphism.
+                    Built using pure CSS and JavaScript without heavy frameworks. This keeps our site lightweight, fast, and gives us full control over our blackish comic theme.
                 </p>
                 <div class="tech-card-tags">
-                    <span>Vanilla CSS3</span>
-                    <span>ES6+ JavaScript</span>
-                    <span>Fredoka &amp; Outfit</span>
-                    <span>CSS Grid &amp; Flex</span>
-                    <span>SVG Icons</span>
+                    <span>HTML5</span>
+                    <span>Vanilla CSS</span>
+                    <span>JavaScript</span>
+                    <span>Fredoka Font</span>
                 </div>
             </div>
 
-            <!-- Tech 4: Performance & Integrations -->
+            <!-- Tech 4: Speed & Forms -->
             <div class="tech-comic-card">
                 <div class="tech-card-top">
-                    <div class="tech-icon-box" style="border-color: #10b981; color: #10b981;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="tech-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                         </svg>
                     </div>
-                    <span class="tech-category-pill">SPEED &amp; INTEGRATIONS</span>
+                    <span class="tech-category-pill">SPEED &amp; FORMS</span>
                 </div>
-                <h3 class="tech-card-title">Caching &amp; Web3Forms API</h3>
+                <h3 class="tech-card-title">Smart Caching &amp; Web3Forms</h3>
                 <p class="tech-card-desc">
-                    Engineered with high-speed query caching (reducing latency by 80x down to 253ms), filemtime asset version cache-busting, asynchronous Web3Forms AJAX message submission, and BCrypt security.
+                    We added smart caching so database queries load instantly in under 0.3 seconds. For student messages, Web3Forms sends inquiries without reloading the page.
                 </p>
                 <div class="tech-card-tags">
-                    <span>Cache::remember</span>
-                    <span>Cache-Busting (v=mtime)</span>
+                    <span>Smart Caching</span>
                     <span>Web3Forms API</span>
-                    <span>BCrypt Hashing</span>
-                    <span>Async Fetch</span>
+                    <span>Fast Loading</span>
+                    <span>Secure Password Hash</span>
                 </div>
             </div>
 
         </div>
 
-        <!-- Architecture Specs Summary Ribbon -->
+        <!-- Quick Summary Bar -->
         <div class="tech-specs-ribbon">
             <div class="tech-spec-item">
-                <span class="spec-label">APPLICATION ARCHITECTURE</span>
-                <span class="spec-value">Laravel 10 MVC (Model-View-Controller)</span>
+                <span class="spec-label">FRAMEWORK</span>
+                <span class="spec-value">Laravel 10 (PHP 8.2)</span>
             </div>
             <div class="tech-spec-item">
-                <span class="spec-label">ACTIVE DATABASE</span>
-                <span class="spec-value">PostgreSQL (Neon Tech Serverless Cloud)</span>
+                <span class="spec-label">DATABASE</span>
+                <span class="spec-value">PostgreSQL (Neon Cloud)</span>
             </div>
             <div class="tech-spec-item">
-                <span class="spec-label">STYLING METHODOLOGY</span>
-                <span class="spec-value">Animora Minimalist Comic (Zero Glassmorphism)</span>
+                <span class="spec-label">THEME</span>
+                <span class="spec-value">Animora Blackish Comic</span>
             </div>
             <div class="tech-spec-item">
-                <span class="spec-label">QUERY OPTIMIZATION</span>
-                <span class="spec-value">Sub-250ms Response via Local Cache Layer</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: College Profile Spotlight Card -->
-    <section class="about-institution-section">
-        <div class="about-institution-card">
-            <div class="institution-logo-col">
-                <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" title="Visit Sangamner College">
-                    <img src="{{ asset('images/college-logo.png') }}" alt="Sangamner College Crest" class="institution-logo-img">
-                </a>
-            </div>
-            <div class="institution-text-col">
-                <span class="institution-badge">OUR ALMA MATER</span>
-                <h3 class="institution-title">
-                    <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer">
-                        Sahakar Maharshi Bhausaheb Santuji Thorat Shikshan Prasarak Sanstha's<br>
-                        S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College (Autonomous)
-                    </a>
-                </h3>
-                <p class="institution-desc">
-                    Re-accredited with 'A++' Grade by NAAC | Affiliated to Savitribai Phule Pune University (SPPU). Located in Sangamner, Maharashtra, our institution is dedicated to nurturing academic excellence, scientific temper, and creative technical leadership.
-                </p>
-                <div class="institution-footer-links">
-                    <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="btn-institution-site">
-                        Visit Official College Website (sangamnercollege.edu.in) ↗
-                    </a>
-                    <a href="{{ route('home') }}#contact" class="btn-institution-contact">
-                        Contact Project Team &rarr;
-                    </a>
-                </div>
+                <span class="spec-label">PAGE SPEED</span>
+                <span class="spec-value">Fast (~0.25s Load Time)</span>
             </div>
         </div>
     </section>
