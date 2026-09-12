@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Asset;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
@@ -20,11 +21,13 @@ class HomeController extends Controller
         $featuredAssets = collect();
         $courses = collect();
 
-        // Fetch courses dynamically from database
+        // Fetch courses dynamically from database (cached to prevent cross-continent latency)
         try {
-            $courses = Course::where('is_featured_home', true)
-                ->orderBy('sort_order', 'asc')
-                ->get();
+            $courses = Cache::remember('home_featured_courses', 3600, function () {
+                return Course::where('is_featured_home', true)
+                    ->orderBy('sort_order', 'asc')
+                    ->get();
+            });
         } catch (\Exception $e) {
             $courses = collect();
         }

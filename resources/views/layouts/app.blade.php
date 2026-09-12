@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Animora Minimalist B&W Design System (Producer Toy Style) -->
-    <link rel="stylesheet" href="{{ asset('css/cgbugs.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cgbugs.css') }}?v={{ file_exists(public_path('css/cgbugs.css')) ? filemtime(public_path('css/cgbugs.css')) : time() }}">
     @yield('styles')
 </head>
 <body>
