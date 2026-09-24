@@ -407,7 +407,8 @@
         const csrfToken = metaCsrf ? metaCsrf.getAttribute('content') : '';
 
         try {
-            const response = await fetch("{{ route('contact.submit') }}", {
+            // 1. Submit to Laravel backend to save inquiry in Neon PostgreSQL
+            const dbPromise = fetch("{{ route('contact.submit') }}", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -416,9 +417,39 @@
                 },
                 body: json
             });
-            const resJson = await response.json();
 
-            if (response.ok && (response.status === 200 || resJson.success)) {
+            // 2. Submit directly to Web3Forms from browser to send the email notification
+            const web3Promise = fetch("https://api.web3forms.com/submit", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+
+            const [response, web3Response] = await Promise.allSettled([dbPromise, web3Promise]);
+
+            let dbSuccess = false;
+            let dbMessage = '';
+
+            if (response.status === 'fulfilled') {
+                const res = response.value;
+                const resJson = await res.json().catch(() => ({}));
+                if (res.ok && (res.status === 200 || resJson.success)) {
+                    dbSuccess = true;
+                } else {
+                    dbMessage = resJson.message || 'Database submission error.';
+                }
+            }
+
+            if (web3Response.status === 'fulfilled') {
+                const wRes = web3Response.value;
+                const wJson = await wRes.json().catch(() => ({}));
+                console.log('Web3Forms Response:', wJson);
+            }
+
+            if (dbSuccess) {
                 // Show inline Thank You card, hide form - NO REDIRECT
                 form.style.display = 'none';
                 if (thankYouCard) {
@@ -428,7 +459,7 @@
                 form.reset();
             } else {
                 result.className = 'form-result-alert form-error';
-                result.innerHTML = resJson.message || 'Submission error. Please try again.';
+                result.innerHTML = dbMessage || 'Submission error. Please try again.';
                 result.style.display = 'block';
             }
         } catch (error) {

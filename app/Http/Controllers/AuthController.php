@@ -176,21 +176,8 @@ class AuthController extends Controller
                 'message' => $request->message,
             ]);
 
-            // Forward to Web3Forms for email alert to najimashaikh267@gmail.com
-            try {
-                Http::timeout(5)->post('https://api.web3forms.com/submit', [
-                    'access_key' => '82d62467-fdbb-4b4c-852d-f44e8be9bc5d',
-                    'subject' => 'New Student Inquiry - ' . $request->name,
-                    'from_name' => 'Animora Campus Portal',
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'phone' => $request->phone ?? 'N/A',
-                    'course_interest' => $request->course_interest ?? 'General Inquiry',
-                    'message' => $request->message,
-                ]);
-            } catch (\Exception $ex) {
-                // Background email forwarding should not block successful DB save
-            }
+            // Web3Forms email notification is dispatched directly from the client side (browser)
+            // to comply with Web3Forms API requirements and ensure fast DB response without server timeouts.
 
             return response()->json([
                 'success' => true,
