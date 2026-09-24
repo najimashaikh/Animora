@@ -78,15 +78,15 @@
                 <p class="teacher-desc">3D Animator with more than 7+ years of experience in the entertainment industry</p>
             </div>
 
-            <!-- Teacher 2: Ms. Gite Dipa Prabhakar -->
+            <!-- Mentor 2: Mr. Prajwal Patil -->
             <div class="teacher-cartoon-card">
                 <div class="teacher-avatar-wrap">
-                    <img src="{{ asset('images/mentor-gite-dipa.jpg') }}" alt="Ms. Gite Dipa Prabhakar" class="teacher-avatar-img">
-                    <span class="teacher-comic-tag">ASSISTANT PROFESSOR</span>
+                    <img src="{{ asset('images/prajwal-patil.jpg') }}" alt="Mr. Prajwal Patil" class="teacher-avatar-img">
+                    <span class="teacher-comic-tag">CO-FOUNDER &amp; IT SUPPORT</span>
                 </div>
-                <h4 class="teacher-name">Ms. Gite Dipa Prabhakar</h4>
-                <div class="teacher-role">Assistant Professor</div>
-                <p class="teacher-desc">Digital Media, Visual Arts &amp; Creative Foundations</p>
+                <h4 class="teacher-name">Mr. Prajwal Patil</h4>
+                <div class="teacher-role">Co-Founder &amp; IT Support Manager</div>
+                <p class="teacher-desc">IT Infrastructure, Systems &amp; Technical Support</p>
             </div>
 
             <!-- Teacher 3: Ms. Pawase Harshal Shivaji -->
