@@ -159,4 +159,151 @@ class HomeController extends Controller
     {
         return view('about');
     }
+
+    /**
+     * Student Work Showcase - Gallery, Reels & Projects.
+     */
+    public function studentWork()
+    {
+        $studentWorks = [
+            [
+                'id' => 1,
+                'student' => 'Mr. Shubham Deshmukh',
+                'category' => 'graphic-design',
+                'category_label' => 'Graphic Design',
+                'title' => 'Brand Identity & Visual Advertising',
+                'image' => asset('images/student-work/shubham-deshmukh-01.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Mr.-Shubham-Deshmukh-01.webp',
+                'description' => 'Creative poster layout, typography hierarchy, and visual branding crafted in Photoshop and Illustrator.',
+            ],
+            [
+                'id' => 2,
+                'student' => 'Ms. Nikita Satpute',
+                'category' => 'graphic-design',
+                'category_label' => 'Graphic Design',
+                'title' => 'Editorial Graphic Composition',
+                'image' => asset('images/student-work/nikita-satpute-01.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Nikita-Satpute-01.webp',
+                'description' => 'Dynamic color grading, layout symmetry, and promotional media design.',
+            ],
+            [
+                'id' => 3,
+                'student' => 'Ms. Shweta Kute',
+                'category' => 'graphic-design',
+                'category_label' => 'Graphic Design',
+                'title' => 'Creative Concept & Vector Graphics',
+                'image' => asset('images/student-work/shweta-kute-01.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Shweta-kute-01.webp',
+                'description' => 'Vector illustration and high-impact digital art for media production.',
+            ],
+            [
+                'id' => 4,
+                'student' => 'Ms. Shweta Kute',
+                'category' => 'graphic-design',
+                'category_label' => 'Graphic Design',
+                'title' => 'Package Design & Advertising Arts',
+                'image' => asset('images/student-work/shweta-kute-02.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Shweta-kute-02.webp',
+                'description' => 'Product rendering and packaging graphic design showcase.',
+            ],
+            [
+                'id' => 5,
+                'student' => 'Mr. Shubham Deshmukh',
+                'category' => 'graphic-design',
+                'category_label' => 'Graphic Design',
+                'title' => 'Cinematic Poster Art & Compositing',
+                'image' => asset('images/student-work/shubham-deshmukh-02.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Mr.-Shubham-Deshmukh-02-1.webp',
+                'description' => 'Digital matte painting and movie poster layout techniques.',
+            ],
+            [
+                'id' => 6,
+                'student' => 'Mr. Shubham Deshmukh',
+                'category' => 'graphic-design',
+                'category_label' => 'Graphic Design',
+                'title' => 'Motion Graphic Assets & UI Design',
+                'image' => asset('images/student-work/shubham-deshmukh-03.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Mr.-Shubham-Deshmukh-03-1.webp',
+                'description' => 'Digital UI elements, iconography and interactive asset presentation.',
+            ],
+            [
+                'id' => 7,
+                'student' => 'Ms. Nikita Satpute',
+                'category' => 'character-design',
+                'category_label' => 'Character Design',
+                'title' => 'Stylized Character Turnaround',
+                'image' => asset('images/student-work/nikita-satpute-01.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Nikita-Satpute-01-1.webp',
+                'description' => 'Full turnaround character sheets with silhouette balance and expressive facial expressions.',
+            ],
+            [
+                'id' => 8,
+                'student' => 'Ms. Nikita Satpute',
+                'category' => 'character-design',
+                'category_label' => 'Character Design',
+                'title' => 'Fantasy Warrior Anatomy & Gear',
+                'image' => asset('images/student-work/nikita-satpute-02.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Nikita-Satpute-02.webp',
+                'description' => 'Detailed armor exploration, weapon props, and fantasy worldbuilding.',
+            ],
+            [
+                'id' => 9,
+                'student' => 'Ms. Shweta Kute',
+                'category' => 'character-design',
+                'category_label' => 'Character Design',
+                'title' => 'Creature Concept & Mascot Design',
+                'image' => asset('images/student-work/shweta-kute-03.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Shweta-kute-03-2.webp',
+                'description' => 'Creature anatomy, gesture sketches, and vibrant color palettes for animation.',
+            ],
+            [
+                'id' => 10,
+                'student' => 'Ms. Shweta Kute',
+                'category' => 'character-design',
+                'category_label' => 'Character Design',
+                'title' => 'Character Lineup & Model Sheets',
+                'image' => asset('images/student-work/shweta-kute-04.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Shweta-Kute-04.webp',
+                'description' => 'Costume variants and character proportion guides for 3D modeling pipelines.',
+            ],
+            [
+                'id' => 11,
+                'student' => 'Ms. Sneha Sonwane',
+                'category' => 'character-design',
+                'category_label' => 'Character Design',
+                'title' => 'Dynamic Action & Hero Poses',
+                'image' => asset('images/student-work/sneha-sonwane-01.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Sneha-Sonwane-01.webp',
+                'description' => 'Action line of action studies, keyframe posing, and dramatic perspective.',
+            ],
+            [
+                'id' => 12,
+                'student' => 'Ms. Sneha Sonwane',
+                'category' => 'character-design',
+                'category_label' => 'Character Design',
+                'title' => 'Facial Rig Expressions & Visemes',
+                'image' => asset('images/student-work/sneha-sonwane-02.webp'),
+                'fallback_image' => 'https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Sneha-Sonwane-02.webp',
+                'description' => 'Phoneme lip-sync guides and expressive cartoon facial sheets.',
+            ],
+        ];
+
+        $reels = [
+            [
+                'id' => 1,
+                'title' => 'Modern Living Room Interior & Lighting Walkthrough',
+                'category' => '3D Animation',
+                'category_slug' => '3d-animation',
+                'thumbnail' => asset('images/student-work/modern-living-room.jpg'),
+                'fallback_thumbnail' => 'https://cgbugs.school/wp-content/uploads/2024/05/modern-living-room-interior-with-furniture.jpg',
+                'video_url' => 'https://www.youtube.com/embed/P-ebibSvFz4',
+                'youtube_link' => 'https://youtu.be/P-ebibSvFz4',
+                'duration' => '01:45',
+                'author' => 'CG Bugs Student Production Team',
+                'description' => 'Photorealistic 3D interior architecture modeling, V-Ray texture rendering, and camera animation in Autodesk Maya.',
+            ],
+        ];
+
+        return view('student-work', compact('studentWorks', 'reels'));
+    }
 }

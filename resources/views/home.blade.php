@@ -104,6 +104,93 @@
     </div>
 </section>
 
+<!-- Student Work Showcase Section (Below Mentors & Staff) -->
+<section class="home-student-work-section" id="student-work">
+    <div class="home-sw-container">
+        <div class="home-sw-header">
+            <span class="home-sw-pill">STUDENT PORTFOLIO &amp; SHOWCASE</span>
+            <h2 class="animora-branding home-sw-heading">STUDENT WORK</h2>
+            <p class="home-sw-lead">
+                Explore extraordinary projects, 3D animated reels, concept art, and graphic design portfolios crafted by our students during their industry-standard training.
+            </p>
+        </div>
+
+        <!-- Featured Grid: Top Artworks & Reels -->
+        <div class="home-sw-grid">
+            <!-- Item 1: Modern Living Room Reel -->
+            <div class="home-sw-card home-sw-card-featured">
+                <div class="home-sw-media">
+                    <img src="{{ asset('images/student-work/modern-living-room.jpg') }}" alt="Modern Living Room 3D Interior" class="home-sw-img" onerror="this.src='https://img.youtube.com/vi/P-ebibSvFz4/maxresdefault.jpg'">
+                    <a href="https://youtu.be/P-ebibSvFz4" target="_blank" rel="noopener noreferrer" class="home-sw-play-overlay">
+                        <div class="home-sw-play-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </div>
+                        <span>Watch 3D Showcase Reel</span>
+                    </a>
+                    <span class="home-sw-badge">3D ANIMATION REEL</span>
+                </div>
+                <div class="home-sw-content">
+                    <span class="home-sw-category">3D Animation &amp; Lighting</span>
+                    <h3 class="home-sw-title">Modern Living Room Interior &amp; Architecture Walkthrough</h3>
+                    <p class="home-sw-author">By CG Bugs Student Production Team</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Shubham Deshmukh Graphic Design -->
+            <div class="home-sw-card">
+                <div class="home-sw-media">
+                    <img src="{{ asset('images/student-work/shubham-deshmukh-01.webp') }}" alt="Graphic Design Poster - Mr. Shubham Deshmukh" class="home-sw-img" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Mr.-Shubham-Deshmukh-01.webp'">
+                    <span class="home-sw-badge">GRAPHIC DESIGN</span>
+                </div>
+                <div class="home-sw-content">
+                    <span class="home-sw-category">Graphic Design &amp; Typography</span>
+                    <h3 class="home-sw-title">Brand Identity &amp; Visual Media</h3>
+                    <p class="home-sw-author">By Mr. Shubham Deshmukh</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Nikita Satpute Character Design -->
+            <div class="home-sw-card">
+                <div class="home-sw-media">
+                    <img src="{{ asset('images/student-work/nikita-satpute-01.webp') }}" alt="Character Design - Ms. Nikita Satpute" class="home-sw-img" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Nikita-Satpute-01-1.webp'">
+                    <span class="home-sw-badge">CHARACTER DESIGN</span>
+                </div>
+                <div class="home-sw-content">
+                    <span class="home-sw-category">Character Concept &amp; Model Sheet</span>
+                    <h3 class="home-sw-title">Stylized Character Turnaround</h3>
+                    <p class="home-sw-author">By Ms. Nikita Satpute</p>
+                </div>
+            </div>
+
+            <!-- Item 4: Shweta Kute Digital Art -->
+            <div class="home-sw-card">
+                <div class="home-sw-media">
+                    <img src="{{ asset('images/student-work/shweta-kute-03.webp') }}" alt="Creature Art - Ms. Shweta Kute" class="home-sw-img" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Shweta-kute-03-2.webp'">
+                    <span class="home-sw-badge">CHARACTER DESIGN</span>
+                </div>
+                <div class="home-sw-content">
+                    <span class="home-sw-category">Creature Concept &amp; Mascot</span>
+                    <h3 class="home-sw-title">Fantasy Creature &amp; Digital Painting</h3>
+                    <p class="home-sw-author">By Ms. Shweta Kute</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to action button to dedicated page -->
+        <div class="home-sw-actions">
+            <a href="{{ route('student.work') }}" class="home-sw-btn-primary">
+                <span>View Full Student Work Gallery &amp; Reels</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Contact Us Section with Static Blue Box & Theme Touch -->
 <section class="contact-section" id="contact">
     <div class="contact-container">

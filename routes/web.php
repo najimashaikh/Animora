@@ -18,6 +18,7 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/student-work', [HomeController::class, 'studentWork'])->name('student.work');
 Route::get('/browse/{category?}', [HomeController::class, 'browse'])->name('browse');
 Route::get('/asset/{slug}', [HomeController::class, 'showAsset'])->name('asset.show');
 Route::get('/pipeline', [HomeController::class, 'pipeline'])->name('pipeline');
