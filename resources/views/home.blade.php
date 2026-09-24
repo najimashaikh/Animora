@@ -89,15 +89,15 @@
                 <p class="teacher-desc">IT Infrastructure, Systems &amp; Technical Support</p>
             </div>
 
-            <!-- Teacher 3: Ms. Pawase Harshal Shivaji -->
+            <!-- Mentor 3: Mr. Rahul Bhalerao -->
             <div class="teacher-cartoon-card">
                 <div class="teacher-avatar-wrap">
-                    <img src="{{ asset('images/mentor-pawase-harshal.jpg') }}" alt="Ms. Pawase Harshal Shivaji" class="teacher-avatar-img">
-                    <span class="teacher-comic-tag">ASSISTANT PROFESSOR</span>
+                    <img src="{{ asset('images/rahul-bhalerao.jpg') }}" alt="Mr. Rahul Bhalerao" class="teacher-avatar-img">
+                    <span class="teacher-comic-tag">CORE MEMBER / SR. MODELER</span>
                 </div>
-                <h4 class="teacher-name">Ms. Pawase Harshal Shivaji</h4>
-                <div class="teacher-role">Assistant Professor</div>
-                <p class="teacher-desc">Computer Graphics, VFX &amp; Creative Technologies</p>
+                <h4 class="teacher-name">Mr. Rahul Bhalerao</h4>
+                <div class="teacher-role">Core Member, Senior Modeler &amp; Character Designer</div>
+                <p class="teacher-desc">Rahul Bhalerao is a Modeler and character Designer with more than 7+ years of experience</p>
             </div>
         </div>
 
