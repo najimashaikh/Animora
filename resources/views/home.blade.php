@@ -48,19 +48,19 @@
     <div class="mentors-container">
         <h2 class="animora-branding mentors-heading">OUR MENTORS &amp; STAFF</h2>
         
-        <!-- Top: Principal Featured -->
+        <!-- Top: Founder & CEO Featured -->
         <div class="principal-spotlight">
             <div class="mentor-avatar-wrap">
-                <img src="{{ asset('images/principal-dr-gaikwad.jpg') }}" alt="Prof. (Dr.) Gaikwad Arun Hari" class="mentor-avatar-img principal-avatar">
-                <span class="mentor-comic-tag">HEAD &amp; PRINCIPAL</span>
+                <img src="{{ asset('images/vishal-kadlag.jpg') }}" alt="Mr. Vishal Kadlag" class="mentor-avatar-img principal-avatar">
+                <span class="mentor-comic-tag">FOUNDER &amp; CEO</span>
             </div>
             <div class="mentor-speech-content">
                 <div class="mentor-speech-header">
-                    <h3 class="mentor-comic-name">Prof. (Dr.) Gaikwad Arun Hari</h3>
-                    <span class="mentor-comic-role">Principal &amp; Head of Animora</span>
+                    <h3 class="mentor-comic-name">Mr. Vishal Kadlag</h3>
+                    <span class="mentor-comic-role">Founder &amp; CEO</span>
                 </div>
                 <div class="comic-speech-bubble speech-left">
-                    <p>“Fostering creativity, innovation, and industry-grade excellence in animation and digital media arts. At Animora, our mission is to empower the next generation of visual storytellers, 3D artists, and pipeline directors!”</p>
+                    <p>“Fostering creativity, innovation, and industry-grade excellence in animation and digital media arts. At Animora, our mission is to empower the next generation of visual storytellers, 3D artists, and pipeline directors!” One of Vishal’s primary missions is to cultivate and nurture Indian artists, particularly those hailing from rural areas. His dream is to produce animated movies and animation content right within India, showcasing the incredible talent that often goes untapped. To kickstart this vision, he established his first school in Sangamner, setting the stage for aspiring artists to realize their dreams.</p>
                 </div>
             </div>
         </div>
