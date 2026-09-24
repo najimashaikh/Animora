@@ -67,15 +67,15 @@
 
         <!-- Line of 3 Teachers Below Principal -->
         <div class="teachers-line-grid">
-            <!-- Teacher 1: Mr. Kawade Sitaram Namdev -->
+            <!-- Mentor 1: Agnelo Fernandes -->
             <div class="teacher-cartoon-card">
                 <div class="teacher-avatar-wrap">
-                    <img src="{{ asset('images/mentor-kawade-sitaram.jpg') }}" alt="Mr. Kawade Sitaram Namdev" class="teacher-avatar-img">
-                    <span class="teacher-comic-tag">ASSISTANT PROFESSOR</span>
+                    <img src="{{ asset('images/agnelo-fernandes.jpg') }}" alt="Agnelo Fernandes" class="teacher-avatar-img">
+                    <span class="teacher-comic-tag">CO-FOUNDER / PRODUCTION HEAD</span>
                 </div>
-                <h4 class="teacher-name">Mr. Kawade Sitaram Namdev</h4>
-                <div class="teacher-role">Assistant Professor</div>
-                <p class="teacher-desc">3D Animation, Rigging &amp; Pipeline Workflows</p>
+                <h4 class="teacher-name">Agnelo Fernandes</h4>
+                <div class="teacher-role">Co-Founder / Production Head</div>
+                <p class="teacher-desc">3D Animator with more than 7+ years of experience in the entertainment industry</p>
             </div>
 
             <!-- Teacher 2: Ms. Gite Dipa Prabhakar -->
