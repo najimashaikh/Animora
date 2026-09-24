@@ -118,48 +118,97 @@
         @yield('content')
     </main>
 
-    <!-- Producer Toy Minimalist Footer -->
+    <!-- Animora & CG BUGS Clean Footer -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
                     <img src="{{ asset('images/logo.png') }}" alt="Animora" style="height: 38px; width: auto; max-width: 150px; object-fit: contain; margin-bottom: 1rem; display: block;">
                     <p>
-                        The open digital asset marketplace and learning portal for 3D animation students. Download production-tested character rigs, sets, and pipeline automation tools.
+                        Final year college project created by students of S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College, Sangamner in association with <strong>CG BUGS School of 3D Animation</strong>.
                     </p>
+                    
+                    <!-- CG BUGS Official Social Media Links -->
+                    <div class="footer-social-wrap" title="Connect with CG BUGS">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/cgbugs/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="CG BUGS on Instagram" aria-label="CG BUGS Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@cgbugs" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="CG BUGS on YouTube" aria-label="CG BUGS YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+                            </svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/people/CG-BUGS-School-of-3D-Animation-Games-VFX/61556608560377/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="CG BUGS on Facebook" aria-label="CG BUGS Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/917737707710" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Connect on WhatsApp (+91 77377 07710)" aria-label="CG BUGS WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </a>
+                        <!-- Official Website -->
+                        <a href="https://cgbugs.school" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="CG BUGS Official School Portal (cgbugs.school)" aria-label="CG BUGS Website">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="footer-links">
+                    <!-- Column 1: Quick Navigation -->
                     <div class="footer-col">
-                        <h5>Student Library</h5>
+                        <h5>Explore</h5>
                         <ul>
-                            <li><a href="{{ route('browse', 'character-rigs') }}">Character Rigs</a></li>
-                            <li><a href="{{ route('browse', 'production-assets') }}">Production Assets</a></li>
-                            <li><a href="{{ route('browse', 'animation-clips') }}">Mocap Loops</a></li>
-                            <li><a href="{{ route('pipeline') }}">Pipeline Scripts</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('home') }}#courses">Explore Courses</a></li>
+                            <li><a href="{{ route('student.work') }}">Student Work Gallery</a></li>
+                            <li><a href="{{ route('home') }}#about">Mentors &amp; Faculty</a></li>
+                            <li><a href="{{ route('about') }}">About Our Team &amp; Project</a></li>
                         </ul>
                     </div>
+
+                    <!-- Column 2: Student Resources -->
                     <div class="footer-col">
-                        <h5>Software Targets</h5>
+                        <h5>Student Portal</h5>
                         <ul>
-                            <li><a href="{{ route('browse') }}?software=Maya">Autodesk Maya</a></li>
-                            <li><a href="{{ route('browse') }}?software=Blender">Blender 4.x</a></li>
-                            <li><a href="{{ route('browse') }}?software=Houdini">SideFX Houdini</a></li>
-                            <li><a href="{{ route('browse') }}?software=Unreal">Unreal Engine</a></li>
+                            <li><a href="{{ route('browse') }}">3D Asset Library</a></li>
+                            <li><a href="{{ route('pipeline') }}">Pipeline Tools &amp; Scripts</a></li>
+                            <li><a href="{{ route('login') }}">Student Sign In</a></li>
+                            <li><a href="{{ route('register') }}">New Student Registration</a></li>
                         </ul>
                     </div>
+
+                    <!-- Column 3: Contact & Campus -->
                     <div class="footer-col">
-                        <h5>Campus Access</h5>
+                        <h5>Contact &amp; Campus</h5>
                         <ul>
-                            <li><a href="javascript:void(0)" onclick="alert('100% Free for educational and portfolio use.');">Student License</a></li>
-                            <li><a href="javascript:void(0)" onclick="alert('Submission Ready: Verified for College Viva & Reel.');">Viva Guidelines</a></li>
-                            <li><a href="javascript:void(0)" onclick="alert('Neon PostgreSQL Serverless Active.');">Database Status</a></li>
+                            <li><a href="{{ route('home') }}#contact">Campus Helpdesk Form</a></li>
+                            <li><a href="mailto:najimashaikh267@gmail.com">najimashaikh267@gmail.com</a></li>
+                            <li><a href="tel:02425223181">(02425) 223181 / 222869</a></li>
+                            <li><a href="tel:7737707710">+91 77377 07710</a></li>
+                            <li><span style="font-size: 0.8rem; color: #71717a;">Sangamner, Ahmednagar (MH)</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <span>&copy; {{ date('Y') }} Animora. Powered by Laravel &amp; PostgreSQL. Minimalist Producer Toy Edition.</span>
-                <span>Built for Student Excellence</span>
+                <span>&copy; {{ date('Y') }} Animora. Final Year College Project by Sangamner College Students.</span>
+                <span>In Association with <a href="https://cgbugs.school" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">CG BUGS School of 3D Animation</a></span>
             </div>
         </div>
     </footer>

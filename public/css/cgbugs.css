@@ -888,8 +888,39 @@ a {
     transition: var(--transition);
 }
 
-.footer-col a:hover {
-    color: #ffffff;
+.footer-social-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.footer-social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #141418;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #e4e4e7;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.footer-social-link:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+}
+
+.footer-social-link svg {
+    width: 17px;
+    height: 17px;
 }
 
 .footer-bottom {
