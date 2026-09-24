@@ -862,6 +862,8 @@ a {
 .footer-links {
     display: flex;
     gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
 .footer-col h5 {
@@ -928,6 +930,24 @@ a {
     .trust-bar {
         justify-content: center;
     }
+    .footer {
+        padding: 3rem 1.5rem 2rem;
+    }
+    .footer-top {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+        width: 100%;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
 }
 
 @media (max-width: 640px) {
@@ -946,6 +966,10 @@ a {
     }
     .btn-solid-white, .btn-ghost-white {
         width: 100%;
+    }
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 
@@ -3636,6 +3660,9 @@ a {
     min-height: 100vh;
     color: #e4e4e7;
     font-family: var(--font-base, inherit);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Hero Banner */
@@ -3644,6 +3671,8 @@ a {
     padding: 6.5rem 1.5rem 4.5rem;
     background: #111116 url('../images/student-work/student-work-banner.webp') center/cover no-repeat;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    overflow: hidden;
 }
 
 .sw-hero-overlay {
@@ -4361,10 +4390,11 @@ a {
     }
     .sw-gallery-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
     }
     .sw-overview-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
     }
     .sw-hero-title {
         font-size: 3rem;
@@ -4372,56 +4402,196 @@ a {
 }
 
 @media (max-width: 768px) {
+    /* Homepage Student Work: 2x2 grid */
+    .home-student-work-section {
+        padding: 3.5rem 1rem;
+    }
+    .home-sw-header {
+        margin-bottom: 2rem;
+    }
+    .home-sw-heading {
+        font-size: 1.85rem;
+    }
+    .home-sw-lead {
+        font-size: 0.92rem;
+    }
     .home-sw-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.9rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
     }
     .home-sw-card {
         border-radius: 14px;
+        min-width: 0;
     }
     .home-sw-content {
-        padding: 0.9rem 0.8rem;
+        padding: 0.85rem 0.75rem;
     }
     .home-sw-category {
         font-size: 0.65rem;
         margin-bottom: 0.25rem;
     }
     .home-sw-title {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
         line-height: 1.28;
         margin-bottom: 0.35rem;
     }
     .home-sw-author {
         font-size: 0.72rem;
     }
+    .home-sw-btn-primary {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.6rem;
+    }
+
+    /* Dedicated Student Work Page Responsive */
+    .sw-page-wrapper {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .sw-container,
+    .sw-overview-container,
+    .sw-hero-content {
+        padding: 0 0.5rem;
+        box-sizing: border-box;
+    }
+    .sw-hero-banner {
+        padding: 4.5rem 1rem 2.5rem;
+    }
+    .sw-hero-title {
+        font-size: 2.3rem;
+        line-height: 1.15;
+        margin-bottom: 1.2rem;
+    }
+    .sw-overview-section {
+        padding: 3rem 1rem;
+    }
+    .sw-overview-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+    .sw-overview-heading {
+        font-size: 1.45rem;
+        line-height: 1.3;
+    }
+    .sw-overview-desc {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+    .sw-quicklinks-box {
+        padding: 1.5rem 1.25rem;
+    }
+    .sw-reels-section,
+    .sw-gallery-section {
+        padding: 3rem 1rem;
+        overflow: hidden;
+    }
+    .sw-section-title {
+        font-size: 1.65rem;
+    }
+    .sw-section-subtitle {
+        font-size: 0.9rem;
+    }
+    .sw-filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-bottom: 2rem;
+    }
+    .sw-filter-btn {
+        font-size: 0.78rem;
+        padding: 0.45rem 1rem;
+    }
     .sw-reels-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 1.25rem;
+        width: 100%;
     }
+    .sw-reel-card {
+        border-radius: 14px;
+        min-width: 0;
+    }
+    .sw-reel-info {
+        padding: 1.2rem;
+    }
+    .sw-reel-title {
+        font-size: 1.1rem;
+    }
+    .sw-reel-desc {
+        font-size: 0.85rem;
+    }
+
+    /* Gallery Grid: 2/2 Columns */
     .sw-gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.85rem;
+        width: 100%;
     }
-    .sw-modal-content {
-        grid-template-columns: 1fr;
+    .sw-art-card {
+        min-width: 0;
+        width: 100%;
+    }
+    .sw-art-inner {
+        border-radius: 12px;
+        width: 100%;
+    }
+    .sw-art-meta {
+        padding: 0.8rem 0.65rem;
+    }
+    .sw-meta-title {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .sw-meta-tag {
+        font-size: 0.6rem;
+    }
+    .sw-meta-author {
+        font-size: 0.72rem;
+    }
+    .sw-modal {
+        padding: 1rem;
+    }
+    .sw-modal-box {
+        border-radius: 16px;
         max-height: 90vh;
         overflow-y: auto;
     }
+    .sw-modal-content {
+        grid-template-columns: 1fr;
+    }
     .sw-modal-media {
-        max-height: 45vh;
+        max-height: 40vh;
+        min-height: 200px;
     }
     .sw-modal-details {
-        padding: 1.5rem;
+        padding: 1.5rem 1.25rem;
     }
-    .sw-hero-title {
-        font-size: 2.2rem;
+    .sw-modal-title {
+        font-size: 1.35rem;
+        margin-bottom: 0.6rem;
+    }
+    .sw-modal-text {
+        font-size: 0.88rem;
+        margin-bottom: 1.5rem;
+    }
+    .sw-modal-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
+    /* Homepage Student Work Mobile */
+    .home-student-work-section {
+        padding: 2.75rem 0.75rem;
+    }
+    .home-sw-heading {
+        font-size: 1.6rem;
+    }
     .home-sw-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.65rem;
     }
     .home-sw-card {
@@ -4453,45 +4623,122 @@ a {
     .home-sw-author {
         font-size: 0.66rem;
     }
+
+    /* Dedicated Student Work Page Small Mobile */
+    .sw-hero-banner {
+        padding: 3.8rem 0.85rem 2rem;
+    }
+    .sw-hero-title {
+        font-size: 1.85rem;
+        margin-bottom: 1rem;
+    }
+    .sw-btn-advisor {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.88rem;
+    }
+    .sw-overview-section {
+        padding: 2.25rem 0.85rem;
+    }
+    .sw-overview-heading {
+        font-size: 1.25rem;
+    }
+    .sw-quicklinks-box {
+        padding: 1.25rem 1rem;
+        border-radius: 14px;
+    }
+    .sw-quicklinks-title {
+        font-size: 0.9rem;
+    }
+    .sw-quicklinks-list a {
+        font-size: 0.84rem;
+    }
+    .sw-reels-section,
+    .sw-gallery-section {
+        padding: 2.25rem 0.85rem;
+    }
+    .sw-section-title {
+        font-size: 1.35rem;
+    }
+    .sw-section-subtitle {
+        font-size: 0.82rem;
+    }
+    .sw-filter-bar {
+        gap: 0.35rem;
+        margin-bottom: 1.5rem;
+    }
+    .sw-filter-btn {
+        font-size: 0.72rem;
+        padding: 0.38rem 0.75rem;
+    }
+    .sw-reels-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+    .sw-reel-info {
+        padding: 1rem;
+    }
+    .sw-reel-title {
+        font-size: 1rem;
+    }
+    .sw-reel-desc {
+        font-size: 0.82rem;
+        margin-bottom: 1rem;
+    }
+    .sw-reel-badge {
+        font-size: 0.58rem;
+        padding: 0.2rem 0.65rem;
+        top: 10px;
+        left: 10px;
+    }
+    .sw-play-btn {
+        width: 44px;
+        height: 44px;
+    }
+    .sw-play-label {
+        font-size: 0.76rem;
+    }
+
+    /* Gallery Grid: STRICT 2 COLUMNS ON MOBILE */
     .sw-gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.65rem;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.55rem;
     }
     .sw-art-inner {
-        border-radius: 12px;
+        border-radius: 10px;
     }
     .sw-art-meta {
-        padding: 0.65rem 0.5rem;
+        padding: 0.6rem 0.45rem;
     }
     .sw-meta-title {
-        font-size: 0.78rem;
+        font-size: 0.76rem;
         margin-bottom: 0.2rem;
     }
     .sw-meta-tag {
-        font-size: 0.55rem;
+        font-size: 0.52rem;
         margin-bottom: 0.2rem;
     }
     .sw-meta-author {
-        font-size: 0.66rem;
+        font-size: 0.65rem;
     }
     .sw-zoom-icon {
-        width: 30px;
-        height: 30px;
-        top: 8px;
-        right: 8px;
+        width: 28px;
+        height: 28px;
+        top: 6px;
+        right: 6px;
     }
     .sw-zoom-icon svg {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
     .sw-hover-cat {
-        font-size: 0.58rem;
+        font-size: 0.55rem;
     }
     .sw-hover-title {
-        font-size: 0.8rem;
+        font-size: 0.76rem;
     }
     .sw-hover-student {
-        font-size: 0.68rem;
+        font-size: 0.65rem;
     }
 }
 
