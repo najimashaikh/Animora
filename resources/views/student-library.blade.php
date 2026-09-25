@@ -45,15 +45,15 @@
         <button type="button" class="toast-close" onclick="closeToast()">&times;</button>
     </div>
 
-    <!-- Main Cards Grid Section (Exact Explore Courses Layout) -->
+    <!-- Main Cards Grid Section (Exact Explore Courses Layout with Anime Poster Visuals) -->
     <section class="course-section" style="margin-top: 1.5rem; margin-bottom: 4rem;">
         <div class="course-card-grid" id="libGrid">
 
             <!-- 1. Notes: 3D Rigging Pipeline -->
-            <div class="course-card lib-item-card" data-category="notes" data-title="3D Rigging and Pipeline Cheatsheet Maya Blender">
+            <div class="course-card lib-item-card" data-category="notes" data-title="3D Rigging and Pipeline Cheatsheet Maya Blender Study Notes">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/card-tools.jpg') }}" alt="3D Rigging &amp; Pipeline Cheatsheet">
-                    <span class="card-category-badge">📚 Notes</span>
+                    <img src="{{ asset('images/lib-study-notes.jpg') }}" alt="3D Rigging &amp; Pipeline Cheatsheet">
+                    <span class="card-category-badge">📚 Study Notes</span>
                     <span class="card-media-badge">.PDF</span>
                 </div>
                 <div class="course-card-title">3D Rigging &amp; Pipeline Cheatsheet</div>
@@ -73,10 +73,10 @@
             </div>
 
             <!-- 2. Notes: 12 Principles of Animation -->
-            <div class="course-card lib-item-card" data-category="notes" data-title="12 Principles of Animation Handbook Timing Curves">
+            <div class="course-card lib-item-card" data-category="notes" data-title="12 Principles of Animation Handbook Timing Curves Study Notes">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/course-individual-courses.jpg') }}" alt="12 Principles of Animation Handbook">
-                    <span class="card-category-badge">📚 Notes</span>
+                    <img src="{{ asset('images/lib-study-notes.jpg') }}" alt="12 Principles of Animation Handbook">
+                    <span class="card-category-badge">📚 Study Notes</span>
                     <span class="card-media-badge">.PDF</span>
                 </div>
                 <div class="course-card-title">12 Principles of Animation Handbook</div>
@@ -96,10 +96,10 @@
             </div>
 
             <!-- 3. 2D: Turnaround Character Sheets -->
-            <div class="course-card lib-item-card" data-category="2d" data-title="8-Point Character Turnaround Kit 2D Animation Sheets">
+            <div class="course-card lib-item-card" data-category="2d" data-title="8-Point Character Turnaround Kit 2D Animation Sheets Model">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/student-work/nikita-satpute-01.webp') }}" alt="8-Point Character Turnaround Kit">
-                    <span class="card-category-badge">🎨 2D Art</span>
+                    <img src="{{ asset('images/lib-2d-animation.jpg') }}" alt="8-Point Character Turnaround Kit">
+                    <span class="card-category-badge">🎨 2D Animation</span>
                     <span class="card-media-badge">.PSD / .PNG</span>
                 </div>
                 <div class="course-card-title">8-Point Character Turnaround Kit</div>
@@ -119,10 +119,10 @@
             </div>
 
             <!-- 4. 2D: Walk & Run Cycle Keyframes -->
-            <div class="course-card lib-item-card" data-category="2d" data-title="Walk and Run Cycle Keyframe Library Animation Poses">
+            <div class="course-card lib-item-card" data-category="2d" data-title="Walk and Run Cycle Keyframe Library Animation Poses Frames">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/student-work/sneha-sonwane-01.webp') }}" alt="Walk &amp; Run Cycle Keyframe Library">
-                    <span class="card-category-badge">🎨 2D Art</span>
+                    <img src="{{ asset('images/lib-2d-animation.jpg') }}" alt="Walk &amp; Run Cycle Keyframe Library">
+                    <span class="card-category-badge">🎨 2D Animation</span>
                     <span class="card-media-badge">.ZIP / .PNG</span>
                 </div>
                 <div class="course-card-title">Walk &amp; Run Cycle Keyframe Library</div>
@@ -142,10 +142,10 @@
             </div>
 
             <!-- 5. 3D: Animora Warrior Biped Rig -->
-            <div class="course-card lib-item-card" data-category="3d" data-title="Animora Biped Warrior Character Rig Maya Blender FBX">
+            <div class="course-card lib-item-card" data-category="3d" data-title="Animora Biped Warrior Character Rig Maya Blender FBX 3D">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/course-3d-animation.jpg') }}" alt="Animora Biped Warrior Character Rig">
-                    <span class="card-category-badge">🧊 3D Rig</span>
+                    <img src="{{ asset('images/lib-3d-models-rigs.jpg') }}" alt="Animora Biped Warrior Character Rig">
+                    <span class="card-category-badge">🧊 3D Models &amp; Rigs</span>
                     <span class="card-media-badge">.MA / .FBX</span>
                 </div>
                 <div class="course-card-title">Animora Biped Warrior Rig</div>
@@ -165,10 +165,10 @@
             </div>
 
             <!-- 6. 3D: Modular Sci-Fi Corridor & Props Kit -->
-            <div class="course-card lib-item-card" data-category="3d" data-title="Modular Sci-Fi Corridor Props Kit Blender FBX 3D">
+            <div class="course-card lib-item-card" data-category="3d" data-title="Modular Sci-Fi Corridor Props Kit Blender FBX 3D Models">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/course-professional-program.jpg') }}" alt="Modular Sci-Fi Corridor &amp; Props Kit">
-                    <span class="card-category-badge">🧊 3D Models</span>
+                    <img src="{{ asset('images/lib-3d-models-rigs.jpg') }}" alt="Modular Sci-Fi Corridor &amp; Props Kit">
+                    <span class="card-category-badge">🧊 3D Models &amp; Rigs</span>
                     <span class="card-media-badge">.BLEND / .FBX</span>
                 </div>
                 <div class="course-card-title">Modular Sci-Fi Corridor Kit</div>
@@ -188,10 +188,10 @@
             </div>
 
             <!-- 7. VFX: Volumetric Explosion & Smoke Cache -->
-            <div class="course-card lib-item-card" data-category="vfx" data-title="Volumetric Explosion Smoke Cache OpenVDB VFX Dynamics">
+            <div class="course-card lib-item-card" data-category="vfx" data-title="Volumetric Explosion Smoke Cache OpenVDB VFX Dynamics Simulation">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/course-vfx.jpg') }}" alt="Volumetric Explosion &amp; Smoke Cache">
-                    <span class="card-category-badge">💥 VFX</span>
+                    <img src="{{ asset('images/lib-vfx-dynamics.jpg') }}" alt="Volumetric Explosion &amp; Smoke Cache">
+                    <span class="card-category-badge">💥 VFX Dynamics</span>
                     <span class="card-media-badge">.VDB</span>
                 </div>
                 <div class="course-card-title">Volumetric Explosion &amp; Smoke Cache</div>
@@ -211,10 +211,10 @@
             </div>
 
             <!-- 8. VFX: Sparks, Dust & Energy Alphas Pack -->
-            <div class="course-card lib-item-card" data-category="vfx" data-title="Sparks Dust Energy Alphas Pack Nuke Niagra VFX">
+            <div class="course-card lib-item-card" data-category="vfx" data-title="Sparks Dust Energy Alphas Pack Nuke Niagra VFX Dynamics">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/card-clips.jpg') }}" alt="Sparks, Dust &amp; Energy Alphas Pack">
-                    <span class="card-category-badge">💥 VFX</span>
+                    <img src="{{ asset('images/lib-vfx-dynamics.jpg') }}" alt="Sparks, Dust &amp; Energy Alphas Pack">
+                    <span class="card-category-badge">💥 VFX Dynamics</span>
                     <span class="card-media-badge">.PNG / .EXR</span>
                 </div>
                 <div class="course-card-title">Sparks, Dust &amp; Energy Alphas</div>
@@ -234,9 +234,9 @@
             </div>
 
             <!-- 9. Game Art: Low-Poly Modular Dungeon Kit -->
-            <div class="course-card lib-item-card" data-category="gameart" data-title="Low Poly Modular Dungeon Kit Game Art UE5 Unity">
+            <div class="course-card lib-item-card" data-category="gameart" data-title="Low Poly Modular Dungeon Kit Game Art UE5 Unity Design">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/course-game-art-design.jpg') }}" alt="Low-Poly Modular Dungeon Kit">
+                    <img src="{{ asset('images/lib-game-art.jpg') }}" alt="Low-Poly Modular Dungeon Kit">
                     <span class="card-category-badge">🎮 Game Art</span>
                     <span class="card-media-badge">.FBX / .TGA</span>
                 </div>
@@ -257,9 +257,9 @@
             </div>
 
             <!-- 10. Game Art: Stylized Handpainted Texture Atlases -->
-            <div class="course-card lib-item-card" data-category="gameart" data-title="Stylized Handpainted Texture Atlases Game Design">
+            <div class="course-card lib-item-card" data-category="gameart" data-title="Stylized Handpainted Texture Atlases Game Design Art">
                 <div class="course-card-img" style="position: relative;">
-                    <img src="{{ asset('images/student-work/shubham-deshmukh-01.webp') }}" alt="Stylized Handpainted Texture Atlases">
+                    <img src="{{ asset('images/lib-game-art.jpg') }}" alt="Stylized Handpainted Texture Atlases">
                     <span class="card-category-badge">🎮 Game Art</span>
                     <span class="card-media-badge">.PNG Atlases</span>
                 </div>
@@ -419,7 +419,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.78);
     backdrop-filter: blur(4px);
     color: #00e5ff;
     font-size: 0.72rem;
@@ -435,7 +435,7 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    background: rgba(0, 112, 243, 0.88);
+    background: rgba(0, 112, 243, 0.9);
     color: #ffffff;
     font-size: 0.68rem;
     font-weight: 700;
