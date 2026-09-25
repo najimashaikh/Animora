@@ -8,10 +8,6 @@
     <!-- Hero / Header Section -->
     <section class="student-lib-hero">
         <div class="student-lib-header-inner">
-            <div class="student-lib-pill">
-                <span class="lib-pill-dot"></span>
-                <span>100% FREE &amp; OPEN ACCESS &bull; NO SIGN-IN REQUIRED</span>
-            </div>
             <h1 class="animora-branding" style="margin-bottom: 0.75rem;">STUDENT ASSET &amp; STUDY LIBRARY</h1>
             <p class="student-lib-subtext">
                 Welcome to the CG Bugs open digital student vault. Download lecture notes, 2D turnaround model sheets, 3D character rigs, VFX simulation caches, and game art assets completely free. Open to all students, artists, and creators worldwide.
@@ -35,15 +31,6 @@
         </div>
     </section>
 
-    <!-- Download Feedback Toast -->
-    <div id="downloadToast" class="lib-download-toast" style="display: none;">
-        <div class="toast-icon">📥</div>
-        <div class="toast-content">
-            <strong id="toastTitle">Download Started!</strong>
-            <span id="toastDesc">Your file is downloading now. Free for everyone without sign-in.</span>
-        </div>
-        <button type="button" class="toast-close" onclick="closeToast()">&times;</button>
-    </div>
 
     <!-- Main Cards Grid Section (Exact Explore Courses Layout with Anime Poster Visuals) -->
     <section class="course-section" style="margin-top: 1.5rem; margin-bottom: 4rem;">
@@ -310,34 +297,6 @@
     margin: 0 auto;
 }
 
-.student-lib-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(0, 112, 243, 0.12);
-    border: 1px solid rgba(0, 112, 243, 0.35);
-    padding: 0.35rem 1rem;
-    border-radius: 999px;
-    color: #00d2ff;
-    font-size: 0.76rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 1.25rem;
-}
-
-.lib-pill-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #00e5ff;
-    box-shadow: 0 0 10px #00e5ff;
-    animation: pillPulse 2s infinite ease-in-out;
-}
-
-@keyframes pillPulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.85); }
-}
 
 .student-lib-subtext {
     font-size: 1.05rem;
@@ -477,60 +436,6 @@
     color: #ffffff;
 }
 
-/* Toast Notification */
-.lib-download-toast {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background: #111116;
-    border: 1px solid #0070f3;
-    border-radius: 12px;
-    padding: 1rem 1.4rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    z-index: 9999;
-    animation: toastSlideUp 0.3s ease-out;
-    max-width: 400px;
-}
-
-@keyframes toastSlideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.toast-icon {
-    font-size: 1.6rem;
-}
-
-.toast-content strong {
-    display: block;
-    color: #ffffff;
-    font-size: 0.95rem;
-    margin-bottom: 0.2rem;
-}
-
-.toast-content span {
-    display: block;
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    line-height: 1.35;
-}
-
-.toast-close {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-size: 1.3rem;
-    cursor: pointer;
-    line-height: 1;
-    margin-left: 0.5rem;
-}
-
-.toast-close:hover {
-    color: #ffffff;
-}
 
 /* Empty State */
 .lib-empty-box {
@@ -602,22 +507,7 @@
     }
 
     function notifyDownload(title, filename) {
-        const toast = document.getElementById('downloadToast');
-        const toastTitle = document.getElementById('toastTitle');
-        const toastDesc = document.getElementById('toastDesc');
-
-        toastTitle.textContent = '📥 Downloading: ' + title;
-        toastDesc.textContent = filename + ' is downloading now. 100% Free for all students!';
-        toast.style.display = 'flex';
-
-        setTimeout(() => {
-            closeToast();
-        }, 5000);
-    }
-
-    function closeToast() {
-        const toast = document.getElementById('downloadToast');
-        if (toast) toast.style.display = 'none';
+        // Download initiated
     }
 </script>
 @endsection
