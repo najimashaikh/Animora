@@ -32,7 +32,7 @@
                 <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
                 <li><a href="{{ route('student.work') }}" class="{{ request()->routeIs('student.work') ? 'active' : '' }}">Student Work</a></li>
                 <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
-                <li><a href="{{ route('home') }}#student-library">Student Library</a></li>
+                <li><a href="{{ route('student.library') }}" class="{{ request()->routeIs('student.library') ? 'active' : '' }}">Student Library</a></li>
                 <li><a href="{{ route('home') }}#contact">Contact Us</a></li>
             </ul>
         </div>
@@ -80,7 +80,7 @@
             <li><a href="{{ route('home') }}" onclick="toggleMobileMenu()">Home</a></li>
             <li><a href="{{ route('student.work') }}" onclick="toggleMobileMenu()">Student Work</a></li>
             <li><a href="{{ route('about') }}" onclick="toggleMobileMenu()">About</a></li>
-            <li><a href="{{ route('home') }}#student-library" onclick="toggleMobileMenu()">Student Library</a></li>
+            <li><a href="{{ route('student.library') }}" onclick="toggleMobileMenu()">Student Library</a></li>
             <li><a href="{{ route('home') }}#contact" onclick="toggleMobileMenu()">Contact Us</a></li>
             <li><a href="{{ route('home') }}#courses" onclick="toggleMobileMenu()" style="color: #ffffff; font-weight: 700;">Explore Courses &rarr;</a></li>
         </ul>
@@ -187,6 +187,7 @@
                     <div class="footer-col">
                         <h5>Student Portal</h5>
                         <ul>
+                            <li><a href="{{ route('student.library') }}">Student Library</a></li>
                             <li><a href="{{ route('browse') }}">3D Asset Library</a></li>
                             <li><a href="{{ route('pipeline') }}">Pipeline Tools &amp; Scripts</a></li>
                             <li><a href="{{ route('login') }}">Student Sign In</a></li>

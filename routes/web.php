@@ -19,6 +19,10 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/student-work', [HomeController::class, 'studentWork'])->name('student.work');
+Route::get('/studentlibrary', [HomeController::class, 'studentLibrary'])->name('student.library');
+Route::get('/student-library', function () {
+    return redirect()->route('student.library');
+});
 Route::get('/browse/{category?}', [HomeController::class, 'browse'])->name('browse');
 Route::get('/asset/{slug}', [HomeController::class, 'showAsset'])->name('asset.show');
 Route::get('/pipeline', [HomeController::class, 'pipeline'])->name('pipeline');

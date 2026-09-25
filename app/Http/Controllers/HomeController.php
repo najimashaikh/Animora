@@ -306,4 +306,12 @@ class HomeController extends Controller
 
         return view('student-work', compact('studentWorks', 'reels'));
     }
+
+    /**
+     * Display the dedicated Student Library page (Public & Free Open Access for Everyone).
+     */
+    public function studentLibrary()
+    {
+        return view('student-library');
+    }
 }
