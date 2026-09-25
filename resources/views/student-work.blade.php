@@ -98,7 +98,7 @@
                 @foreach($reels as $reel)
                 <div class="sw-reel-card" data-category="{{ $reel['category_slug'] }}">
                     <div class="sw-reel-video-wrapper">
-                        <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="sw-reel-thumb" onerror="this.src='{{ $reel['fallback_thumbnail'] }}'">
+                        <img src="{{ $reel['thumbnail'] }}" alt="{{ $reel['title'] }}" class="sw-reel-thumb" loading="lazy" decoding="async" onerror="this.src='{{ $reel['fallback_thumbnail'] }}'">
                         <div class="sw-reel-overlay" onclick="openVideoModal('{{ $reel['video_url'] }}', '{{ addslashes($reel['title']) }}')">
                             <div class="sw-play-btn">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">

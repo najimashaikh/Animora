@@ -100,7 +100,9 @@ class HomeController extends Controller
         $search = trim($request->input('q', ''));
         $software = $request->input('software');
         
-        $categories = Category::orderBy('sort_order')->get();
+        $categories = Cache::remember('all_categories_sorted', 3600, function () {
+            return Category::orderBy('sort_order')->get();
+        });
         $activeCategory = null;
 
         $query = Asset::with('category');
@@ -146,8 +148,10 @@ class HomeController extends Controller
      */
     public function pipeline()
     {
-        $pipelineCategory = Category::where('slug', 'pipeline-tools')->first();
-        $tools = $pipelineCategory ? $pipelineCategory->assets : collect();
+        $tools = Cache::remember('pipeline_tools_assets', 3600, function () {
+            $pipelineCategory = Category::where('slug', 'pipeline-tools')->first();
+            return $pipelineCategory ? $pipelineCategory->assets : collect();
+        });
 
         return view('pipeline', compact('tools'));
     }

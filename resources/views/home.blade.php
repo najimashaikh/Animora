@@ -7,7 +7,7 @@
 <!-- Full Width Static Hero Section (Animora Comic Art Banner - No Text) -->
 <section class="hero-static-section hero-fullwidth">
     <div class="hero-image-wrapper">
-        <img src="{{ asset('images/animora-hero-full.png') }}" alt="Animora Animation Assets" class="hero-static-img">
+        <img src="{{ asset('images/animora-hero-full.png') }}" alt="Animora Animation Assets" class="hero-static-img" fetchpriority="high" decoding="async">
     </div>
 </section>
 
@@ -16,7 +16,7 @@
     <div class="doraemon-sketch-box">
         <!-- Left: Doraemon GIF (The Circle in sketch) -->
         <div class="doraemon-sketch-left">
-            <img src="{{ asset('ChatGPT%20Image%20Sep%2011,%202026,%2009_08_52%20PM.png') }}" alt="Doraemon" class="doraemon-sketch-img">
+            <img src="{{ asset('ChatGPT%20Image%20Sep%2011,%202026,%2009_08_52%20PM.png') }}" alt="Doraemon" class="doraemon-sketch-img" loading="lazy" decoding="async">
         </div>
 
         <!-- Right: Explore Courses text in sketch -->
@@ -34,7 +34,7 @@
         @foreach($courses as $course)
         <div class="course-card">
             <div class="course-card-img">
-                <img src="{{ isset($course->image) ? $course->image : (str_starts_with($course->image_url, 'http') ? $course->image_url : asset($course->image_url)) }}" alt="{{ $course->name }}">
+                <img src="{{ isset($course->image) ? $course->image : (str_starts_with($course->image_url, 'http') ? $course->image_url : asset($course->image_url)) }}" alt="{{ $course->name }}" loading="lazy" decoding="async">
             </div>
             <div class="course-card-title">{{ $course->name }}</div>
             <div class="course-card-desc">{{ $course->short_description }}</div>
@@ -51,7 +51,7 @@
         <!-- Top: Founder & CEO Featured -->
         <div class="principal-spotlight">
             <div class="mentor-avatar-wrap">
-                <img src="{{ asset('images/vishal-kadlag.jpg') }}" alt="Mr. Vishal Kadlag" class="mentor-avatar-img principal-avatar">
+                <img src="{{ asset('images/vishal-kadlag.jpg') }}" alt="Mr. Vishal Kadlag" class="mentor-avatar-img principal-avatar" loading="lazy" decoding="async">
                 <span class="mentor-comic-tag">FOUNDER &amp; CEO</span>
             </div>
             <div class="mentor-speech-content">
@@ -70,7 +70,7 @@
             <!-- Mentor 1: Agnelo Fernandes -->
             <div class="teacher-cartoon-card">
                 <div class="teacher-avatar-wrap">
-                    <img src="{{ asset('images/agnelo-fernandes.jpg') }}" alt="Agnelo Fernandes" class="teacher-avatar-img">
+                    <img src="{{ asset('images/agnelo-fernandes.jpg') }}" alt="Agnelo Fernandes" class="teacher-avatar-img" loading="lazy" decoding="async">
                     <span class="teacher-comic-tag">CO-FOUNDER / PRODUCTION HEAD</span>
                 </div>
                 <h4 class="teacher-name">Agnelo Fernandes</h4>
@@ -81,7 +81,7 @@
             <!-- Mentor 2: Mr. Prajwal Patil -->
             <div class="teacher-cartoon-card">
                 <div class="teacher-avatar-wrap">
-                    <img src="{{ asset('images/prajwal-patil.jpg') }}" alt="Mr. Prajwal Patil" class="teacher-avatar-img">
+                    <img src="{{ asset('images/prajwal-patil.jpg') }}" alt="Mr. Prajwal Patil" class="teacher-avatar-img" loading="lazy" decoding="async">
                     <span class="teacher-comic-tag">CO-FOUNDER &amp; IT SUPPORT</span>
                 </div>
                 <h4 class="teacher-name">Mr. Prajwal Patil</h4>
@@ -92,7 +92,7 @@
             <!-- Mentor 3: Mr. Rahul Bhalerao -->
             <div class="teacher-cartoon-card">
                 <div class="teacher-avatar-wrap">
-                    <img src="{{ asset('images/rahul-bhalerao.jpg') }}" alt="Mr. Rahul Bhalerao" class="teacher-avatar-img">
+                    <img src="{{ asset('images/rahul-bhalerao.jpg') }}" alt="Mr. Rahul Bhalerao" class="teacher-avatar-img" loading="lazy" decoding="async">
                     <span class="teacher-comic-tag">CORE MEMBER / SR. MODELER</span>
                 </div>
                 <h4 class="teacher-name">Mr. Rahul Bhalerao</h4>
@@ -120,7 +120,7 @@
             <!-- Item 1: Modern Living Room Reel -->
             <div class="home-sw-card home-sw-card-featured">
                 <div class="home-sw-media">
-                    <img src="{{ asset('images/student-work/modern-living-room.jpg') }}" alt="Modern Living Room 3D Interior" class="home-sw-img" onerror="this.src='https://img.youtube.com/vi/P-ebibSvFz4/maxresdefault.jpg'">
+                    <img src="{{ asset('images/student-work/modern-living-room.jpg') }}" alt="Modern Living Room 3D Interior" class="home-sw-img" loading="lazy" decoding="async" onerror="this.src='https://img.youtube.com/vi/P-ebibSvFz4/maxresdefault.jpg'">
                     <a href="https://youtu.be/P-ebibSvFz4" target="_blank" rel="noopener noreferrer" class="home-sw-play-overlay">
                         <div class="home-sw-play-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -141,7 +141,7 @@
             <!-- Item 2: Shubham Deshmukh Graphic Design -->
             <div class="home-sw-card">
                 <div class="home-sw-media">
-                    <img src="{{ asset('images/student-work/shubham-deshmukh-01.webp') }}" alt="Graphic Design Poster - Mr. Shubham Deshmukh" class="home-sw-img" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Mr.-Shubham-Deshmukh-01.webp'">
+                    <img src="{{ asset('images/student-work/shubham-deshmukh-01.webp') }}" alt="Graphic Design Poster - Mr. Shubham Deshmukh" class="home-sw-img" loading="lazy" decoding="async" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Mr.-Shubham-Deshmukh-01.webp'">
                     <span class="home-sw-badge">GRAPHIC DESIGN</span>
                 </div>
                 <div class="home-sw-content">
@@ -154,7 +154,7 @@
             <!-- Item 3: Nikita Satpute Character Design -->
             <div class="home-sw-card">
                 <div class="home-sw-media">
-                    <img src="{{ asset('images/student-work/nikita-satpute-01.webp') }}" alt="Character Design - Ms. Nikita Satpute" class="home-sw-img" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Nikita-Satpute-01-1.webp'">
+                    <img src="{{ asset('images/student-work/nikita-satpute-01.webp') }}" alt="Character Design - Ms. Nikita Satpute" class="home-sw-img" loading="lazy" decoding="async" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Nikita-Satpute-01-1.webp'">
                     <span class="home-sw-badge">CHARACTER DESIGN</span>
                 </div>
                 <div class="home-sw-content">
@@ -167,7 +167,7 @@
             <!-- Item 4: Shweta Kute Digital Art -->
             <div class="home-sw-card">
                 <div class="home-sw-media">
-                    <img src="{{ asset('images/student-work/shweta-kute-03.webp') }}" alt="Creature Art - Ms. Shweta Kute" class="home-sw-img" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Shweta-kute-03-2.webp'">
+                    <img src="{{ asset('images/student-work/shweta-kute-03.webp') }}" alt="Creature Art - Ms. Shweta Kute" class="home-sw-img" loading="lazy" decoding="async" onerror="this.src='https://cgbugs.school/wp-content/uploads/2024/05/Ms.-Shweta-kute-03-2.webp'">
                     <span class="home-sw-badge">CHARACTER DESIGN</span>
                 </div>
                 <div class="home-sw-content">
@@ -201,7 +201,7 @@
             <!-- Top Mascot & Header Banner inside the Blue Box -->
             <div class="contact-blue-header">
                 <div class="contact-robot-mascot-wrap">
-                    <img src="{{ asset('images/contact-robot.png') }}" alt="Contact Us Robot Mascot" class="contact-robot-img">
+                    <img src="{{ asset('images/contact-robot.png') }}" alt="Contact Us Robot Mascot" class="contact-robot-img" loading="lazy" decoding="async">
                 </div>
                 <div class="contact-header-content">
                     <div class="contact-comic-tag">ANIMORA CAMPUS HELPDESK</div>
@@ -361,7 +361,7 @@
     <div class="college-home-box">
         <div class="college-home-left">
             <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="college-home-logo-wrap" title="S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College">
-                <img src="{{ asset('images/college-logo.png') }}" alt="Sangamner College Logo" class="college-home-logo">
+                <img src="{{ asset('images/college-logo.png') }}" alt="Sangamner College Logo" class="college-home-logo" loading="lazy" decoding="async">
             </a>
         </div>
         <div class="college-home-center">

@@ -14,9 +14,12 @@
     <!-- Google Fonts: Minimalist High Contrast (Inter & Outfit) + Fredoka for Comic Cartoon elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Animora Minimalist B&W Design System (Producer Toy Style) -->
+    <link rel="preload" href="{{ asset('css/cgbugs.css') }}?v={{ file_exists(public_path('css/cgbugs.css')) ? filemtime(public_path('css/cgbugs.css')) : time() }}" as="style">
     <link rel="stylesheet" href="{{ asset('css/cgbugs.css') }}?v={{ file_exists(public_path('css/cgbugs.css')) ? filemtime(public_path('css/cgbugs.css')) : time() }}">
     @yield('styles')
 </head>
@@ -26,7 +29,7 @@
     <nav class="navbar">
         <div class="nav-left">
             <a href="{{ route('home') }}" class="brand-logo" aria-label="Animora Home">
-                <img src="{{ asset('images/logo.png') }}" alt="Animora" class="brand-logo-img">
+                <img src="{{ asset('images/logo.png') }}" alt="Animora" class="brand-logo-img" width="140" height="35" fetchpriority="high">
             </a>
             <ul class="nav-links desktop-only">
                 <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
@@ -238,6 +241,32 @@
                 window.location.href = "{{ route('browse') }}";
             }
         }
+
+        /* Instant Hover/Touch Link Prefetcher for 0ms transitions */
+        (function() {
+            const prefetched = new Set();
+            function prefetch(url) {
+                if (!url || prefetched.has(url)) return;
+                if (url.startsWith('#') || url.includes('logout') || url.startsWith('javascript:')) return;
+                try {
+                    const u = new URL(url, window.location.origin);
+                    if (u.origin !== window.location.origin) return;
+                    prefetched.add(url);
+                    const link = document.createElement('link');
+                    link.rel = 'prefetch';
+                    link.href = url;
+                    document.head.appendChild(link);
+                } catch(e) {}
+            }
+            document.addEventListener('mouseover', function(e) {
+                const a = e.target.closest('a');
+                if (a && a.href) prefetch(a.href);
+            }, { passive: true });
+            document.addEventListener('touchstart', function(e) {
+                const a = e.target.closest('a');
+                if (a && a.href) prefetch(a.href);
+            }, { passive: true });
+        })();
     </script>
     @yield('scripts')
 </body>

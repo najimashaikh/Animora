@@ -12,7 +12,7 @@
             <!-- Clickable College Logo (redirects to college website) -->
             <div class="about-logo-wrapper">
                 <a href="https://sangamnercollege.edu.in/" target="_blank" rel="noopener noreferrer" class="about-college-logo-link" title="S. N. Arts, D. J. Malpani Commerce and B. N. Sarda Science College">
-                    <img src="{{ asset('images/college-logo.png') }}" alt="Sangamner College Logo" class="about-college-logo-img">
+                    <img src="{{ asset('images/college-logo.png') }}" alt="Sangamner College Logo" class="about-college-logo-img" loading="lazy" decoding="async">
                 </a>
             </div>
 
@@ -173,7 +173,7 @@
         <!-- Principal Spotlight -->
         <div class="about-principal-card">
             <div class="about-principal-left">
-                <img src="{{ asset('images/principal-dr-gaikwad.jpg') }}" alt="Prof. (Dr.) Gaikwad Arun Hari" class="about-principal-img">
+                <img src="{{ asset('images/principal-dr-gaikwad.jpg') }}" alt="Prof. (Dr.) Gaikwad Arun Hari" class="about-principal-img" loading="lazy" decoding="async">
                 <span class="about-badge-tag">PRINCIPAL</span>
             </div>
             <div class="about-principal-right">
@@ -191,7 +191,7 @@
             <!-- Mentor 1: Mr. Kawade Sitaram Namdev -->
             <div class="about-teacher-card">
                 <div class="about-teacher-img-wrap">
-                    <img src="{{ asset('images/mentor-kawade-sitaram.jpg') }}" alt="Mr. Kawade Sitaram Namdev" class="about-teacher-avatar">
+                    <img src="{{ asset('images/mentor-kawade-sitaram.jpg') }}" alt="Mr. Kawade Sitaram Namdev" class="about-teacher-avatar" loading="lazy" decoding="async">
                     <span class="about-teacher-tag">PROJECT GUIDE</span>
                 </div>
                 <h4 class="about-teacher-name">Mr. Kawade Sitaram Namdev</h4>
@@ -205,7 +205,7 @@
             <!-- Mentor 2: Ms. Gite Dipa Prabhakar -->
             <div class="about-teacher-card">
                 <div class="about-teacher-img-wrap">
-                    <img src="{{ asset('images/mentor-gite-dipa.jpg') }}" alt="Ms. Gite Dipa Prabhakar" class="about-teacher-avatar">
+                    <img src="{{ asset('images/mentor-gite-dipa.jpg') }}" alt="Ms. Gite Dipa Prabhakar" class="about-teacher-avatar" loading="lazy" decoding="async">
                     <span class="about-teacher-tag">PROJECT GUIDE</span>
                 </div>
                 <h4 class="about-teacher-name">Ms. Gite Dipa Prabhakar</h4>
@@ -219,7 +219,7 @@
             <!-- Mentor 3: Ms. Pawase Harshal Shivaji -->
             <div class="about-teacher-card">
                 <div class="about-teacher-img-wrap">
-                    <img src="{{ asset('images/mentor-pawase-harshal.jpg') }}" alt="Ms. Pawase Harshal Shivaji" class="about-teacher-avatar">
+                    <img src="{{ asset('images/mentor-pawase-harshal.jpg') }}" alt="Ms. Pawase Harshal Shivaji" class="about-teacher-avatar" loading="lazy" decoding="async">
                     <span class="about-teacher-tag">PROJECT GUIDE</span>
                 </div>
                 <h4 class="about-teacher-name">Ms. Pawase Harshal Shivaji</h4>
