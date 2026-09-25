@@ -744,6 +744,28 @@
             }
         });
     });
+
+    /* Interactive Filter for Student Library Vault */
+    function filterStudentLib(category, tabBtn) {
+        const tabs = document.querySelectorAll('.lib-tab-btn');
+        tabs.forEach(t => t.classList.remove('active'));
+        if (tabBtn) tabBtn.classList.add('active');
+
+        const cards = document.querySelectorAll('.student-lib-grid .lib-card');
+        cards.forEach(card => {
+            const cardCat = card.getAttribute('data-category');
+            if (category === 'all' || cardCat === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    /* Download Trigger for Student Library Vault */
+    function triggerStudentDownload(filename) {
+        alert('📥 Downloading Student Resource: ' + filename + '\n\nAccess granted for CG Bugs registered student.');
+    }
 </script>
 
 @endsection
