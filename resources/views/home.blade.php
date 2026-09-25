@@ -191,6 +191,223 @@
     </div>
 </section>
 
+<!-- Student Library Section (Downloadable Notes & Production Assets) -->
+<section class="student-library-section" id="student-library">
+    <div class="student-lib-container">
+        <!-- Section Header -->
+        <div class="student-lib-header">
+            <div class="student-lib-badge">STUDENT RESOURCE VAULT</div>
+            <h2 class="student-lib-title">STUDENT LIBRARY</h2>
+            <p class="student-lib-subtitle">
+                Access curated lecture notes, production-ready rigs, 2D model sheets, VFX caches, and game art assets crafted for CG Bugs animators and students.
+            </p>
+
+            <!-- Interactive Category Filter Tabs -->
+            <div class="student-lib-tabs">
+                <button class="lib-tab-btn active" onclick="filterStudentLib('all', this)">All Resources</button>
+                <button class="lib-tab-btn" onclick="filterStudentLib('notes', this)">📚 Study Notes</button>
+                <button class="lib-tab-btn" onclick="filterStudentLib('2d', this)">🎨 2D Animation</button>
+                <button class="lib-tab-btn" onclick="filterStudentLib('3d', this)">🧊 3D Models &amp; Rigs</button>
+                <button class="lib-tab-btn" onclick="filterStudentLib('vfx', this)">💥 VFX Dynamics</button>
+                <button class="lib-tab-btn" onclick="filterStudentLib('gameart', this)">🎮 Game Art &amp; Design</button>
+            </div>
+        </div>
+
+        <!-- Resources Grid -->
+        <div class="student-lib-grid" id="studentLibGrid">
+            <!-- 1. Notes: Maya & 3D Rigging -->
+            <div class="lib-card" data-category="notes">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">STUDY NOTES</span>
+                    <span class="lib-card-ext">.PDF</span>
+                </div>
+                <div class="lib-card-icon">📚</div>
+                <h3 class="lib-card-title">3D Rigging &amp; Pipeline Cheatsheet</h3>
+                <p class="lib-card-desc">Comprehensive field notes on Maya biped joint hierarchy, IK/FK blending, skin weights painting, and naming conventions.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 4.8 MB</span>
+                    <span>Format: PDF E-Book</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('3D_Rigging_Pipeline_Notes.pdf')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download Notes</span>
+                </a>
+            </div>
+
+            <!-- 2. Notes: 12 Principles -->
+            <div class="lib-card" data-category="notes">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">STUDY NOTES</span>
+                    <span class="lib-card-ext">.PDF</span>
+                </div>
+                <div class="lib-card-icon">📖</div>
+                <h3 class="lib-card-title">12 Principles of Animation Handbook</h3>
+                <p class="lib-card-desc">Detailed timing charts, anticipation curves, squash &amp; stretch examples, and ease-in/ease-out acceleration formulas.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 8.2 MB</span>
+                    <span>Format: PDF Guide</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('12_Principles_Animation_Handbook.pdf')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download Notes</span>
+                </a>
+            </div>
+
+            <!-- 3. 2D: Turnaround Character Sheets -->
+            <div class="lib-card" data-category="2d">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">2D ANIMATION</span>
+                    <span class="lib-card-ext">.PSD / .PNG</span>
+                </div>
+                <div class="lib-card-icon">🎨</div>
+                <h3 class="lib-card-title">8-Point Character Turnaround Kit</h3>
+                <p class="lib-card-desc">Standard studio turnaround template sheets with proportions, eye line guides, and layered expression sheets.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 22.5 MB</span>
+                    <span>Layers: 16 PSD Layers</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('2D_Character_Turnaround_Pack.zip')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download 2D Kit</span>
+                </a>
+            </div>
+
+            <!-- 4. 2D: Walk & Run Cycle Keys -->
+            <div class="lib-card" data-category="2d">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">2D ANIMATION</span>
+                    <span class="lib-card-ext">.ZIP</span>
+                </div>
+                <div class="lib-card-icon">🏃</div>
+                <h3 class="lib-card-title">Walk &amp; Run Cycle Keyframe Library</h3>
+                <p class="lib-card-desc">Contact, down, passing, and up pose vector breakdowns ready for frame-by-frame practice in Toon Boom and Flash.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 14.1 MB</span>
+                    <span>Format: PNG Sequences</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('Walk_Run_Keyframes_Pack.zip')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download 2D Kit</span>
+                </a>
+            </div>
+
+            <!-- 5. 3D: Hero Biped Rig -->
+            <div class="lib-card" data-category="3d">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">3D MODELS &amp; RIGS</span>
+                    <span class="lib-card-ext">.MA / .FBX</span>
+                </div>
+                <div class="lib-card-icon">🤖</div>
+                <h3 class="lib-card-title">Animora Biped Warrior Character Rig</h3>
+                <p class="lib-card-desc">Production-grade biped rig with facial blendshapes, stretchy spline spine, space switching, and clean quad topology.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 38.6 MB</span>
+                    <span>Polygons: 28,450 Quads</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('Animora_Warrior_Rig_v2.zip')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download 3D Rig</span>
+                </a>
+            </div>
+
+            <!-- 6. 3D: Sci-Fi Modular Kit -->
+            <div class="lib-card" data-category="3d">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">3D MODELS &amp; RIGS</span>
+                    <span class="lib-card-ext">.BLEND / .FBX</span>
+                </div>
+                <div class="lib-card-icon">🚀</div>
+                <h3 class="lib-card-title">Modular Sci-Fi Corridor &amp; Props Kit</h3>
+                <p class="lib-card-desc">Snap-to-grid architectural pieces including walls, airlocks, conduits, consoles, and baked 4K PBR normal maps.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 64.2 MB</span>
+                    <span>Assets: 42 Modular Meshes</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('SciFi_Corridor_Modular_Kit.zip')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download 3D Kit</span>
+                </a>
+            </div>
+
+            <!-- 7. VFX: OpenVDB Fire & Explosion -->
+            <div class="lib-card" data-category="vfx">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">VFX DYNAMICS</span>
+                    <span class="lib-card-ext">.VDB</span>
+                </div>
+                <div class="lib-card-icon">💥</div>
+                <h3 class="lib-card-title">Volumetric Explosion &amp; Smoke Cache</h3>
+                <p class="lib-card-desc">High-density OpenVDB simulation cache simulated in Houdini, optimized for Arnold, V-Ray, and Blender Cycles rendering.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 112 MB</span>
+                    <span>Frames: 120 VDB Frames</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('Volumetric_Explosion_VDB.zip')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download VFX Cache</span>
+                </a>
+            </div>
+
+            <!-- 8. VFX: Particle Alphas Pack -->
+            <div class="lib-card" data-category="vfx">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">VFX DYNAMICS</span>
+                    <span class="lib-card-ext">.PNG / .EXR</span>
+                </div>
+                <div class="lib-card-icon">⚡</div>
+                <h3 class="lib-card-title">Sparks, Dust &amp; Energy Alphas Pack</h3>
+                <p class="lib-card-desc">100+ alpha mask textures for Niagra and VFX compositing in Nuke and After Effects with 32-bit linear gamma.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 31.0 MB</span>
+                    <span>Resolution: 2048 x 2048</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('VFX_Particle_Alphas_Pack.zip')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download VFX Alphas</span>
+                </a>
+            </div>
+
+            <!-- 9. Game Art: Modular Dungeon Kit -->
+            <div class="lib-card" data-category="gameart">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">GAME ART &amp; DESIGN</span>
+                    <span class="lib-card-ext">.FBX / .TGA</span>
+                </div>
+                <div class="lib-card-icon">🎮</div>
+                <h3 class="lib-card-title">Low-Poly Modular Dungeon Kit</h3>
+                <p class="lib-card-desc">Grid-aligned stone walls, flagstone floors, torches, pillars, and treasure chests optimized for Unity and Unreal Engine 5.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 45.3 MB</span>
+                    <span>Engine Ready: UE5 / Unity</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('LowPoly_Dungeon_Kit.zip')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download Game Kit</span>
+                </a>
+            </div>
+
+            <!-- 10. Game Art: Handpainted Texture Atlases -->
+            <div class="lib-card" data-category="gameart">
+                <div class="lib-card-top">
+                    <span class="lib-card-cat-badge">GAME ART &amp; DESIGN</span>
+                    <span class="lib-card-ext">.PNG Atlases</span>
+                </div>
+                <div class="lib-card-icon">🏰</div>
+                <h3 class="lib-card-title">Stylized Handpainted Texture Atlases</h3>
+                <p class="lib-card-desc">Tileable wood planks, cobblestone, roof tiles, and stylized foliage trim sheets with seamless tiling.</p>
+                <div class="lib-card-meta">
+                    <span>Size: 28.7 MB</span>
+                    <span>Format: Seamless 4K PNG</span>
+                </div>
+                <a href="javascript:void(0);" onclick="triggerStudentDownload('Stylized_Texture_Atlases.zip')" class="lib-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download Game Kit</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Contact Us Section with Static Blue Box & Theme Touch -->
 <section class="contact-section" id="contact">
     <div class="contact-container">

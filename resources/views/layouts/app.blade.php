@@ -32,6 +32,7 @@
                 <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
                 <li><a href="{{ route('student.work') }}" class="{{ request()->routeIs('student.work') ? 'active' : '' }}">Student Work</a></li>
                 <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
+                <li><a href="{{ route('home') }}#student-library">Student Library</a></li>
                 <li><a href="{{ route('home') }}#contact">Contact Us</a></li>
             </ul>
         </div>
@@ -79,6 +80,7 @@
             <li><a href="{{ route('home') }}" onclick="toggleMobileMenu()">Home</a></li>
             <li><a href="{{ route('student.work') }}" onclick="toggleMobileMenu()">Student Work</a></li>
             <li><a href="{{ route('about') }}" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="{{ route('home') }}#student-library" onclick="toggleMobileMenu()">Student Library</a></li>
             <li><a href="{{ route('home') }}#contact" onclick="toggleMobileMenu()">Contact Us</a></li>
             <li><a href="{{ route('home') }}#courses" onclick="toggleMobileMenu()" style="color: #ffffff; font-weight: 700;">Explore Courses &rarr;</a></li>
         </ul>
